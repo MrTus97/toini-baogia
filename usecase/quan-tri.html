@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quản trị Toini · Toini giai đoạn 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/uc.css">
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs";
+mermaid.initialize({startOnLoad:true,theme:"base",securityLevel:"loose",
+ flowchart:{htmlLabels:true,curve:"basis"},
+ themeVariables:{fontFamily:"Archivo, system-ui, sans-serif",fontSize:"14px",
+ primaryColor:"#FFFDF8",primaryBorderColor:"#0D0D0D",primaryTextColor:"#0D0D0D",lineColor:"#0D0D0D",
+ secondaryColor:"#F5F1E8",tertiaryColor:"#F5F1E8",clusterBkg:"#F5F1E8",clusterBorder:"#0D0D0D",
+ actorBkg:"#C6FF00",actorBorder:"#0D0D0D",actorTextColor:"#0D0D0D",actorLineColor:"#0D0D0D",
+ signalColor:"#0D0D0D",signalTextColor:"#0D0D0D",labelBoxBkgColor:"#C6FF00",labelBoxBorderColor:"#0D0D0D",
+ noteBkgColor:"#FFE7A3",noteBorderColor:"#0D0D0D",activationBkgColor:"#C6FF00",edgeLabelBackground:"#FFFDF8"}});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="logo">toini</span><span class="sub">Use case · Giai đoạn 1</span></div>
+    <nav class="tabs"><a href="index.html">Tổng quan</a><a href="khach.html">Khách</a><a href="quan.html">Quán</a><a href="quan-tri.html" class="on" aria-current="page">Quản trị Toini</a><a href="tu-dong.html">Hệ thống tự động</a><a href="../mock/index.html" class="ext">Mock ↗</a><a href="../evidence/index.html" class="ext">Evidence ↗</a><a href="../bao-gia/index.html" class="ext">Báo giá ↗</a></nav>
+  </div>
+</header>
+
+<section class="hero"><div class="wrap">
+  <div class="kick">🛠 Tác nhân · Nhân viên Toini: Giám đốc · Sale/CSKH · Kế toán</div>
+  <h1>Quản trị Toini</h1>
+  <p>Toini có 3 vai trò. <b>Giám đốc</b> có toàn quyền. <b>Sale/CSKH</b> quản lý quán, nội dung, đơn và tài khoản quán. <b>Kế toán</b> lo đối soát, công nợ và xuất số liệu. Mọi thao tác tạo mới và chỉnh sửa đều được ghi vào nhật ký (<a class="ref" href="tu-dong.html#UC-S07" title="Ghi nhật ký thao tác">UC-S07</a>).</p>
+</div></section>
+<div class="wrap layout">
+  <aside class="toc"><div class="toc-in"><b>17 use case</b><ol><li><a href="#UC-A01"><span>UC-A01</span>Quản lý quán và hồ sơ quán</a></li><li><a href="#UC-A02"><span>UC-A02</span>Nhập dữ liệu quán ban đầu từ file mẫu</a></li><li><a href="#UC-A03"><span>UC-A03</span>Quản lý ưu đãi của quán</a></li><li><a href="#UC-A04"><span>UC-A04</span>Quản lý tài khoản quán</a></li><li><a href="#UC-A05"><span>UC-A05</span>Quản lý nhân viên Toini và vai trò</a></li><li><a href="#UC-A06"><span>UC-A06</span>Theo dõi đơn và hỗ trợ khách</a></li><li><a href="#UC-A07"><span>UC-A07</span>Xử lý đơn quán chậm phản hồi</a></li><li><a href="#UC-A08"><span>UC-A08</span>Thiết lập tỷ lệ hoa hồng</a></li><li><a href="#UC-A09"><span>UC-A09</span>Đối soát hóa đơn</a></li><li><a href="#UC-A10"><span>UC-A10</span>Công nợ và ghi nhận thanh toán</a></li><li><a href="#UC-A11"><span>UC-A11</span>Xuất số liệu theo mẫu ThucTe</a></li><li><a href="#UC-A12"><span>UC-A12</span>Quản lý nội dung chung và cấu hình</a></li><li><a href="#UC-A13"><span>UC-A13</span>Xem nhật ký thao tác</a></li><li><a href="#UC-A14"><span>UC-A14</span>Thiết lập trần gửi tin và chặn lạm dụng</a></li><li><a href="#UC-A15"><span>UC-A15</span>Quản lý sự kiện</a></li><li><a href="#UC-A16"><span>UC-A16</span>Kiểm duyệt đánh giá</a></li><li><a href="#UC-A17"><span>UC-A17</span>Quản lý deal siêu hời</a></li></ol></div></aside>
+  <main>
+    <section class="card diagram">
+      <h2>Sơ đồ use case</h2>
+      <p class="muted">Bấm vào từng ô để tới mô tả chi tiết.</p>
+      <pre class="mermaid">flowchart LR
+  ACT(["🛠 Nhân viên Toini"]):::actor
+  A01(["&lt;b&gt;UC-A01&lt;/b&gt;&lt;br/&gt;Quản lý quán và hồ sơ quán"])
+  ACT --- A01
+  click A01 href "#UC-A01"
+  A02(["&lt;b&gt;UC-A02&lt;/b&gt;&lt;br/&gt;Nhập dữ liệu quán ban đầu từ file mẫu"])
+  ACT --- A02
+  click A02 href "#UC-A02"
+  A03(["&lt;b&gt;UC-A03&lt;/b&gt;&lt;br/&gt;Quản lý ưu đãi của quán"])
+  ACT --- A03
+  click A03 href "#UC-A03"
+  A04(["&lt;b&gt;UC-A04&lt;/b&gt;&lt;br/&gt;Quản lý tài khoản quán"])
+  ACT --- A04
+  click A04 href "#UC-A04"
+  A05(["&lt;b&gt;UC-A05&lt;/b&gt;&lt;br/&gt;Quản lý nhân viên Toini và vai trò"])
+  ACT --- A05
+  click A05 href "#UC-A05"
+  A06(["&lt;b&gt;UC-A06&lt;/b&gt;&lt;br/&gt;Theo dõi đơn và hỗ trợ khách"])
+  ACT --- A06
+  click A06 href "#UC-A06"
+  A07(["&lt;b&gt;UC-A07&lt;/b&gt;&lt;br/&gt;Xử lý đơn quán chậm phản hồi"])
+  ACT --- A07
+  click A07 href "#UC-A07"
+  A08(["&lt;b&gt;UC-A08&lt;/b&gt;&lt;br/&gt;Thiết lập tỷ lệ hoa hồng"])
+  ACT --- A08
+  click A08 href "#UC-A08"
+  A09(["&lt;b&gt;UC-A09&lt;/b&gt;&lt;br/&gt;Đối soát hóa đơn"])
+  ACT --- A09
+  click A09 href "#UC-A09"
+  A10(["&lt;b&gt;UC-A10&lt;/b&gt;&lt;br/&gt;Công nợ và ghi nhận thanh toán"])
+  ACT --- A10
+  click A10 href "#UC-A10"
+  A11(["&lt;b&gt;UC-A11&lt;/b&gt;&lt;br/&gt;Xuất số liệu theo mẫu ThucTe"])
+  ACT --- A11
+  click A11 href "#UC-A11"
+  A12(["&lt;b&gt;UC-A12&lt;/b&gt;&lt;br/&gt;Quản lý nội dung chung và cấu hình"])
+  ACT --- A12
+  click A12 href "#UC-A12"
+  A13(["&lt;b&gt;UC-A13&lt;/b&gt;&lt;br/&gt;Xem nhật ký thao tác"])
+  ACT --- A13
+  click A13 href "#UC-A13"
+  A14(["&lt;b&gt;UC-A14&lt;/b&gt;&lt;br/&gt;Thiết lập trần gửi tin và chặn lạm dụng"])
+  ACT --- A14
+  click A14 href "#UC-A14"
+  A15(["&lt;b&gt;UC-A15&lt;/b&gt;&lt;br/&gt;Quản lý sự kiện"])
+  ACT --- A15
+  click A15 href "#UC-A15"
+  A16(["&lt;b&gt;UC-A16&lt;/b&gt;&lt;br/&gt;Kiểm duyệt đánh giá"])
+  ACT --- A16
+  click A16 href "#UC-A16"
+  A17(["&lt;b&gt;UC-A17&lt;/b&gt;&lt;br/&gt;Quản lý deal siêu hời"])
+  ACT --- A17
+  click A17 href "#UC-A17"
+  classDef actor fill:#C6FF00,stroke:#0D0D0D,stroke-width:2.5px,color:#0D0D0D,font-weight:800</pre>
+    </section>
+    <article class="uc" id="UC-A01">
+  <header>
+    <span class="code">UC-A01</span>
+    <h3>Quản lý quán và hồ sơ quán</h3>
+    <div class="meta"><span class="pill actor">Sale/CSKH</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Toini giữ thông tin quán trên web luôn đúng và đủ.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Toini đã thống nhất thông tin với quán.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Web khách hiển thị thông tin mới của quán.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên thêm quán mới hoặc mở một quán đã có.</li><li>Nhân viên nhập hoặc sửa: tên quán, loại hình, khu vực, địa chỉ, vị trí trên Google Maps, ảnh, giờ mở cửa, phí vào cửa, chi tiêu tối thiểu, thuế và phí, dress code, giới hạn tuổi, mô tả và bản dịch cho 6 ngôn ngữ.</li><li>Nhân viên <b>gắn tiện ích</b> cho quán bằng cách tick chọn trong danh mục tiện ích (nhạc sống, view sông Hàn, nhận thẻ, menu tiếng Anh…). Tiện ích hiện ở trang quán và dùng cho bộ lọc tiện ích của khách (<a class="ref" href="khach.html#UC-K02" title="Xem trang chủ và tìm quán">UC-K02</a>).</li><li>Để dịch sang các ngôn ngữ khác, nhân viên bấm <b>“Dịch bằng AI”</b>, chọn dịch tất cả các ngôn ngữ còn thiếu hoặc chỉ một số ngôn ngữ. Hệ thống gửi nội dung sang dịch vụ dịch AI và nhận về <b>bản dịch nháp</b>.</li><li>Nhân viên xem bản dịch nháp của từng ngôn ngữ, sửa lại nếu cần, rồi bấm <b>“Duyệt”</b>. Chỉ bản dịch đã duyệt mới hiển thị trên web khách.</li><li>Nhân viên nhập thông tin hợp đồng và người liên hệ của quán.</li><li>Nhân viên bật hoặc tắt hiển thị quán trên web khách.</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Dịch vụ dịch AI bị lỗi hoặc không phản hồi</td><td>Hệ thống báo lỗi. Nhân viên bấm dịch lại, hoặc tự nhập bản dịch.</td></tr><tr><td>Sửa nội dung gốc sau khi bản dịch đã được duyệt</td><td>Các bản dịch liên quan được đánh dấu “cần dịch lại”. Web vẫn hiển thị bản dịch đã duyệt trước đó, cho tới khi bản dịch mới được duyệt.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Quán không tự sửa hồ sơ trong giai đoạn này. Toini trao đổi với quán rồi cập nhật trực tiếp.</li><li>Bản đồ nhúng và nút Grab dùng vị trí quán nhập ở đây.</li><li>AI chỉ tạo bản nháp. Bản nháp không bao giờ tự hiển thị lên web khi chưa được duyệt.</li><li>Ngôn ngữ nào chưa có bản dịch đã duyệt thì web hiển thị tiếng Anh.</li><li>Phí dịch vụ dịch AI tính theo lượng chữ được dịch. Toini trả trực tiếp cho nhà cung cấp, khoản này nằm trong chi phí dịch vụ.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K03" title="Xem chi tiết quán">UC-K03 · Xem chi tiết quán</a><a class="chip" href="khach.html#UC-K04" title="Đi tới quán bằng Grab hoặc Google Maps">UC-K04 · Đi tới quán bằng Grab hoặc Google Maps</a><a class="chip" href="#UC-A02" title="Nhập dữ liệu quán ban đầu từ file mẫu">UC-A02 · Nhập dữ liệu quán ban đầu từ file mẫu</a><a class="chip" href="#UC-A03" title="Quản lý ưu đãi của quán">UC-A03 · Quản lý ưu đãi của quán</a></div>
+</article>
+<article class="uc" id="UC-A02">
+  <header>
+    <span class="code">UC-A02</span>
+    <h3>Nhập dữ liệu quán ban đầu từ file mẫu</h3>
+    <div class="meta"><span class="pill actor">Toini + đội phát triển</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Đưa dữ liệu khoảng 50 quán đầu tiên lên hệ thống trước ngày chạy thật.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đội phát triển gửi Toini file mẫu.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Hệ thống đã có dữ liệu quán để chạy thử.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Toini điền file mẫu gồm thông tin quán, ảnh, giờ mở cửa, giá, ưu đãi và bản dịch.</li><li>Đội phát triển nhập file vào hệ thống một lần.</li><li>Hệ thống kiểm tra từng dòng. Dòng có lỗi được trả lại cho Toini, kèm lỗi cụ thể của từng dòng để sửa.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Sau lần nhập ban đầu, quán mới được thêm qua <a class="ref" href="#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01</a>.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01 · Quản lý quán và hồ sơ quán</a></div>
+</article>
+<article class="uc" id="UC-A03">
+  <header>
+    <span class="code">UC-A03</span>
+    <h3>Quản lý ưu đãi của quán</h3>
+    <div class="meta"><span class="pill actor">Sale/CSKH</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Hiển thị ưu đãi rõ ràng để thu hút khách đặt bàn qua Toini.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Quán đã có trên hệ thống.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Khách thấy ưu đãi mới.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên tạo, sửa hoặc tắt ưu đãi của một quán. Mỗi ưu đãi gồm: tên, mô tả, điều kiện, ngày và khung giờ áp dụng, thời hạn.</li><li>Để dịch tên, mô tả và điều kiện của ưu đãi sang các ngôn ngữ khác, nhân viên bấm <b>“Dịch bằng AI”</b>. Hệ thống trả về bản dịch nháp.</li><li>Nhân viên xem, sửa và <b>duyệt</b> bản dịch nháp, giống như với hồ sơ quán (<a class="ref" href="#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01</a>).</li><li>Ưu đãi đang có hiệu lực hiển thị trên trang quán và trên màn hình ưu đãi của khách (<a class="ref" href="khach.html#UC-K09" title="Báo “Tôi đã tới quán” và dùng ưu đãi">UC-K09</a>).</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Dịch vụ dịch AI bị lỗi hoặc không phản hồi</td><td>Hệ thống báo lỗi. Nhân viên bấm dịch lại, hoặc tự nhập bản dịch.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Ưu đãi do quán chịu. Toini nhập theo thỏa thuận với quán.</li><li>Bản dịch nháp của AI chỉ hiển thị trên web sau khi được duyệt. Ngôn ngữ nào chưa có bản dịch đã duyệt thì web hiển thị tiếng Anh.</li><li>Phí dịch AI nằm trong chi phí dịch vụ, Toini trả trực tiếp cho nhà cung cấp.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K03" title="Xem chi tiết quán">UC-K03 · Xem chi tiết quán</a><a class="chip" href="khach.html#UC-K09" title="Báo “Tôi đã tới quán” và dùng ưu đãi">UC-K09 · Báo “Tôi đã tới quán” và dùng ưu đãi</a></div>
+</article>
+<article class="uc" id="UC-A04">
+  <header>
+    <span class="code">UC-A04</span>
+    <h3>Quản lý tài khoản quán</h3>
+    <div class="meta"><span class="pill actor">Sale/CSKH</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Cấp quyền vào cổng quán cho đúng người và đúng quán.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Quán đã có trên hệ thống.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Nhân viên quán dùng được cổng quán (<a class="ref" href="quan.html#UC-Q01" title="Đăng nhập và chọn quán">UC-Q01</a>).</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên tạo tài khoản (tên, email đăng nhập, mật khẩu tạm).</li><li>Nhân viên gán tài khoản cho một hoặc nhiều quán, hoặc bỏ gán.</li><li>Nhân viên khóa hoặc mở khóa tài khoản, cấp lại mật khẩu.</li><li>Nhân viên xem danh sách tài khoản của từng quán, và danh sách quán của từng tài khoản.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Một quán có nhiều tài khoản. Một tài khoản quản lý được nhiều quán.</li><li>Quán tự giao tài khoản cho nhân viên của mình. Hệ thống không phân quyền bên trong quán.</li><li>Tài khoản bị khóa sẽ bị đăng xuất ngay.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="quan.html#UC-Q01" title="Đăng nhập và chọn quán">UC-Q01 · Đăng nhập và chọn quán</a></div>
+</article>
+<article class="uc" id="UC-A05">
+  <header>
+    <span class="code">UC-A05</span>
+    <h3>Quản lý nhân viên Toini và vai trò</h3>
+    <div class="meta"><span class="pill actor">Giám đốc</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Mỗi nhân viên Toini chỉ làm đúng phần việc của mình.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Không có.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Nhân viên Toini đăng nhập và thấy đúng các chức năng của vai trò mình.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Giám đốc tạo tài khoản cho nhân viên Toini và chọn vai trò: Giám đốc, Sale/CSKH, hoặc Kế toán.</li><li>Giám đốc đổi vai trò, khóa hoặc mở khóa tài khoản.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Giám đốc có toàn quyền.</li><li>Sale/CSKH: quán, ưu đãi, nội dung, đơn, tài khoản quán.</li><li>Kế toán: đối soát, công nợ, xuất số liệu.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-A13" title="Xem nhật ký thao tác">UC-A13 · Xem nhật ký thao tác</a></div>
+</article>
+<article class="uc" id="UC-A06">
+  <header>
+    <span class="code">UC-A06</span>
+    <h3>Theo dõi đơn và hỗ trợ khách</h3>
+    <div class="meta"><span class="pill actor">Sale/CSKH</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Toini nắm mọi đơn và xử lý được khi khách hoặc quán gặp vấn đề.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Không có.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Đơn được xử lý.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên xem danh sách mọi đơn, lọc theo trạng thái, quán, ngày.</li><li>Nhân viên tìm đơn theo mã đặt chỗ, số điện thoại hoặc email.</li><li>Nhân viên xem lịch sử của đơn: ai đã làm gì, tin nhắn đã gửi qua kênh nào, gửi thành công hay không.</li><li>Khi cần, nhân viên làm thay khách hoặc quán: đổi giờ, hủy đơn, xác nhận hoặc từ chối thay quán (khi quán báo qua điện thoại), gửi lại thông báo.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Mỗi lần làm thay đều phải nhập lý do. Thao tác được ghi vào nhật ký (<a class="ref" href="tu-dong.html#UC-S07" title="Ghi nhật ký thao tác">UC-S07</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-A07" title="Xử lý đơn quán chậm phản hồi">UC-A07 · Xử lý đơn quán chậm phản hồi</a><a class="chip" href="tu-dong.html#UC-S01" title="Gửi tin cho khách theo kênh phù hợp">UC-S01 · Gửi tin cho khách theo kênh phù hợp</a><a class="chip" href="tu-dong.html#UC-S07" title="Ghi nhật ký thao tác">UC-S07 · Ghi nhật ký thao tác</a></div>
+</article>
+<article class="uc" id="UC-A07">
+  <header>
+    <span class="code">UC-A07</span>
+    <h3>Xử lý đơn quán chậm phản hồi</h3>
+    <div class="meta"><span class="pill actor">Sale/CSKH</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Không để khách chờ lâu khi quán chưa xem đơn.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đơn đã “Chờ quán xác nhận” quá 15 phút (<a class="ref" href="tu-dong.html#UC-S02" title="Hẹn giờ theo trạng thái đơn">UC-S02</a>).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Đơn được xác nhận hoặc từ chối trước khi bị tự hủy.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Trang quản trị hiện cảnh báo nổi bật. Bot Telegram gửi tin vào nhóm CSKH của Toini.</li><li>Nhân viên CSKH gọi điện cho quán.</li><li>Quán xác nhận trên cổng quán, hoặc CSKH xác nhận thay quán và ghi lý do.</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Tới 30 phút vẫn chưa có kết quả</td><td>Hệ thống tự hủy đơn và báo khách (<a class="ref" href="tu-dong.html#UC-S02" title="Hẹn giờ theo trạng thái đơn">UC-S02</a>).</td></tr></tbody></table></div><div class="rel"><span>Liên quan</span><a class="chip" href="quan.html#UC-Q04" title="Xác nhận hoặc từ chối đơn">UC-Q04 · Xác nhận hoặc từ chối đơn</a><a class="chip" href="tu-dong.html#UC-S02" title="Hẹn giờ theo trạng thái đơn">UC-S02 · Hẹn giờ theo trạng thái đơn</a><a class="chip" href="#UC-A06" title="Theo dõi đơn và hỗ trợ khách">UC-A06 · Theo dõi đơn và hỗ trợ khách</a></div>
+</article>
+<article class="uc" id="UC-A08">
+  <header>
+    <span class="code">UC-A08</span>
+    <h3>Thiết lập tỷ lệ hoa hồng</h3>
+    <div class="meta"><span class="pill actor">Giám đốc</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Tính hoa hồng đúng theo thỏa thuận với từng quán, kể cả khi tỷ lệ thay đổi.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Quán đã có trên hệ thống.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Các đơn mới tính theo tỷ lệ mới.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Giám đốc chọn quán, nhập tỷ lệ hoa hồng (%) và ngày bắt đầu áp dụng.</li><li>Hệ thống lưu thành một phiên bản mới và giữ lịch sử các phiên bản cũ.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Mỗi đơn dùng tỷ lệ đang áp dụng vào ngày khách tới quán. Đổi tỷ lệ không làm thay đổi hoa hồng của các đơn trước đó.</li><li>Mỗi quán dùng một tỷ lệ, chưa tách riêng theo loại dịch vụ.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="tu-dong.html#UC-S03" title="Tính hoa hồng">UC-S03 · Tính hoa hồng</a></div>
+</article>
+<article class="uc" id="UC-A09">
+  <header>
+    <span class="code">UC-A09</span>
+    <h3>Đối soát hóa đơn</h3>
+    <div class="meta"><span class="pill actor">Kế toán</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Bảo đảm hoa hồng tính trên số liệu đúng.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Có đơn đã tới quán trong kỳ.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Số liệu của kỳ sẵn sàng để chốt.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Kế toán mở danh sách đối soát của kỳ. Mỗi đơn có: giờ khách tới, ai báo đã tới (khách hay quán), số khách, giá trị hóa đơn, ảnh hóa đơn, phần Toini tài trợ (nếu đơn dùng deal), hoa hồng tạm tính.</li><li>Kế toán lọc nhanh các đơn cần chú ý: đơn chưa có hóa đơn, đơn do quán báo đã tới.</li><li>Kế toán đối chiếu giờ tới, số khách và giá trị hóa đơn, rồi đánh dấu <b>“Đã khớp”</b>.</li><li>Nếu số liệu lệch, kế toán liên hệ quán, rồi điều chỉnh số tiền hoặc hoa hồng. Mỗi lần điều chỉnh bắt buộc ghi lý do.</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Phát hiện sai sau khi đã chốt kỳ</td><td>Kỳ đã chốt không bị sửa. Hệ thống tạo một dòng điều chỉnh và đưa vào kỳ sau.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Việc trao đổi khi số liệu lệch diễn ra ngoài hệ thống (điện thoại, Zalo…). Hệ thống lưu lại kết quả điều chỉnh và lý do.</li><li>Hệ thống không xử lý các thỏa thuận riêng giữa khách và quán.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="quan.html#UC-Q06" title="Báo “Khách đã tới”">UC-Q06 · Báo “Khách đã tới”</a><a class="chip" href="quan.html#UC-Q07" title="Nhập hóa đơn">UC-Q07 · Nhập hóa đơn</a><a class="chip" href="tu-dong.html#UC-S03" title="Tính hoa hồng">UC-S03 · Tính hoa hồng</a><a class="chip" href="tu-dong.html#UC-S04" title="Chốt kỳ đối soát hằng tuần">UC-S04 · Chốt kỳ đối soát hằng tuần</a></div>
+</article>
+<article class="uc" id="UC-A10">
+  <header>
+    <span class="code">UC-A10</span>
+    <h3>Công nợ và ghi nhận thanh toán</h3>
+    <div class="meta"><span class="pill actor">Kế toán</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Theo dõi quán nào còn nợ, nợ bao nhiêu, đã quá hạn hay chưa.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đã có kỳ được chốt (<a class="ref" href="tu-dong.html#UC-S04" title="Chốt kỳ đối soát hằng tuần">UC-S04</a>).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Công nợ của quán được cập nhật, và quán thấy cùng số liệu trên cổng quán (<a class="ref" href="quan.html#UC-Q08" title="Xem công nợ hoa hồng">UC-Q08</a>).</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Kế toán xem bảng công nợ theo quán và theo kỳ: số phát sinh, đã thu, còn phải thu, hạn trả, đã quá hạn hay chưa.</li><li>Khi quán chuyển khoản, kế toán ghi nhận khoản đã thu (ngày, số tiền, ghi chú).</li><li>Kỳ có công nợ âm (do deal siêu hời): bảng ghi “Toini trả quán”; khi Toini chuyển tiền cho quán, kế toán ghi nhận “đã trả quán”.</li><li>Từ mỗi kỳ công nợ, kế toán bấm xem được chi tiết tới từng đơn.</li></ol>
+  <div class="rel"><span>Liên quan</span><a class="chip" href="quan.html#UC-Q08" title="Xem công nợ hoa hồng">UC-Q08 · Xem công nợ hoa hồng</a><a class="chip" href="tu-dong.html#UC-S04" title="Chốt kỳ đối soát hằng tuần">UC-S04 · Chốt kỳ đối soát hằng tuần</a><a class="chip" href="#UC-A11" title="Xuất số liệu theo mẫu ThucTe">UC-A11 · Xuất số liệu theo mẫu ThucTe</a></div>
+</article>
+<article class="uc" id="UC-A11">
+  <header>
+    <span class="code">UC-A11</span>
+    <h3>Xuất số liệu theo mẫu ThucTe</h3>
+    <div class="meta"><span class="pill actor">Kế toán</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Đưa số liệu vào file kế hoạch tài chính của Toini mà không phải nhập tay.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Không có.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Kế toán có file Excel để dùng.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Kế toán chọn tháng hoặc khoảng ngày cần xuất.</li><li>Hệ thống xuất file Excel gồm từng hóa đơn (kèm phần Toini tài trợ của deal) và bảng tổng hợp theo quán, đúng các cột của tab ThucTe trong file kế hoạch tài chính Toini đã gửi.</li></ol>
+  <div class="rel"><span>Liên quan</span><a class="chip" href="#UC-A10" title="Công nợ và ghi nhận thanh toán">UC-A10 · Công nợ và ghi nhận thanh toán</a></div>
+</article>
+<article class="uc" id="UC-A12">
+  <header>
+    <span class="code">UC-A12</span>
+    <h3>Quản lý nội dung chung và cấu hình</h3>
+    <div class="meta"><span class="pill actor">Sale/CSKH · Giám đốc</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Toini tự sửa chữ trên web và các cấu hình thường dùng, không cần nhờ đội phát triển.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Không có.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Web khách hiển thị nội dung mới.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Sửa bản dịch chữ giao diện web khách cho 6 ngôn ngữ.</li><li>Sửa nội dung email gửi khách. Xem danh sách mẫu tin ZNS và SMS.</li><li>Sửa nội dung trang điều khoản sử dụng và chính sách bảo mật.</li><li>Cấu hình nút chat: danh sách kênh, link từng kênh, thứ tự kênh theo ngôn ngữ (<a class="ref" href="khach.html#UC-K10" title="Nhắn tin cho Toini qua ứng dụng chat">UC-K10</a>).</li><li>Quản lý danh mục khu vực, loại hình quán và <b>tiện ích</b>. Mỗi tiện ích có tên ở 6 ngôn ngữ.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Mẫu tin ZNS và SMS brandname phải được Zalo và nhà mạng duyệt. Muốn đổi câu chữ thì phải gửi duyệt lại, không sửa ngay trên hệ thống được.</li><li>Nội dung pháp lý của điều khoản và chính sách do Toini cung cấp.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K01" title="Chọn ngôn ngữ và loại tiền">UC-K01 · Chọn ngôn ngữ và loại tiền</a><a class="chip" href="khach.html#UC-K10" title="Nhắn tin cho Toini qua ứng dụng chat">UC-K10 · Nhắn tin cho Toini qua ứng dụng chat</a><a class="chip" href="tu-dong.html#UC-S01" title="Gửi tin cho khách theo kênh phù hợp">UC-S01 · Gửi tin cho khách theo kênh phù hợp</a></div>
+</article>
+<article class="uc" id="UC-A13">
+  <header>
+    <span class="code">UC-A13</span>
+    <h3>Xem nhật ký thao tác</h3>
+    <div class="meta"><span class="pill actor">Giám đốc</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Truy được ai đã làm gì, vào lúc nào.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Không có.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Giám đốc truy được nguồn gốc của mọi thay đổi.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Giám đốc tìm trong nhật ký theo người thao tác, khoảng thời gian, đối tượng (quán, đơn, tài khoản, hoa hồng, hóa đơn…) và loại thao tác.</li><li>Mỗi dòng nhật ký có: thời điểm, người làm, thao tác, giá trị trước và sau khi thay đổi.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Không ai sửa hoặc xóa được nhật ký (<a class="ref" href="tu-dong.html#UC-S07" title="Ghi nhật ký thao tác">UC-S07</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="tu-dong.html#UC-S07" title="Ghi nhật ký thao tác">UC-S07 · Ghi nhật ký thao tác</a></div>
+</article>
+<article class="uc" id="UC-A14">
+  <header>
+    <span class="code">UC-A14</span>
+    <h3>Thiết lập trần gửi tin và chặn lạm dụng</h3>
+    <div class="meta"><span class="pill actor">Giám đốc</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Giới hạn chi phí tin nhắn và ngăn kẻ xấu lợi dụng web để gửi tin hàng loạt.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Không có.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Hệ thống gửi tin trong giới hạn Toini đã đặt.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Giám đốc đặt trần số tin ZNS và SMS tối đa mỗi ngày cho toàn hệ thống.</li><li>Giám đốc đặt giới hạn số lần gửi mã cho mỗi số điện thoại, mỗi email, mỗi địa chỉ IP.</li><li>Giám đốc xem số tin đã gửi trong ngày theo từng kênh.</li><li>Giám đốc chặn hoặc bỏ chặn một số điện thoại, email hoặc địa chỉ IP.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Khi số tin trong ngày chạm 80% trần, Giám đốc nhận cảnh báo. Khi chạm 100%, Giám đốc nhận cảnh báo và hệ thống xử lý theo <a class="ref" href="tu-dong.html#UC-S06" title="Chống bot và giới hạn gửi tin">UC-S06</a>.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K06" title="Xác minh số điện thoại hoặc email bằng mã OTP">UC-K06 · Xác minh số điện thoại hoặc email bằng mã OTP</a><a class="chip" href="tu-dong.html#UC-S06" title="Chống bot và giới hạn gửi tin">UC-S06 · Chống bot và giới hạn gửi tin</a></div>
+</article>
+<article class="uc" id="UC-A15">
+  <header>
+    <span class="code">UC-A15</span>
+    <h3>Quản lý sự kiện</h3>
+    <div class="meta"><span class="pill actor">Sale/CSKH</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Đưa sự kiện của các quán lên web để khách có lý do đặt bàn tối đó.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Quán đã có trên hệ thống.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Sự kiện hiện ở mục Sự kiện, lịch tháng và trang quán (<a class="ref" href="khach.html#UC-K12" title="Xem sự kiện và đặt bàn theo sự kiện">UC-K12</a>).</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên tạo hoặc sửa sự kiện: quán, ngày, giờ bắt đầu – kết thúc, ảnh (chọn từ ảnh của quán), nhãn, bật/tắt hiển thị.</li><li>Nhân viên nhập tên và mô tả bằng tiếng Việt, bấm <b>“Dịch bằng AI”</b> để tạo bản nháp các ngôn ngữ, sửa và duyệt (giống <a class="ref" href="#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01</a>).</li><li>Nhân viên xem danh sách sự kiện sắp tới / đã qua và <b>số đơn</b> mỗi sự kiện mang lại.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Quán không tự tạo sự kiện trong giai đoạn này; Toini nhập theo thông tin quán gửi.</li><li>Chưa bán vé sự kiện (giai đoạn 2).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K12" title="Xem sự kiện và đặt bàn theo sự kiện">UC-K12 · Xem sự kiện và đặt bàn theo sự kiện</a><a class="chip" href="#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01 · Quản lý quán và hồ sơ quán</a></div>
+</article>
+<article class="uc" id="UC-A16">
+  <header>
+    <span class="code">UC-A16</span>
+    <h3>Kiểm duyệt đánh giá</h3>
+    <div class="meta"><span class="pill actor">Sale/CSKH</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Chỉ đăng đánh giá thật, phù hợp; loại bỏ nội dung vi phạm.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Có đánh giá chờ duyệt (<a class="ref" href="khach.html#UC-K13" title="Đánh giá sau khi đi">UC-K13</a>).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Đánh giá được đăng lên trang quán hoặc bị từ chối.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên mở mục <b>Đánh giá</b>, tab “Chờ duyệt” (menu có số đếm).</li><li>Mỗi đánh giá có: quán, tên khách, mã đơn, số sao, bình luận, ảnh (bấm để phóng to).</li><li>Nhân viên bấm <b>“Duyệt”</b> để đăng, hoặc <b>“Không duyệt”</b> và nhập lý do.</li><li>Nhân viên xem lại các đánh giá đã duyệt / không duyệt và đổi quyết định khi cần.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Mọi quyết định duyệt / không duyệt được ghi nhật ký (<a class="ref" href="tu-dong.html#UC-S07" title="Ghi nhật ký thao tác">UC-S07</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K13" title="Đánh giá sau khi đi">UC-K13 · Đánh giá sau khi đi</a><a class="chip" href="khach.html#UC-K03" title="Xem chi tiết quán">UC-K03 · Xem chi tiết quán</a><a class="chip" href="tu-dong.html#UC-S07" title="Ghi nhật ký thao tác">UC-S07 · Ghi nhật ký thao tác</a></div>
+</article>
+<article class="uc" id="UC-A17">
+  <header>
+    <span class="code">UC-A17</span>
+    <h3>Quản lý deal siêu hời</h3>
+    <div class="meta"><span class="pill actor">Giám đốc</span><span class="pill where">Trang quản trị</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Chạy deal giảm giá lớn do Toini tài trợ để điều hướng khách tới quán.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Quán đã có tỷ lệ hoa hồng (<a class="ref" href="#UC-A08" title="Thiết lập tỷ lệ hoa hồng">UC-A08</a>).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Deal hiện trên web khách và áp dụng cho đơn mới (<a class="ref" href="khach.html#UC-K14" title="Đặt bàn với deal siêu hời Toini">UC-K14</a>).</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Giám đốc tạo hoặc sửa deal: quán, <b>loại deal</b> (giảm % hóa đơn, hoặc voucher số tiền), mức giảm, khung giờ, ngày áp dụng, hạn, <b>số suất tối đa</b>, bật/tắt.</li><li>Màn hình hiện ví dụ tính tiền ngay khi nhập: với hóa đơn mẫu, khách được giảm bao nhiêu, hoa hồng gốc, hoa hồng thực (có thể âm).</li><li>Nhập tên và điều kiện deal bằng tiếng Việt, <b>Dịch bằng AI</b>, sửa và duyệt.</li><li>Danh sách deal hiện số suất đã dùng và tổng tiền Toini đã tài trợ.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Toini chịu toàn bộ phần giảm của deal, trừ vào hoa hồng của đơn (<a class="ref" href="tu-dong.html#UC-S03" title="Tính hoa hồng">UC-S03</a>). Ví dụ quán trả Toini 15%: deal giảm 40% → hoa hồng thực −25% hóa đơn (Toini trả quán); voucher 100K → hoa hồng thực = 15% hóa đơn − 100K.</li><li>Hoa hồng âm được trừ vào công nợ của quán trong kỳ; nếu cả kỳ âm thì Toini trả lại quán (<a class="ref" href="#UC-A10" title="Công nợ và ghi nhận thanh toán">UC-A10</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K14" title="Đặt bàn với deal siêu hời Toini">UC-K14 · Đặt bàn với deal siêu hời Toini</a><a class="chip" href="tu-dong.html#UC-S03" title="Tính hoa hồng">UC-S03 · Tính hoa hồng</a><a class="chip" href="#UC-A08" title="Thiết lập tỷ lệ hoa hồng">UC-A08 · Thiết lập tỷ lệ hoa hồng</a><a class="chip" href="#UC-A10" title="Công nợ và ghi nhận thanh toán">UC-A10 · Công nợ và ghi nhận thanh toán</a></div>
+</article>
+  </main>
+</div>
+<footer class="foot"><div class="wrap">Toini · Tài liệu use case giai đoạn 1 · Bản 1 · 07/11/2026</div></footer>
+</body>
+</html>

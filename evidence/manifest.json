@@ -1,0 +1,1319 @@
+[
+ {
+  "id": "E01",
+  "title": "Khách tìm quán và xem thông tin quán",
+  "desc": "Khách mở web, đổi ngôn ngữ/tiền tệ, lọc quán, xem ảnh, giá, bản đồ và gọi Grab.",
+  "ucs": [
+   "K01",
+   "K02",
+   "K03",
+   "K04"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E01-01.jpg",
+    "caption": "Trang Khám phá: tìm quán, chọn nhanh khu vực/loại hình, số quán còn nhận khách tối nay.",
+    "ucs": [
+     "K02"
+    ],
+    "link": "khach/index.html#/",
+    "device": "mobile"
+   },
+   {
+    "n": 2,
+    "file": "E01-02.jpg",
+    "caption": "Ưu đãi tối nay khi đặt qua Toini (đang diễn ra / sắp bắt đầu, có đếm ngược).",
+    "ucs": [
+     "K02"
+    ],
+    "link": "khach/index.html#/",
+    "device": "mobile"
+   },
+   {
+    "n": 3,
+    "file": "E01-03.jpg",
+    "caption": "Danh sách quán: lọc theo khu vực, loại hình (ví dụ Spa), mức giá, còn nhận khách tối nay.",
+    "ucs": [
+     "K02"
+    ],
+    "link": "khach/index.html#/explore?type=spa",
+    "device": "mobile"
+   },
+   {
+    "n": 4,
+    "file": "E01-04.jpg",
+    "caption": "Lọc theo tiện ích, chọn nhiều cùng lúc (ví dụ View sông Hàn + Menu tiếng Anh): chỉ còn quán có đủ các tiện ích.",
+    "ucs": [
+     "K02"
+    ],
+    "link": "khach/index.html#/explore?tags=view,en_menu",
+    "device": "mobile"
+   },
+   {
+    "n": 5,
+    "file": "E01-05.jpg",
+    "caption": "Chọn 1 trong 6 ngôn ngữ (VI, EN, KO, RU, ZH, JA).",
+    "ucs": [
+     "K01"
+    ],
+    "link": "khach/index.html#/",
+    "device": "mobile"
+   },
+   {
+    "n": 6,
+    "file": "E01-06.jpg",
+    "caption": "Chọn loại tiền; giá quy đổi theo tỷ giá ngân hàng, có thời điểm cập nhật.",
+    "ucs": [
+     "K01",
+     "S05"
+    ],
+    "link": "khach/index.html#/",
+    "device": "mobile"
+   },
+   {
+    "n": 7,
+    "file": "E01-07.jpg",
+    "caption": "Trang quán bằng tiếng Hàn, giá hiển thị quy đổi KRW.",
+    "ucs": [
+     "K01",
+     "K03"
+    ],
+    "link": "khach/index.html#/v/sky36",
+    "device": "mobile"
+   },
+   {
+    "n": 8,
+    "file": "E01-08.jpg",
+    "caption": "Trang quán: ảnh lớn, ảnh thu nhỏ, nút xem tất cả ảnh; thanh Đặt bàn cố định ở đáy.",
+    "ucs": [
+     "K03"
+    ],
+    "link": "khach/index.html#/v/sky36",
+    "device": "mobile"
+   },
+   {
+    "n": 9,
+    "file": "E01-09.jpg",
+    "caption": "Gallery toàn màn hình: vuốt/mũi tên để xem ảnh, dải ảnh thu nhỏ bên dưới.",
+    "ucs": [
+     "K03"
+    ],
+    "link": "khach/index.html#/v/sky36",
+    "device": "mobile"
+   },
+   {
+    "n": 10,
+    "file": "E01-10.jpg",
+    "caption": "Ưu đãi khi đặt qua Toini và giới thiệu quán.",
+    "ucs": [
+     "K03"
+    ],
+    "link": "khach/index.html#/v/sky36",
+    "device": "mobile"
+   },
+   {
+    "n": 11,
+    "file": "E01-11.jpg",
+    "caption": "Giá & quy định minh bạch: giờ mở cửa, phí vào cửa, chi tiêu tối thiểu, thuế phí, dress code, giới hạn tuổi.",
+    "ucs": [
+     "K03"
+    ],
+    "link": "khach/index.html#/v/sky36",
+    "device": "mobile"
+   },
+   {
+    "n": 12,
+    "file": "E01-12.jpg",
+    "caption": "Google Maps nhúng vị trí quán, nút Đi Grab và Chỉ đường.",
+    "ucs": [
+     "K03",
+     "K04"
+    ],
+    "link": "khach/index.html#/v/sky36",
+    "device": "mobile"
+   },
+   {
+    "n": 13,
+    "file": "E01-13.jpg",
+    "caption": "Đi Grab: mở app Grab với điểm đến là quán, điểm đón là vị trí hiện tại (mock hiển thị màn hình mô phỏng).",
+    "ucs": [
+     "K04"
+    ],
+    "link": "khach/index.html#/v/sky36",
+    "device": "mobile"
+   }
+  ]
+ },
+ {
+  "id": "E02",
+  "title": "Tìm quán gần tôi trên bản đồ",
+  "desc": "Khách chưa có quán cụ thể: đặt vị trí, xem ghim các quán quanh mình, bấm ghim xem nhanh rồi vào trang quán.",
+  "ucs": [
+   "K11"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E02-01.jpg",
+    "caption": "Bản đồ “Quán gần bạn”: chọn vị trí bằng GPS, điểm có sẵn, chạm hoặc kéo chấm tím.",
+    "ucs": [
+     "K11"
+    ],
+    "link": "khach/index.html#/map",
+    "device": "mobile"
+   },
+   {
+    "n": 2,
+    "file": "E02-02.jpg",
+    "caption": "Mỗi quán là một ghim theo loại hình; vòng tròn 1,5 km quanh vị trí của khách.",
+    "ucs": [
+     "K11"
+    ],
+    "link": "khach/index.html#/map",
+    "device": "mobile"
+   },
+   {
+    "n": 3,
+    "file": "E02-03.jpg",
+    "caption": "Đổi vị trí sang Chợ Hàn: danh sách “Gần bạn nhất” tự xếp lại theo khoảng cách.",
+    "ucs": [
+     "K11"
+    ],
+    "link": "khach/index.html#/map",
+    "device": "mobile"
+   },
+   {
+    "n": 4,
+    "file": "E02-04.jpg",
+    "caption": "Bấm ghim: thẻ nhỏ có ảnh, loại hình, khoảng cách, tình trạng nhận khách, ưu đãi.",
+    "ucs": [
+     "K11"
+    ],
+    "link": "khach/index.html#/map",
+    "device": "mobile"
+   },
+   {
+    "n": 5,
+    "file": "E02-05.jpg",
+    "caption": "Bấm thẻ nhỏ để vào trang chi tiết quán và đặt bàn.",
+    "ucs": [
+     "K11",
+     "K03"
+    ],
+    "link": null,
+    "device": "mobile"
+   },
+   {
+    "n": 6,
+    "file": "E02-06.jpg",
+    "caption": "Trên máy tính: bản đồ và danh sách quán gần nhất hiển thị song song.",
+    "ucs": [
+     "K11"
+    ],
+    "link": "khach/index.html#/map",
+    "device": "desktop"
+   }
+  ]
+ },
+ {
+  "id": "E03",
+  "title": "Đặt bàn và xác minh OTP (khách số Việt Nam)",
+  "desc": "Khách đặt bàn không cần tài khoản, nhận mã qua Zalo ZNS, đơn được tạo và quán nhận tin Telegram.",
+  "ucs": [
+   "K05",
+   "K06",
+   "S01",
+   "S09",
+   "Q03"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E03-01.jpg",
+    "caption": "Bước 1 – chọn tối, giờ đến, số khách, ghi chú; tối quán đã tắt nhận khách bị gạch.",
+    "ucs": [
+     "K05"
+    ],
+    "link": "khach/index.html#/v/herbal-spa",
+    "device": "mobile"
+   },
+   {
+    "n": 2,
+    "file": "E03-02.jpg",
+    "caption": "Bước 2 – tên, SĐT hoặc email (ít nhất một), đồng ý điều khoản. Có nút điền mẫu cho demo.",
+    "ucs": [
+     "K05"
+    ],
+    "link": "khach/index.html#/v/herbal-spa",
+    "device": "mobile"
+   },
+   {
+    "n": 3,
+    "file": "E03-03.jpg",
+    "caption": "Bước 3 – mã OTP gửi qua Zalo ZNS (tin mô phỏng hiện ở đầu màn hình); mã demo đã điền sẵn.",
+    "ucs": [
+     "K06",
+     "S01"
+    ],
+    "link": null,
+    "device": "mobile"
+   },
+   {
+    "n": 4,
+    "file": "E03-04.jpg",
+    "caption": "Đặt xong: mã đặt chỗ, các kênh khách sẽ nhận kết quả; tin “đã nhận đơn” gửi qua ZNS, quán nhận tin Telegram.",
+    "ucs": [
+     "K05",
+     "S01",
+     "S09"
+    ],
+    "link": null,
+    "device": "mobile"
+   },
+   {
+    "n": 5,
+    "file": "E03-05.jpg",
+    "caption": "Trang đơn TN-EPPH: trạng thái “Chờ quán xác nhận”, đếm ngược 15 phút.",
+    "ucs": [
+     "K07"
+    ],
+    "link": "khach/index.html#/b/TN-EPPH",
+    "device": "mobile"
+   },
+   {
+    "n": 6,
+    "file": "E03-06.jpg",
+    "caption": "Trang đơn: thông tin đơn, các kênh báo kết quả, lịch sử đơn.",
+    "ucs": [
+     "K07"
+    ],
+    "link": "khach/index.html#/b/TN-EPPH",
+    "device": "mobile"
+   },
+   {
+    "n": 7,
+    "file": "E03-07.jpg",
+    "caption": "Nhóm Telegram của quán nhận tin đơn mới kèm link mở đơn (mô phỏng).",
+    "ucs": [
+     "Q03"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 8,
+    "file": "E03-08.jpg",
+    "caption": "Cổng quán: đơn mới nằm ở “Đơn cần xử lý”, có đồng hồ đếm 15 phút.",
+    "ucs": [
+     "Q03",
+     "Q04"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   }
+  ]
+ },
+ {
+  "id": "E04",
+  "title": "Kênh gửi tin: khách nước ngoài, ZNS lỗi chuyển SMS",
+  "desc": "Số nước ngoài bắt buộc có email; số VN gửi ZNS, ZNS lỗi thì chuyển SMS; mọi tin được ghi lại.",
+  "ucs": [
+   "K06",
+   "S01",
+   "S06"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E04-01.jpg",
+    "caption": "Số nước ngoài mà không có email: hệ thống yêu cầu nhập email vì ZNS/SMS chỉ gửi số Việt Nam.",
+    "ucs": [
+     "K05",
+     "K06"
+    ],
+    "link": "khach/index.html#/v/brilliant-top-bar",
+    "device": "mobile"
+   },
+   {
+    "n": 2,
+    "file": "E04-02.jpg",
+    "caption": "Khách Hàn (số +82 + email): mã OTP gửi qua email.",
+    "ucs": [
+     "K06",
+     "S01"
+    ],
+    "link": null,
+    "device": "mobile"
+   },
+   {
+    "n": 3,
+    "file": "E04-03.jpg",
+    "caption": "Số Việt Nam nhưng Zalo ZNS lỗi: hệ thống tự gửi lại qua SMS brandname.",
+    "ucs": [
+     "K06",
+     "S01"
+    ],
+    "link": null,
+    "device": "mobile"
+   },
+   {
+    "n": 4,
+    "file": "E04-04.jpg",
+    "caption": "Quản trị: nhật ký tin đã gửi khách – kênh, loại tin, gửi được hay lý do lỗi.",
+    "ucs": [
+     "S01",
+     "A06"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 5,
+    "file": "E04-05.jpg",
+    "caption": "Trần gửi tin theo ngày, giới hạn theo SĐT/email/IP, danh sách chặn.",
+    "ucs": [
+     "A14",
+     "S06"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   }
+  ]
+ },
+ {
+  "id": "E05",
+  "title": "Quán nhận và xử lý đơn",
+  "desc": "Nhân viên quán đăng nhập, chọn quán, xác nhận hoặc từ chối đơn; khách thấy kết quả ngay.",
+  "ucs": [
+   "Q01",
+   "Q04",
+   "Q05",
+   "K07"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E05-01.jpg",
+    "caption": "Đăng nhập cổng quán bằng tài khoản Toini cấp (thông tin demo điền sẵn).",
+    "ucs": [
+     "Q01"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 2,
+    "file": "E05-02.jpg",
+    "caption": "Một tài khoản quản lý nhiều quán: chọn quán làm việc, đổi được ở đầu trang.",
+    "ucs": [
+     "Q01"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 3,
+    "file": "E05-03.jpg",
+    "caption": "Đơn cần xử lý: đơn quá 15 phút được tô đỏ; đơn tối nay đã xác nhận ở bên dưới.",
+    "ucs": [
+     "Q04"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 4,
+    "file": "E05-04.jpg",
+    "caption": "Quán bấm Xác nhận: hệ thống báo kết quả cho khách (tin mô phỏng).",
+    "ucs": [
+     "Q04",
+     "S01"
+    ],
+    "link": null,
+    "device": "mobile"
+   },
+   {
+    "n": 5,
+    "file": "E05-05.jpg",
+    "caption": "Từ chối đơn: chọn lý do, có thể thêm ghi chú cho khách.",
+    "ucs": [
+     "Q04"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 6,
+    "file": "E05-06.jpg",
+    "caption": "Lịch đơn theo ngày: lọc theo trạng thái, xem SĐT, ngôn ngữ, ghi chú của khách.",
+    "ucs": [
+     "Q05"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 7,
+    "file": "E05-07.jpg",
+    "caption": "Phía khách: đơn chuyển “Đã xác nhận”, có nút “Tôi đã tới quán”.",
+    "ucs": [
+     "K07"
+    ],
+    "link": "khach/index.html#/b/TN-A7K2",
+    "device": "mobile"
+   },
+   {
+    "n": 8,
+    "file": "E05-08.jpg",
+    "caption": "Đơn bị từ chối: hiện lý do và gợi ý quán tương tự còn nhận khách.",
+    "ucs": [
+     "K07"
+    ],
+    "link": "khach/index.html#/b/TN-B3M9",
+    "device": "mobile"
+   }
+  ]
+ },
+ {
+  "id": "E06",
+  "title": "Quán chậm phản hồi: cảnh báo 15 phút, tự hủy 30 phút",
+  "desc": "Quá 15 phút CSKH được cảnh báo để gọi quán; quá 30 phút đơn tự hủy và khách được báo.",
+  "ucs": [
+   "A07",
+   "S02",
+   "A06"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E06-01.jpg",
+    "caption": "Tổng quan quản trị: cảnh báo đơn chờ quán quá 15 phút, kèm SĐT người liên hệ của quán.",
+    "ucs": [
+     "A07",
+     "S02"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 2,
+    "file": "E06-02.jpg",
+    "caption": "Nhóm Telegram CSKH nhận cảnh báo (mô phỏng).",
+    "ucs": [
+     "A07"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 3,
+    "file": "E06-03.jpg",
+    "caption": "Chi tiết đơn: lịch sử, tin đã gửi, các thao tác hỗ trợ khách/quán.",
+    "ucs": [
+     "A06"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 4,
+    "file": "E06-04.jpg",
+    "caption": "Quán đồng ý qua điện thoại: CSKH xác nhận thay quán, bắt buộc ghi lý do.",
+    "ucs": [
+     "A07",
+     "A06"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 5,
+    "file": "E06-05.jpg",
+    "caption": "Sau 30 phút quán không phản hồi: đơn tự hủy “Quá hạn”, khách được gợi ý quán khác.",
+    "ucs": [
+     "S02",
+     "K07"
+    ],
+    "link": "khach/index.html#/b/TN-B3M9",
+    "device": "desktop"
+   }
+  ]
+ },
+ {
+  "id": "E07",
+  "title": "Khách đổi giờ hoặc hủy đơn",
+  "desc": "Đổi giờ thì đơn quay về chờ quán xác nhận; hủy trước giờ đặt không mất phí.",
+  "ucs": [
+   "K08"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E07-01.jpg",
+    "caption": "Đơn của tôi: các đơn đã đặt trên thiết bị này; tra cứu bằng mã + SĐT/email khi dùng máy khác.",
+    "ucs": [
+     "K07"
+    ],
+    "link": "khach/index.html#/my",
+    "device": "mobile"
+   },
+   {
+    "n": 2,
+    "file": "E07-02.jpg",
+    "caption": "Trang đơn có nút Đổi giờ và Hủy đơn (khi chưa tới giờ đặt).",
+    "ucs": [
+     "K08"
+    ],
+    "link": "khach/index.html#/b/TN-R2D5",
+    "device": "mobile"
+   },
+   {
+    "n": 3,
+    "file": "E07-03.jpg",
+    "caption": "Đổi giờ: chọn tối và giờ mới.",
+    "ucs": [
+     "K08"
+    ],
+    "link": "khach/index.html#/b/TN-R2D5",
+    "device": "mobile"
+   },
+   {
+    "n": 4,
+    "file": "E07-04.jpg",
+    "caption": "Đơn quay về “Chờ quán xác nhận”, quán có lại 15 phút; khách nhận tin đổi giờ.",
+    "ucs": [
+     "K08",
+     "S01"
+    ],
+    "link": null,
+    "device": "mobile"
+   },
+   {
+    "n": 5,
+    "file": "E07-05.jpg",
+    "caption": "Hủy đơn: xác nhận lại, không mất phí.",
+    "ucs": [
+     "K08"
+    ],
+    "link": "khach/index.html#/b/TN-R2D5",
+    "device": "mobile"
+   },
+   {
+    "n": 6,
+    "file": "E07-06.jpg",
+    "caption": "Đơn đã hủy; quán nhận tin Telegram “Khách hủy đơn”.",
+    "ucs": [
+     "K08",
+     "Q03"
+    ],
+    "link": null,
+    "device": "mobile"
+   }
+  ]
+ },
+ {
+  "id": "E08",
+  "title": "Khách tới quán và dùng ưu đãi",
+  "desc": "Khách bấm “Tôi đã tới quán”, đồng ý chia sẻ vị trí 1 lần (tùy chọn), đưa màn hình ưu đãi cho nhân viên.",
+  "ucs": [
+   "K09",
+   "Q06"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E08-01.jpg",
+    "caption": "Đơn đã xác nhận (có deal voucher 100K): nút lớn “Tôi đã tới quán”.",
+    "ucs": [
+     "K09"
+    ],
+    "link": "khach/index.html#/b/TN-C5Q1",
+    "device": "mobile"
+   },
+   {
+    "n": 2,
+    "file": "E08-02.jpg",
+    "caption": "Hỏi chia sẻ vị trí một lần (khách có thể từ chối).",
+    "ucs": [
+     "K09"
+    ],
+    "link": "khach/index.html#/b/TN-C5Q1",
+    "device": "mobile"
+   },
+   {
+    "n": 3,
+    "file": "E08-03.jpg",
+    "caption": "Màn hình ưu đãi: đồng hồ chạy để nhân viên biết không phải ảnh chụp; đưa cho nhân viên quán.",
+    "ucs": [
+     "K09"
+    ],
+    "link": "khach/index.html#/b/TN-C5Q1",
+    "device": "mobile"
+   },
+   {
+    "n": 4,
+    "file": "E08-04.jpg",
+    "caption": "Khách quên bấm: nhân viên quán bấm “Khách đã tới” trên cổng quán.",
+    "ucs": [
+     "Q06"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   }
+  ]
+ },
+ {
+  "id": "E09",
+  "title": "Hóa đơn, đối soát, chốt kỳ và công nợ",
+  "desc": "Quán nhập hóa đơn, hệ thống tính hoa hồng, kế toán đối soát, kỳ tuần được chốt, ghi nhận quán đã trả và xuất số liệu.",
+  "ucs": [
+   "Q07",
+   "S03",
+   "A09",
+   "S04",
+   "A10",
+   "Q08",
+   "A11"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E09-01.jpg",
+    "caption": "Cổng quán – Hóa đơn: các đơn khách đã tới cần nhập hóa đơn.",
+    "ucs": [
+     "Q07"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 2,
+    "file": "E09-02.jpg",
+    "caption": "Nhập số hóa đơn, tiền trước thuế phí, số khách thực tế, ảnh hóa đơn; hoa hồng tạm tính hiện ngay.",
+    "ucs": [
+     "Q07",
+     "S03"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 3,
+    "file": "E09-03.jpg",
+    "caption": "Đã nhập: hiện ở “Đã nhập, kỳ chưa chốt” kèm tỷ lệ và hoa hồng tạm tính.",
+    "ucs": [
+     "Q07",
+     "S03"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 4,
+    "file": "E09-04.jpg",
+    "caption": "Kế toán – Đối soát: giờ khách tới, ai báo tới, số khách, hóa đơn, ảnh, hoa hồng; lọc đơn cần chú ý.",
+    "ucs": [
+     "A09"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 5,
+    "file": "E09-05.jpg",
+    "caption": "Điều chỉnh khi lệch số: sửa giá trị/hoa hồng, bắt buộc ghi lý do.",
+    "ucs": [
+     "A09"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 6,
+    "file": "E09-06.jpg",
+    "caption": "Kỳ tuần được chốt tự động: công nợ từng quán, đã thu, còn lại, hạn trả (+7 ngày), quá hạn.",
+    "ucs": [
+     "S04",
+     "A10"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 7,
+    "file": "E09-07.jpg",
+    "caption": "Ghi nhận khoản quán đã chuyển khoản.",
+    "ucs": [
+     "A10"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 8,
+    "file": "E09-08.jpg",
+    "caption": "Xuất file Excel theo mẫu ThucTe: từng hóa đơn và tổng hợp theo quán.",
+    "ucs": [
+     "A11"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 9,
+    "file": "E09-09.jpg",
+    "caption": "Cổng quán – Công nợ hoa hồng: phải trả, đã trả, còn lại, hạn trả theo từng kỳ.",
+    "ucs": [
+     "Q08"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   }
+  ]
+ },
+ {
+  "id": "E10",
+  "title": "Quản lý quán, ưu đãi và dịch bằng AI",
+  "desc": "Toini cập nhật hồ sơ quán và ưu đãi; bấm Dịch bằng AI, sửa và duyệt bản nháp; nhập dữ liệu ban đầu từ file.",
+  "ucs": [
+   "A01",
+   "A03",
+   "A02",
+   "A12"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E10-01.jpg",
+    "caption": "Danh sách quán: hợp đồng, trạng thái bản dịch từng ngôn ngữ, hiển thị.",
+    "ucs": [
+     "A01"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 2,
+    "file": "E10-02.jpg",
+    "caption": "Sửa thông tin quán: giờ, giá, phí, dress code, vị trí (dùng cho bản đồ và Grab).",
+    "ucs": [
+     "A01"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 3,
+    "file": "E10-03.jpg",
+    "caption": "Gắn tiện ích cho quán bằng cách tick chọn; tiện ích hiện ở trang quán và dùng cho bộ lọc của khách.",
+    "ucs": [
+     "A01",
+     "K02"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 4,
+    "file": "E10-04.jpg",
+    "caption": "Quản lý ảnh: thêm, xóa, đặt ảnh đại diện.",
+    "ucs": [
+     "A01"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 5,
+    "file": "E10-05.jpg",
+    "caption": "Bấm “Dịch bằng AI”: hệ thống tạo bản nháp tiếng Hàn để nhân viên xem và sửa.",
+    "ucs": [
+     "A01"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 6,
+    "file": "E10-06.jpg",
+    "caption": "Duyệt bản dịch: chỉ bản đã duyệt mới hiện trên web khách.",
+    "ucs": [
+     "A01"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 7,
+    "file": "E10-07.jpg",
+    "caption": "Web khách tiếng Hàn hiện mô tả vừa duyệt; ưu đãi chưa có bản KO thì hiện tiếng Anh.",
+    "ucs": [
+     "A01",
+     "K01"
+    ],
+    "link": "khach/index.html#/v/brilliant-top-bar",
+    "device": "mobile"
+   },
+   {
+    "n": 8,
+    "file": "E10-08.jpg",
+    "caption": "Danh sách ưu đãi của các quán, khung giờ, trạng thái bản dịch.",
+    "ucs": [
+     "A03"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 9,
+    "file": "E10-09.jpg",
+    "caption": "Ưu đãi cũng có nút Dịch bằng AI → sửa → duyệt, giống hồ sơ quán.",
+    "ucs": [
+     "A03"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 10,
+    "file": "E10-10.jpg",
+    "caption": "Nhập dữ liệu quán ban đầu từ file mẫu: kiểm tra từng dòng, báo lỗi theo dòng (mô phỏng).",
+    "ucs": [
+     "A02"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 11,
+    "file": "E10-11.jpg",
+    "caption": "Nội dung & cấu hình: kênh chat, chữ giao diện, mẫu tin, điều khoản, danh mục.",
+    "ucs": [
+     "A12"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   }
+  ]
+ },
+ {
+  "id": "E11",
+  "title": "Tài khoản quán, nhân viên Toini và nhận khách theo tối",
+  "desc": "Toini cấp tài khoản cho quán (nhiều–nhiều), phân vai trò nhân viên; quán bật/tắt nhận khách từng tối.",
+  "ucs": [
+   "A04",
+   "A05",
+   "Q01",
+   "Q02"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E11-01.jpg",
+    "caption": "Tài khoản quán: một quán nhiều tài khoản, một tài khoản nhiều quán; khóa, cấp lại mật khẩu.",
+    "ucs": [
+     "A04"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 2,
+    "file": "E11-02.jpg",
+    "caption": "Gán một tài khoản cho nhiều quán.",
+    "ucs": [
+     "A04"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 3,
+    "file": "E11-03.jpg",
+    "caption": "Nhân viên Toini và vai trò: Giám đốc, Sale/CSKH, Kế toán.",
+    "ucs": [
+     "A05"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 4,
+    "file": "E11-04.jpg",
+    "caption": "Đăng nhập vai trò Kế toán: menu chỉ có đối soát, công nợ, xuất số liệu.",
+    "ucs": [
+     "A05"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 5,
+    "file": "E11-05.jpg",
+    "caption": "Tài khoản quán đã bị khóa không đăng nhập được.",
+    "ucs": [
+     "Q01",
+     "A04"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 6,
+    "file": "E11-06.jpg",
+    "caption": "Lần đăng nhập đầu: bắt đổi mật khẩu tạm do Toini cấp.",
+    "ucs": [
+     "Q01"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 7,
+    "file": "E11-07.jpg",
+    "caption": "Bật/tắt “còn nhận khách” cho từng tối; tối đã tắt thì khách không đặt được.",
+    "ucs": [
+     "Q02"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 8,
+    "file": "E11-08.jpg",
+    "caption": "Hồ sơ quán chỉ xem: muốn sửa thì liên hệ Toini.",
+    "ucs": [
+     "Q01",
+     "A01"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   }
+  ]
+ },
+ {
+  "id": "E12",
+  "title": "Hoa hồng, nhật ký thao tác và hỗ trợ khách",
+  "desc": "Giám đốc đặt tỷ lệ hoa hồng có phiên bản, xem nhật ký mọi thao tác; khách nhắn Toini qua ứng dụng chat quen dùng.",
+  "ucs": [
+   "A08",
+   "A13",
+   "S07",
+   "K10"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E12-01.jpg",
+    "caption": "Tỷ lệ hoa hồng theo quán, có lịch sử phiên bản và ngày áp dụng.",
+    "ucs": [
+     "A08"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 2,
+    "file": "E12-02.jpg",
+    "caption": "Thêm phiên bản mới: đơn từ ngày áp dụng trở đi mới dùng tỷ lệ mới.",
+    "ucs": [
+     "A08"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 3,
+    "file": "E12-03.jpg",
+    "caption": "Nhật ký thao tác: ai làm gì, lúc nào, giá trị trước → sau; không sửa/xóa được.",
+    "ucs": [
+     "A13",
+     "S07"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 4,
+    "file": "E12-04.jpg",
+    "caption": "Nút chat nổi: khách chọn Zalo, KakaoTalk, WhatsApp, LINE, WeChat… kênh hợp ngôn ngữ xếp đầu.",
+    "ucs": [
+     "K10"
+    ],
+    "link": "khach/index.html#/",
+    "device": "mobile"
+   }
+  ]
+ },
+ {
+  "id": "E13",
+  "title": "Sự kiện và đặt bàn theo sự kiện",
+  "desc": "Khách xem sự kiện tối nay, lịch tháng, đặt bàn gắn với sự kiện; quán thấy khách đặt vì sự kiện nào; Toini quản lý sự kiện.",
+  "ucs": [
+   "K12",
+   "A15",
+   "Q04"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E13-01.jpg",
+    "caption": "Trang chủ có mục “Sự kiện tối nay”.",
+    "ucs": [
+     "K12",
+     "K02"
+    ],
+    "link": "khach/index.html#/",
+    "device": "mobile"
+   },
+   {
+    "n": 2,
+    "file": "E13-02.jpg",
+    "caption": "Mục Sự kiện: lọc Tối nay · Ngày mai · 7 ngày tới · Lịch tháng.",
+    "ucs": [
+     "K12"
+    ],
+    "link": "khach/index.html#/events",
+    "device": "mobile"
+   },
+   {
+    "n": 3,
+    "file": "E13-03.jpg",
+    "caption": "Lịch tháng: ngày có sự kiện có số đếm, bấm vào ngày để xem sự kiện.",
+    "ucs": [
+     "K12"
+    ],
+    "link": "khach/index.html#/events",
+    "device": "mobile"
+   },
+   {
+    "n": 4,
+    "file": "E13-04.jpg",
+    "caption": "Chi tiết sự kiện: ảnh, quán, thời gian, mô tả, nút Đặt bàn cho sự kiện.",
+    "ucs": [
+     "K12"
+    ],
+    "link": "khach/index.html#/events",
+    "device": "mobile"
+   },
+   {
+    "n": 5,
+    "file": "E13-05.jpg",
+    "caption": "Form đặt bàn điền sẵn tối và giờ theo sự kiện, ghi rõ đặt cho sự kiện nào.",
+    "ucs": [
+     "K12",
+     "K05"
+    ],
+    "link": "khach/index.html#/events",
+    "device": "mobile"
+   },
+   {
+    "n": 6,
+    "file": "E13-06.jpg",
+    "caption": "Trang đơn ghi “Đặt cho sự kiện”.",
+    "ucs": [
+     "K12",
+     "K07"
+    ],
+    "link": "khach/index.html#/b/TN-XD7P",
+    "device": "mobile"
+   },
+   {
+    "n": 7,
+    "file": "E13-07.jpg",
+    "caption": "Cổng quán: đơn có nhãn sự kiện để quán chuẩn bị.",
+    "ucs": [
+     "Q04",
+     "K12"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 8,
+    "file": "E13-08.jpg",
+    "caption": "Quản trị – Sự kiện: danh sách sắp tới, số đơn mỗi sự kiện mang lại, trạng thái bản dịch.",
+    "ucs": [
+     "A15"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 9,
+    "file": "E13-09.jpg",
+    "caption": "Sửa sự kiện: quán, ngày giờ, ảnh, nhãn, hiển thị; tab nội dung có Dịch bằng AI.",
+    "ucs": [
+     "A15"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   }
+  ]
+ },
+ {
+  "id": "E14",
+  "title": "Deal siêu hời Toini tài trợ",
+  "desc": "Toini cấu hình deal (% hóa đơn hoặc voucher); khách đặt với deal; quán nhập hóa đơn, hệ thống tính phần Toini tài trợ và hoa hồng thực (có thể âm), trừ vào công nợ.",
+  "ucs": [
+   "K14",
+   "A17",
+   "Q07",
+   "S03",
+   "A10"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E14-01.jpg",
+    "caption": "Quản trị – Deal siêu hời: loại deal, mức, khung giờ, số suất đã dùng, tổng tiền Toini đã tài trợ; có ví dụ cách tính.",
+    "ucs": [
+     "A17"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 2,
+    "file": "E14-02.jpg",
+    "caption": "Cấu hình deal: giảm % hoặc voucher; ví dụ tính ngay hoa hồng thực (−500.000đ khi giảm 40% hóa đơn 2 triệu).",
+    "ucs": [
+     "A17",
+     "S03"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 3,
+    "file": "E14-03.jpg",
+    "caption": "Trang chủ – Deal siêu hời Toini tài trợ: mức giảm, khung giờ, số suất còn lại.",
+    "ucs": [
+     "K14"
+    ],
+    "link": "khach/index.html#/",
+    "device": "mobile"
+   },
+   {
+    "n": 4,
+    "file": "E14-04.jpg",
+    "caption": "Trang quán hiện deal siêu hời với nút “Đặt bàn với deal này”.",
+    "ucs": [
+     "K14",
+     "K03"
+    ],
+    "link": "khach/index.html#/v/sky36",
+    "device": "mobile"
+   },
+   {
+    "n": 5,
+    "file": "E14-05.jpg",
+    "caption": "Form tự chọn giờ trong khung deal; khách thấy deal áp dụng cho đơn, có thể chọn không dùng.",
+    "ucs": [
+     "K14",
+     "K05"
+    ],
+    "link": "khach/index.html#/v/sky36",
+    "device": "mobile"
+   },
+   {
+    "n": 6,
+    "file": "E14-06.jpg",
+    "caption": "Trang đơn có vé deal siêu hời Toini tài trợ.",
+    "ucs": [
+     "K14"
+    ],
+    "link": "khach/index.html#/b/TN-Z4SY",
+    "device": "mobile"
+   },
+   {
+    "n": 7,
+    "file": "E14-07.jpg",
+    "caption": "Quán nhập hóa đơn đơn có deal 40%: khách được giảm, Toini tài trợ, hoa hồng thực âm (Toini trả quán).",
+    "ucs": [
+     "Q07",
+     "S03",
+     "K14"
+    ],
+    "link": "quan/index.html",
+    "device": "mobile"
+   },
+   {
+    "n": 8,
+    "file": "E14-08.jpg",
+    "caption": "Công nợ: kỳ có tổng hoa hồng âm ghi “Toini trả quán”, có nút ghi nhận đã trả quán.",
+    "ucs": [
+     "A10",
+     "S04"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   }
+  ]
+ },
+ {
+  "id": "E15",
+  "title": "Đánh giá sau khi đi",
+  "desc": "Khách đã tới quán chấm sao, viết bình luận, đính kèm ảnh; Toini duyệt; đánh giá hiện trên trang quán.",
+  "ucs": [
+   "K13",
+   "A16",
+   "S10"
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "file": "E15-01.jpg",
+    "caption": "Đơn đã tới quán có nút “Đánh giá trải nghiệm” (email mời đánh giá cũng dẫn tới đây).",
+    "ucs": [
+     "K13",
+     "S10"
+    ],
+    "link": "khach/index.html#/b/TN-P6F6",
+    "device": "mobile"
+   },
+   {
+    "n": 2,
+    "file": "E15-02.jpg",
+    "caption": "Chấm 1–5 sao, viết bình luận, đính kèm tối đa 3 ảnh.",
+    "ucs": [
+     "K13"
+    ],
+    "link": "khach/index.html#/b/TN-P6F6",
+    "device": "mobile"
+   },
+   {
+    "n": 3,
+    "file": "E15-03.jpg",
+    "caption": "Đánh giá đã gửi, chờ Toini duyệt.",
+    "ucs": [
+     "K13"
+    ],
+    "link": "khach/index.html#/b/TN-P6F6",
+    "device": "mobile"
+   },
+   {
+    "n": 4,
+    "file": "E15-04.jpg",
+    "caption": "Quản trị – Đánh giá chờ duyệt: số sao, bình luận, ảnh, mã đơn; Duyệt hoặc Không duyệt (có lý do).",
+    "ucs": [
+     "A16"
+    ],
+    "link": "quan-tri/index.html",
+    "device": "desktop"
+   },
+   {
+    "n": 5,
+    "file": "E15-05.jpg",
+    "caption": "Trang quán: điểm trung bình và các đánh giá đã duyệt, kèm ảnh của khách.",
+    "ucs": [
+     "K13",
+     "K03"
+    ],
+    "link": "khach/index.html#/v/sky36",
+    "device": "mobile"
+   }
+  ]
+ }
+]

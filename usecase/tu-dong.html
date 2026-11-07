@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hệ thống tự động · Toini giai đoạn 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/uc.css">
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs";
+mermaid.initialize({startOnLoad:true,theme:"base",securityLevel:"loose",
+ flowchart:{htmlLabels:true,curve:"basis"},
+ themeVariables:{fontFamily:"Archivo, system-ui, sans-serif",fontSize:"14px",
+ primaryColor:"#FFFDF8",primaryBorderColor:"#0D0D0D",primaryTextColor:"#0D0D0D",lineColor:"#0D0D0D",
+ secondaryColor:"#F5F1E8",tertiaryColor:"#F5F1E8",clusterBkg:"#F5F1E8",clusterBorder:"#0D0D0D",
+ actorBkg:"#C6FF00",actorBorder:"#0D0D0D",actorTextColor:"#0D0D0D",actorLineColor:"#0D0D0D",
+ signalColor:"#0D0D0D",signalTextColor:"#0D0D0D",labelBoxBkgColor:"#C6FF00",labelBoxBorderColor:"#0D0D0D",
+ noteBkgColor:"#FFE7A3",noteBorderColor:"#0D0D0D",activationBkgColor:"#C6FF00",edgeLabelBackground:"#FFFDF8"}});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="logo">toini</span><span class="sub">Use case · Giai đoạn 1</span></div>
+    <nav class="tabs"><a href="index.html">Tổng quan</a><a href="khach.html">Khách</a><a href="quan.html">Quán</a><a href="quan-tri.html">Quản trị Toini</a><a href="tu-dong.html" class="on" aria-current="page">Hệ thống tự động</a><a href="../mock/index.html" class="ext">Mock ↗</a><a href="../evidence/index.html" class="ext">Evidence ↗</a><a href="../bao-gia/index.html" class="ext">Báo giá ↗</a></nav>
+  </div>
+</header>
+
+<section class="hero"><div class="wrap">
+  <div class="kick">⚙ Tác nhân · Hệ thống (chạy theo thời gian hoặc theo sự kiện)</div>
+  <h1>Hệ thống tự động</h1>
+  <p>Những việc hệ thống tự làm đúng giờ, không cần ai bấm, kể cả khi không có người trực.</p>
+</div></section>
+<div class="wrap layout">
+  <aside class="toc"><div class="toc-in"><b>10 use case</b><ol><li><a href="#UC-S01"><span>UC-S01</span>Gửi tin cho khách theo kênh phù hợp</a></li><li><a href="#UC-S02"><span>UC-S02</span>Hẹn giờ theo trạng thái đơn</a></li><li><a href="#UC-S03"><span>UC-S03</span>Tính hoa hồng</a></li><li><a href="#UC-S04"><span>UC-S04</span>Chốt kỳ đối soát hằng tuần</a></li><li><a href="#UC-S05"><span>UC-S05</span>Cập nhật tỷ giá</a></li><li><a href="#UC-S06"><span>UC-S06</span>Chống bot và giới hạn gửi tin</a></li><li><a href="#UC-S07"><span>UC-S07</span>Ghi nhật ký thao tác</a></li><li><a href="#UC-S08"><span>UC-S08</span>Sao lưu dữ liệu hằng ngày</a></li><li><a href="#UC-S09"><span>UC-S09</span>Lưu lịch sử đặt bàn theo số điện thoại và email</a></li><li><a href="#UC-S10"><span>UC-S10</span>Gửi email mời đánh giá</a></li></ol></div></aside>
+  <main>
+    <section class="card diagram">
+      <h2>Sơ đồ use case</h2>
+      <p class="muted">Bấm vào từng ô để tới mô tả chi tiết.</p>
+      <pre class="mermaid">flowchart LR
+  ACT(["⚙ Hệ thống (chạy theo thời gian hoặc theo sự kiện)"]):::actor
+  S01(["&lt;b&gt;UC-S01&lt;/b&gt;&lt;br/&gt;Gửi tin cho khách theo kênh phù hợp"])
+  ACT --- S01
+  click S01 href "#UC-S01"
+  S02(["&lt;b&gt;UC-S02&lt;/b&gt;&lt;br/&gt;Hẹn giờ theo trạng thái đơn"])
+  ACT --- S02
+  click S02 href "#UC-S02"
+  S03(["&lt;b&gt;UC-S03&lt;/b&gt;&lt;br/&gt;Tính hoa hồng"])
+  ACT --- S03
+  click S03 href "#UC-S03"
+  S04(["&lt;b&gt;UC-S04&lt;/b&gt;&lt;br/&gt;Chốt kỳ đối soát hằng tuần"])
+  ACT --- S04
+  click S04 href "#UC-S04"
+  S05(["&lt;b&gt;UC-S05&lt;/b&gt;&lt;br/&gt;Cập nhật tỷ giá"])
+  ACT --- S05
+  click S05 href "#UC-S05"
+  S06(["&lt;b&gt;UC-S06&lt;/b&gt;&lt;br/&gt;Chống bot và giới hạn gửi tin"])
+  ACT --- S06
+  click S06 href "#UC-S06"
+  S07(["&lt;b&gt;UC-S07&lt;/b&gt;&lt;br/&gt;Ghi nhật ký thao tác"])
+  ACT --- S07
+  click S07 href "#UC-S07"
+  S08(["&lt;b&gt;UC-S08&lt;/b&gt;&lt;br/&gt;Sao lưu dữ liệu hằng ngày"])
+  ACT --- S08
+  click S08 href "#UC-S08"
+  S09(["&lt;b&gt;UC-S09&lt;/b&gt;&lt;br/&gt;Lưu lịch sử đặt bàn theo số điện thoại và email"])
+  ACT --- S09
+  click S09 href "#UC-S09"
+  S10(["&lt;b&gt;UC-S10&lt;/b&gt;&lt;br/&gt;Gửi email mời đánh giá"])
+  ACT --- S10
+  click S10 href "#UC-S10"
+  classDef actor fill:#C6FF00,stroke:#0D0D0D,stroke-width:2.5px,color:#0D0D0D,font-weight:800</pre>
+    </section>
+    <article class="uc" id="UC-S01">
+  <header>
+    <span class="code">UC-S01</span>
+    <h3>Gửi tin cho khách theo kênh phù hợp</h3>
+    <div class="meta"><span class="pill actor">Hệ thống tự động</span><span class="pill where">Hệ thống</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách nhận được mã xác minh và kết quả đơn với chi phí thấp nhất.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Có sự kiện cần báo khách.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Khách nhận được tin, hoặc lỗi gửi được ghi lại để CSKH theo dõi (<a class="ref" href="quan-tri.html#UC-A06" title="Theo dõi đơn và hỗ trợ khách">UC-A06</a>).</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Các sự kiện được báo: mã xác minh, đã nhận đơn, quán xác nhận, quán từ chối, đơn quá hạn và bị tự hủy, đổi giờ, hủy đơn; mời đánh giá (chỉ qua email, <a class="ref" href="#UC-S10" title="Gửi email mời đánh giá">UC-S10</a>).</li><li>Hệ thống chọn kênh theo thông tin khách đã để lại:<ul><li>Khách có số Việt Nam: gửi Zalo ZNS. Không gửi được thì gửi SMS brandname.</li><li>Khách có email: gửi email.</li><li>Riêng mã xác minh chỉ gửi qua một kênh, theo thứ tự ở <a class="ref" href="khach.html#UC-K06" title="Xác minh số điện thoại hoặc email bằng mã OTP">UC-K06</a>.</li></ul></li><li>Tin nhắn viết bằng ngôn ngữ khách đã dùng khi đặt.</li><li>Hệ thống lưu lại kết quả gửi của từng tin: kênh nào, gửi được hay không.</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Mọi kênh đều không gửi được</td><td>Đơn vẫn được xử lý bình thường. Khách tự tra cứu đơn trên web (<a class="ref" href="khach.html#UC-K07" title="Nhận kết quả và tra cứu đơn">UC-K07</a>).</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Tin nhắn chỉ chứa thông tin giao dịch của đơn, không có nội dung quảng cáo.</li><li>Tin gửi ra luôn nằm trong trần gửi tin (<a class="ref" href="#UC-S06" title="Chống bot và giới hạn gửi tin">UC-S06</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K06" title="Xác minh số điện thoại hoặc email bằng mã OTP">UC-K06 · Xác minh số điện thoại hoặc email bằng mã OTP</a><a class="chip" href="khach.html#UC-K07" title="Nhận kết quả và tra cứu đơn">UC-K07 · Nhận kết quả và tra cứu đơn</a><a class="chip" href="#UC-S06" title="Chống bot và giới hạn gửi tin">UC-S06 · Chống bot và giới hạn gửi tin</a><a class="chip" href="quan-tri.html#UC-A06" title="Theo dõi đơn và hỗ trợ khách">UC-A06 · Theo dõi đơn và hỗ trợ khách</a><a class="chip" href="quan-tri.html#UC-A12" title="Quản lý nội dung chung và cấu hình">UC-A12 · Quản lý nội dung chung và cấu hình</a></div>
+</article>
+<article class="uc" id="UC-S02">
+  <header>
+    <span class="code">UC-S02</span>
+    <h3>Hẹn giờ theo trạng thái đơn</h3>
+    <div class="meta"><span class="pill actor">Hệ thống tự động</span><span class="pill where">Hệ thống</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Đơn không bị treo khi không ai xử lý.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Có đơn đang chờ xác nhận, hoặc có đơn đã xác nhận nhưng đã qua giờ đặt.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Mọi đơn đều đi tới một trạng thái rõ ràng.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Đơn chờ quán xác nhận quá <b>15 phút</b>: hệ thống cảnh báo CSKH (<a class="ref" href="quan-tri.html#UC-A07" title="Xử lý đơn quán chậm phản hồi">UC-A07</a>).</li><li>Đơn chờ quán xác nhận quá <b>30 phút</b>: hệ thống tự hủy, chuyển đơn sang <b>“Quá hạn”</b>, báo khách và gợi ý các quán khác còn nhận khách tối đó.</li><li>Đơn đã xác nhận nhưng hết ngày vẫn không có ai báo đã tới: hệ thống chuyển đơn sang <b>“Không đến”</b>.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Thời gian 15 phút và 30 phút tính lại từ đầu mỗi khi khách đổi giờ.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="quan-tri.html#UC-A07" title="Xử lý đơn quán chậm phản hồi">UC-A07 · Xử lý đơn quán chậm phản hồi</a><a class="chip" href="quan.html#UC-Q04" title="Xác nhận hoặc từ chối đơn">UC-Q04 · Xác nhận hoặc từ chối đơn</a><a class="chip" href="khach.html#UC-K08" title="Đổi giờ hoặc hủy đơn">UC-K08 · Đổi giờ hoặc hủy đơn</a></div>
+</article>
+<article class="uc" id="UC-S03">
+  <header>
+    <span class="code">UC-S03</span>
+    <h3>Tính hoa hồng</h3>
+    <div class="meta"><span class="pill actor">Hệ thống tự động</span><span class="pill where">Hệ thống</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Hoa hồng của từng đơn được tính tự động và nhất quán.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Quán vừa nhập hoặc sửa hóa đơn (<a class="ref" href="quan.html#UC-Q07" title="Nhập hóa đơn">UC-Q07</a>), hoặc kế toán vừa điều chỉnh (<a class="ref" href="quan-tri.html#UC-A09" title="Đối soát hóa đơn">UC-A09</a>).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Hoa hồng hiển thị trên cổng quán và trang đối soát.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Hoa hồng gốc = giá trị hóa đơn trước thuế và phí (sau ưu đãi của quán) × tỷ lệ hoa hồng của quán áp dụng vào ngày khách tới.</li><li>Đơn dùng deal siêu hời: phần Toini tài trợ = % deal × giá trị hóa đơn (deal giảm %), hoặc số tiền voucher (deal voucher, không vượt giá trị hóa đơn).</li><li>Hoa hồng thực = hoa hồng gốc − phần Toini tài trợ. Ví dụ hoa hồng 15%, deal giảm 40% → hoa hồng thực = −25% hóa đơn; voucher 100K → hoa hồng thực = 15% hóa đơn − 100K.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Cách làm tròn số tiền theo quy tắc Toini chốt trong giai đoạn đặc tả.</li><li>Hoa hồng thực được phép âm; phần âm được trừ vào công nợ của quán trong kỳ (<a class="ref" href="#UC-S04" title="Chốt kỳ đối soát hằng tuần">UC-S04</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="quan.html#UC-Q07" title="Nhập hóa đơn">UC-Q07 · Nhập hóa đơn</a><a class="chip" href="quan-tri.html#UC-A08" title="Thiết lập tỷ lệ hoa hồng">UC-A08 · Thiết lập tỷ lệ hoa hồng</a><a class="chip" href="quan-tri.html#UC-A09" title="Đối soát hóa đơn">UC-A09 · Đối soát hóa đơn</a></div>
+</article>
+<article class="uc" id="UC-S04">
+  <header>
+    <span class="code">UC-S04</span>
+    <h3>Chốt kỳ đối soát hằng tuần</h3>
+    <div class="meta"><span class="pill actor">Hệ thống tự động</span><span class="pill where">Hệ thống</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Công nợ được chốt đều đặn mỗi tuần, có hạn trả rõ ràng.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đến mốc chốt kỳ hằng tuần. Toini chọn ngày và giờ chốt.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Quán và kế toán thấy công nợ mới (<a class="ref" href="quan.html#UC-Q08" title="Xem công nợ hoa hồng">UC-Q08</a>, <a class="ref" href="quan-tri.html#UC-A10" title="Công nợ và ghi nhận thanh toán">UC-A10</a>).</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Hệ thống khóa kỳ vừa qua. Hóa đơn trong kỳ đã khóa không sửa được nữa.</li><li>Hệ thống tạo công nợ của kỳ cho từng quán, với hạn trả là ngày chốt cộng 7 ngày. Công nợ là tổng hoa hồng thực (đã trừ phần Toini tài trợ); nếu tổng âm thì Toini phải trả quán.</li><li>Đơn đã tới quán nhưng chưa có hóa đơn được đánh dấu “thiếu hóa đơn” và chuyển sang kỳ sau, để kế toán theo dõi.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Thay đổi sau khi chốt kỳ được ghi thành dòng điều chỉnh ở kỳ sau (<a class="ref" href="quan-tri.html#UC-A09" title="Đối soát hóa đơn">UC-A09</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="quan.html#UC-Q08" title="Xem công nợ hoa hồng">UC-Q08 · Xem công nợ hoa hồng</a><a class="chip" href="quan-tri.html#UC-A09" title="Đối soát hóa đơn">UC-A09 · Đối soát hóa đơn</a><a class="chip" href="quan-tri.html#UC-A10" title="Công nợ và ghi nhận thanh toán">UC-A10 · Công nợ và ghi nhận thanh toán</a></div>
+</article>
+<article class="uc" id="UC-S05">
+  <header>
+    <span class="code">UC-S05</span>
+    <h3>Cập nhật tỷ giá</h3>
+    <div class="meta"><span class="pill actor">Hệ thống tự động</span><span class="pill where">Hệ thống</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Giá quy đổi trên web luôn sát với thực tế.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đến giờ cập nhật, 2 lần mỗi ngày.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Web khách dùng tỷ giá mới (<a class="ref" href="khach.html#UC-K01" title="Chọn ngôn ngữ và loại tiền">UC-K01</a>).</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Hệ thống lấy tỷ giá từ nguồn ngân hàng và lưu kèm thời điểm cập nhật.</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Không lấy được tỷ giá</td><td>Hệ thống giữ tỷ giá lần trước. Web vẫn ghi đúng thời điểm của tỷ giá đó.</td></tr></tbody></table></div><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K01" title="Chọn ngôn ngữ và loại tiền">UC-K01 · Chọn ngôn ngữ và loại tiền</a></div>
+</article>
+<article class="uc" id="UC-S06">
+  <header>
+    <span class="code">UC-S06</span>
+    <h3>Chống bot và giới hạn gửi tin</h3>
+    <div class="meta"><span class="pill actor">Hệ thống tự động</span><span class="pill where">Hệ thống</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Ngăn tấn công làm tốn tiền tin nhắn hoặc làm quá tải web.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Luôn bật.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Chi phí tin nhắn không vượt mức Toini đã đặt.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Mọi truy cập đi qua <b>Cloudflare</b>. Cloudflare lọc bot và che giấu địa chỉ máy chủ.</li><li>Trước khi gửi mã xác minh, hệ thống kiểm tra người dùng có phải người thật không (Cloudflare Turnstile, thường người dùng không phải làm gì).</li><li>Hệ thống đếm số lần gửi mã theo số điện thoại, email và địa chỉ IP. Vượt giới hạn Toini đặt (<a class="ref" href="quan-tri.html#UC-A14" title="Thiết lập trần gửi tin và chặn lạm dụng">UC-A14</a>) thì từ chối gửi.</li><li>Khi tổng số tin ZNS hoặc SMS trong ngày chạm trần, hệ thống ngừng gửi qua kênh đó tới hết ngày. Khách có email thì nhận tin qua email.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Giám đốc nhận cảnh báo khi chạm 80% và 100% trần (<a class="ref" href="quan-tri.html#UC-A14" title="Thiết lập trần gửi tin và chặn lạm dụng">UC-A14</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K06" title="Xác minh số điện thoại hoặc email bằng mã OTP">UC-K06 · Xác minh số điện thoại hoặc email bằng mã OTP</a><a class="chip" href="quan-tri.html#UC-A14" title="Thiết lập trần gửi tin và chặn lạm dụng">UC-A14 · Thiết lập trần gửi tin và chặn lạm dụng</a><a class="chip" href="#UC-S01" title="Gửi tin cho khách theo kênh phù hợp">UC-S01 · Gửi tin cho khách theo kênh phù hợp</a></div>
+</article>
+<article class="uc" id="UC-S07">
+  <header>
+    <span class="code">UC-S07</span>
+    <h3>Ghi nhật ký thao tác</h3>
+    <div class="meta"><span class="pill actor">Hệ thống tự động</span><span class="pill where">Hệ thống</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Truy vết được người đã tạo hoặc sửa bất kỳ dữ liệu nào.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Có thao tác tạo mới, chỉnh sửa, xóa hoặc đổi trạng thái.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Giám đốc xem được nhật ký (<a class="ref" href="quan-tri.html#UC-A13" title="Xem nhật ký thao tác">UC-A13</a>).</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Hệ thống tự ghi: thời điểm, ai làm (nhân viên Toini, tài khoản quán, khách hay hệ thống), trên đối tượng nào, giá trị trước và sau khi thay đổi.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Ghi cho mọi dữ liệu: quán, ưu đãi, tài khoản, đơn, hóa đơn, hoa hồng, công nợ, cấu hình.</li><li>Không ai sửa hoặc xóa được nhật ký.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="quan-tri.html#UC-A13" title="Xem nhật ký thao tác">UC-A13 · Xem nhật ký thao tác</a></div>
+</article>
+<article class="uc" id="UC-S08">
+  <header>
+    <span class="code">UC-S08</span>
+    <h3>Sao lưu dữ liệu hằng ngày</h3>
+    <div class="meta"><span class="pill actor">Hệ thống tự động</span><span class="pill where">Hệ thống</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khôi phục được dữ liệu khi có sự cố phần mềm hoặc thao tác nhầm.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đến giờ sao lưu, 1 lần mỗi ngày vào ban đêm.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Mỗi ngày có một bản sao lưu mới.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Hệ thống sao lưu cơ sở dữ liệu và ảnh (ảnh quán, ảnh hóa đơn), rồi lưu ngay trên máy chủ (VPS).</li><li>Hệ thống giữ các bản sao lưu gần nhất và tự xóa bản cũ hơn.</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Sao lưu bị lỗi</td><td>Đội vận hành nhận cảnh báo.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Toàn bộ hệ thống chạy trên 1 máy chủ, bản sao lưu cũng nằm trên máy chủ đó. Toini đã chấp nhận rủi ro sau: nếu máy chủ hỏng hoàn toàn thì có thể mất cả dữ liệu lẫn bản sao lưu. Có thể bổ sung sao lưu sang nơi khác ở giai đoạn sau.</li></ul>
+</article>
+<article class="uc" id="UC-S09">
+  <header>
+    <span class="code">UC-S09</span>
+    <h3>Lưu lịch sử đặt bàn theo số điện thoại và email</h3>
+    <div class="meta"><span class="pill actor">Hệ thống tự động</span><span class="pill where">Hệ thống</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Chuẩn bị cho chức năng tài khoản khách sau này.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Có đơn mới được tạo (<a class="ref" href="khach.html#UC-K05" title="Đặt bàn">UC-K05</a>).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Lịch sử đặt bàn được lưu sẵn theo thông tin liên hệ.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Hệ thống chuẩn hóa số điện thoại (dạng quốc tế) và email (chữ thường), rồi gắn đơn vào thông tin liên hệ đó.</li><li>Các đơn của cùng một số điện thoại hoặc cùng một email được nhóm lại với nhau.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Khi có chức năng tài khoản ở giai đoạn sau, khách đăng ký bằng số điện thoại hoặc email sẽ xem lại được các lần đặt trước đây.</li><li>Trong giai đoạn này, CSKH dùng dữ liệu đó để tìm đơn theo số điện thoại hoặc email (<a class="ref" href="quan-tri.html#UC-A06" title="Theo dõi đơn và hỗ trợ khách">UC-A06</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K05" title="Đặt bàn">UC-K05 · Đặt bàn</a><a class="chip" href="quan-tri.html#UC-A06" title="Theo dõi đơn và hỗ trợ khách">UC-A06 · Theo dõi đơn và hỗ trợ khách</a></div>
+</article>
+<article class="uc" id="UC-S10">
+  <header>
+    <span class="code">UC-S10</span>
+    <h3>Gửi email mời đánh giá</h3>
+    <div class="meta"><span class="pill actor">Hệ thống tự động</span><span class="pill where">Hệ thống</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Nhắc khách đánh giá sau khi đi mà không tốn phí tin nhắn.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đơn đã tới quán được 2 giờ, khách có email, chưa được mời và chưa đánh giá.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Khách nhận email mời đánh giá.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Hệ thống gửi email mời đánh giá theo ngôn ngữ khách, kèm link mở trang đơn (<a class="ref" href="khach.html#UC-K13" title="Đánh giá sau khi đi">UC-K13</a>).</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Khách không có email</td><td>Không gửi tin; khách vẫn đánh giá được khi mở trang đơn.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Chỉ gửi qua email, mỗi đơn một lần; không gửi ZNS/SMS để tránh phí và tin mang tính quảng cáo.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K13" title="Đánh giá sau khi đi">UC-K13 · Đánh giá sau khi đi</a><a class="chip" href="#UC-S01" title="Gửi tin cho khách theo kênh phù hợp">UC-S01 · Gửi tin cho khách theo kênh phù hợp</a></div>
+</article>
+  </main>
+</div>
+<footer class="foot"><div class="wrap">Toini · Tài liệu use case giai đoạn 1 · Bản 1 · 07/11/2026</div></footer>
+</body>
+</html>

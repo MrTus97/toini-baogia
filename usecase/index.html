@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tổng quan · Toini giai đoạn 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/uc.css">
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs";
+mermaid.initialize({startOnLoad:true,theme:"base",securityLevel:"loose",
+ flowchart:{htmlLabels:true,curve:"basis"},
+ themeVariables:{fontFamily:"Archivo, system-ui, sans-serif",fontSize:"14px",
+ primaryColor:"#FFFDF8",primaryBorderColor:"#0D0D0D",primaryTextColor:"#0D0D0D",lineColor:"#0D0D0D",
+ secondaryColor:"#F5F1E8",tertiaryColor:"#F5F1E8",clusterBkg:"#F5F1E8",clusterBorder:"#0D0D0D",
+ actorBkg:"#C6FF00",actorBorder:"#0D0D0D",actorTextColor:"#0D0D0D",actorLineColor:"#0D0D0D",
+ signalColor:"#0D0D0D",signalTextColor:"#0D0D0D",labelBoxBkgColor:"#C6FF00",labelBoxBorderColor:"#0D0D0D",
+ noteBkgColor:"#FFE7A3",noteBorderColor:"#0D0D0D",activationBkgColor:"#C6FF00",edgeLabelBackground:"#FFFDF8"}});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="logo">toini</span><span class="sub">Use case · Giai đoạn 1</span></div>
+    <nav class="tabs"><a href="index.html" class="on" aria-current="page">Tổng quan</a><a href="khach.html">Khách</a><a href="quan.html">Quán</a><a href="quan-tri.html">Quản trị Toini</a><a href="tu-dong.html">Hệ thống tự động</a><a href="../mock/index.html" class="ext">Mock ↗</a><a href="../evidence/index.html" class="ext">Evidence ↗</a><a href="../bao-gia/index.html" class="ext">Báo giá ↗</a></nav>
+  </div>
+</header>
+
+<section class="hero"><div class="wrap">
+  <div class="kick">Toini · Giai đoạn 1 · Bản 1 · 07/11/2026</div>
+  <h1>Use case <i>giai đoạn 1</i></h1>
+  <p>Tài liệu mô tả ai làm gì trên hệ thống Toini trong giai đoạn 1: khách tìm quán và đặt bàn, quán xác nhận đơn và nhập hóa đơn, Toini đối soát và thu hoa hồng. Mỗi use case có mã riêng để dẫn chiếu trong mock, luồng minh họa và báo giá.</p>
+</div></section>
+<div class="wrap">
+  <section>
+    <h2>1. Ai dùng hệ thống</h2>
+    <div class="actors"><a class="actor-card" href="khach.html">
+  <span class="ic">👤</span>
+  <b>Khách</b>
+  <small>Khách du lịch và người địa phương</small>
+  <span class="n">14 use case →</span>
+</a><a class="actor-card" href="quan.html">
+  <span class="ic">🏪</span>
+  <b>Quán</b>
+  <small>Nhân viên quán</small>
+  <span class="n">8 use case →</span>
+</a><a class="actor-card" href="quan-tri.html">
+  <span class="ic">🛠</span>
+  <b>Quản trị Toini</b>
+  <small>Nhân viên Toini: Giám đốc · Sale/CSKH · Kế toán</small>
+  <span class="n">17 use case →</span>
+</a><a class="actor-card" href="tu-dong.html">
+  <span class="ic">⚙</span>
+  <b>Hệ thống tự động</b>
+  <small>Hệ thống (chạy theo thời gian hoặc theo sự kiện)</small>
+  <span class="n">10 use case →</span>
+</a></div>
+  </section>
+
+  <section class="card diagram">
+    <h2>2. Tổng quan hệ thống</h2>
+    <p class="muted">Có 3 ứng dụng dùng chung một hệ thống dữ liệu, chạy trên 1 máy chủ, phía trước là Cloudflare. Các dịch vụ bên ngoài đều đứng tên tài khoản của Toini.</p>
+    <pre class="mermaid">flowchart LR
+  K(["👤 Khách"]):::actor
+  Q(["🏪 Nhân viên quán"]):::actor
+  T(["🛠 Nhân viên Toini&lt;br/&gt;Giám đốc · CSKH · Kế toán"]):::actor
+  CF["Cloudflare&lt;br/&gt;chống bot"]:::ext
+  K --&gt; CF
+  Q --&gt; CF
+  T --&gt; CF
+  subgraph SYS["Hệ thống Toini · 1 máy chủ"]
+    direction TB
+    W["Web khách&lt;br/&gt;6 ngôn ngữ · 6 loại tiền"]
+    P["Cổng quán"]
+    A["Trang quản trị"]
+    DB[("Dữ liệu + nhật ký&lt;br/&gt;sao lưu hằng ngày")]
+    W --&gt; DB
+    P --&gt; DB
+    A --&gt; DB
+  end
+  CF --&gt; W
+  CF --&gt; P
+  CF --&gt; A
+  subgraph OUT["Dịch vụ bên ngoài"]
+    direction TB
+    MSG["Zalo ZNS → SMS → Email"]:::ext
+    TG["Telegram&lt;br/&gt;báo đơn cho quán"]:::ext
+    MAP["Google Maps nhúng · Grab"]:::ext
+    LMAP["Bản đồ tương tác&lt;br/&gt;quán gần bạn"]:::ext
+    CHAT["Zalo · KakaoTalk · WhatsApp&lt;br/&gt;LINE · WeChat…"]:::ext
+    AI["Dịch vụ dịch AI&lt;br/&gt;bản dịch nháp"]:::ext
+  end
+  A -. "Dịch bằng AI" .-&gt; AI
+  DB -.-&gt; MSG
+  DB -.-&gt; TG
+  W -.-&gt; MAP
+  W -.-&gt; LMAP
+  W -.-&gt; CHAT
+  classDef actor fill:#C6FF00,stroke:#0D0D0D,stroke-width:2.5px,color:#0D0D0D,font-weight:800
+  classDef ext fill:#0D0D0D,stroke:#0D0D0D,color:#F5F1E8</pre>
+  </section>
+
+  <section class="card diagram">
+    <h2>3. Luồng chính: từ đặt bàn tới thu hoa hồng</h2>
+    <p class="muted">Đây là luồng phải chạy trọn vẹn khi nghiệm thu giai đoạn 1.</p>
+    <pre class="mermaid">sequenceDiagram
+  autonumber
+  actor K as Khách
+  participant W as Web Toini
+  actor Q as Quán
+  actor CS as CSKH Toini
+  actor KT as Kế toán
+  K-&gt;&gt;W: Tìm quán, xem giá, chọn tối và giờ
+  K-&gt;&gt;W: Nhập SĐT hoặc email, đồng ý điều khoản
+  W--&gt;&gt;K: Mã OTP (ZNS → SMS → email)
+  K-&gt;&gt;W: Nhập mã
+  W--&gt;&gt;K: Mã đặt chỗ · "Chờ quán xác nhận"
+  W--&gt;&gt;Q: Telegram báo đơn mới
+  alt Quán xác nhận trong 15 phút
+    Q-&gt;&gt;W: Xác nhận
+    W--&gt;&gt;K: "Đã xác nhận" (email / ZNS / SMS)
+  else Quán từ chối
+    Q-&gt;&gt;W: Từ chối + lý do
+    W--&gt;&gt;K: Báo từ chối
+  else Quá 15 phút
+    W--&gt;&gt;CS: Cảnh báo
+    CS-&gt;&gt;Q: Gọi điện cho quán
+    Note over W: Quá 30 phút: tự hủy, báo khách
+  end
+  K-&gt;&gt;W: Bấm "Đi Grab" tới quán
+  K-&gt;&gt;W: "Tôi đã tới quán" → màn hình ưu đãi
+  opt Khách quên bấm
+    Q-&gt;&gt;W: "Khách đã tới"
+  end
+  Q-&gt;&gt;W: Nhập hóa đơn + ảnh
+  W-&gt;&gt;W: Tính hoa hồng
+  KT-&gt;&gt;W: Đối soát, điều chỉnh (nếu lệch)
+  W-&gt;&gt;W: Chốt kỳ tuần · hạn trả +7 ngày
+  Q-&gt;&gt;KT: Chuyển khoản hoa hồng
+  KT-&gt;&gt;W: Ghi nhận đã thu</pre>
+  </section>
+
+  <div>
+    <section class="card diagram">
+      <h2>4. Trạng thái của đơn đặt bàn</h2>
+      <p class="muted">Đơn chỉ chuyển trạng thái theo các mũi tên trong sơ đồ.</p>
+      <pre class="mermaid">stateDiagram-v2
+  direction LR
+  state "Chờ quán xác nhận" as pending
+  state "Đã xác nhận" as confirmed
+  state "Quán từ chối" as rejected
+  state "Quá hạn" as expired
+  state "Đã hủy" as cancelled
+  state "Đã tới quán" as arrived
+  state "Không đến" as no_show
+  state "Đã có hóa đơn" as billed
+  state "Đã chốt kỳ" as settled
+  [*] --&gt; pending: Khách đặt + OTP
+  pending --&gt; confirmed: Quán xác nhận
+  pending --&gt; rejected: Quán từ chối
+  pending --&gt; expired: Quá 30 phút
+  pending --&gt; cancelled: Khách hủy
+  confirmed --&gt; pending: Khách đổi giờ
+  confirmed --&gt; cancelled: Khách hủy
+  confirmed --&gt; arrived: Khách / quán báo đã tới
+  confirmed --&gt; no_show: Hết ngày, không ai báo tới
+  arrived --&gt; billed: Quán nhập hóa đơn
+  billed --&gt; settled: Chốt kỳ tuần
+  settled --&gt; [*]
+  rejected --&gt; [*]
+  expired --&gt; [*]
+  cancelled --&gt; [*]
+  no_show --&gt; [*]</pre>
+    </section>
+    <section class="card diagram">
+      <h2>5. Chọn kênh gửi tin cho khách</h2>
+      <p class="muted">Ưu tiên kênh rẻ hơn. Chi tiết ở <a class="ref" href="tu-dong.html#UC-S01">UC-S01</a>.</p>
+      <pre class="mermaid">flowchart TB
+  A["Cần gửi tin cho khách"] --&gt; B{"Khách có số&lt;br/&gt;Việt Nam?"}
+  B -- Có --&gt; Z["Gửi Zalo ZNS"]
+  Z --&gt; ZF{"Gửi được?"}
+  ZF -- Không --&gt; S["Gửi SMS brandname"]
+  ZF -- Có --&gt; OK["Khách nhận tin"]
+  S --&gt; OK
+  B -- Không --&gt; E{"Khách có email?"}
+  E -- Có --&gt; M["Gửi email"] --&gt; OK
+  E -- Không --&gt; W["Khách tự tra cứu trên web"]
+  C{{"Chạm trần tin trong ngày?"}} -. "ngừng ZNS/SMS,&lt;br/&gt;chuyển email nếu có" .-&gt; E
+  classDef d fill:#FFFDF8,stroke:#0D0D0D</pre>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>6. Danh sách 49 use case</h2>
+    <div class="tbl"><table class="list"><thead><tr><th>Mã</th><th>Use case</th><th>Người thực hiện</th><th>Nơi thực hiện</th></tr></thead><tbody><tr class="grp"><td colspan="4">👤 Khách</td></tr><tr><td class="id"><a href="khach.html#UC-K01">UC-K01</a></td><td><a href="khach.html#UC-K01">Chọn ngôn ngữ và loại tiền</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K02">UC-K02</a></td><td><a href="khach.html#UC-K02">Xem trang chủ và tìm quán</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K03">UC-K03</a></td><td><a href="khach.html#UC-K03">Xem chi tiết quán</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K04">UC-K04</a></td><td><a href="khach.html#UC-K04">Đi tới quán bằng Grab hoặc Google Maps</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K05">UC-K05</a></td><td><a href="khach.html#UC-K05">Đặt bàn</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K06">UC-K06</a></td><td><a href="khach.html#UC-K06">Xác minh số điện thoại hoặc email bằng mã OTP</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K07">UC-K07</a></td><td><a href="khach.html#UC-K07">Nhận kết quả và tra cứu đơn</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K08">UC-K08</a></td><td><a href="khach.html#UC-K08">Đổi giờ hoặc hủy đơn</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K09">UC-K09</a></td><td><a href="khach.html#UC-K09">Báo “Tôi đã tới quán” và dùng ưu đãi</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K10">UC-K10</a></td><td><a href="khach.html#UC-K10">Nhắn tin cho Toini qua ứng dụng chat</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K11">UC-K11</a></td><td><a href="khach.html#UC-K11">Tìm quán gần tôi trên bản đồ</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K12">UC-K12</a></td><td><a href="khach.html#UC-K12">Xem sự kiện và đặt bàn theo sự kiện</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K13">UC-K13</a></td><td><a href="khach.html#UC-K13">Đánh giá sau khi đi</a></td><td>Khách</td><td>Web khách</td></tr><tr><td class="id"><a href="khach.html#UC-K14">UC-K14</a></td><td><a href="khach.html#UC-K14">Đặt bàn với deal siêu hời Toini</a></td><td>Khách</td><td>Web khách</td></tr><tr class="grp"><td colspan="4">🏪 Quán</td></tr><tr><td class="id"><a href="quan.html#UC-Q01">UC-Q01</a></td><td><a href="quan.html#UC-Q01">Đăng nhập và chọn quán</a></td><td>Quán</td><td>Cổng quán</td></tr><tr><td class="id"><a href="quan.html#UC-Q02">UC-Q02</a></td><td><a href="quan.html#UC-Q02">Bật hoặc tắt nhận khách theo từng tối</a></td><td>Quán</td><td>Cổng quán</td></tr><tr><td class="id"><a href="quan.html#UC-Q03">UC-Q03</a></td><td><a href="quan.html#UC-Q03">Nhận thông báo đơn mới</a></td><td>Quán</td><td>Cổng quán</td></tr><tr><td class="id"><a href="quan.html#UC-Q04">UC-Q04</a></td><td><a href="quan.html#UC-Q04">Xác nhận hoặc từ chối đơn</a></td><td>Quán</td><td>Cổng quán</td></tr><tr><td class="id"><a href="quan.html#UC-Q05">UC-Q05</a></td><td><a href="quan.html#UC-Q05">Xem lịch đơn theo ngày</a></td><td>Quán</td><td>Cổng quán</td></tr><tr><td class="id"><a href="quan.html#UC-Q06">UC-Q06</a></td><td><a href="quan.html#UC-Q06">Báo “Khách đã tới”</a></td><td>Quán</td><td>Cổng quán</td></tr><tr><td class="id"><a href="quan.html#UC-Q07">UC-Q07</a></td><td><a href="quan.html#UC-Q07">Nhập hóa đơn</a></td><td>Quán</td><td>Cổng quán</td></tr><tr><td class="id"><a href="quan.html#UC-Q08">UC-Q08</a></td><td><a href="quan.html#UC-Q08">Xem công nợ hoa hồng</a></td><td>Quán</td><td>Cổng quán</td></tr><tr class="grp"><td colspan="4">🛠 Quản trị Toini</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A01">UC-A01</a></td><td><a href="quan-tri.html#UC-A01">Quản lý quán và hồ sơ quán</a></td><td>Sale/CSKH</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A02">UC-A02</a></td><td><a href="quan-tri.html#UC-A02">Nhập dữ liệu quán ban đầu từ file mẫu</a></td><td>Toini + đội phát triển</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A03">UC-A03</a></td><td><a href="quan-tri.html#UC-A03">Quản lý ưu đãi của quán</a></td><td>Sale/CSKH</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A04">UC-A04</a></td><td><a href="quan-tri.html#UC-A04">Quản lý tài khoản quán</a></td><td>Sale/CSKH</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A05">UC-A05</a></td><td><a href="quan-tri.html#UC-A05">Quản lý nhân viên Toini và vai trò</a></td><td>Giám đốc</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A06">UC-A06</a></td><td><a href="quan-tri.html#UC-A06">Theo dõi đơn và hỗ trợ khách</a></td><td>Sale/CSKH</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A07">UC-A07</a></td><td><a href="quan-tri.html#UC-A07">Xử lý đơn quán chậm phản hồi</a></td><td>Sale/CSKH</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A08">UC-A08</a></td><td><a href="quan-tri.html#UC-A08">Thiết lập tỷ lệ hoa hồng</a></td><td>Giám đốc</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A09">UC-A09</a></td><td><a href="quan-tri.html#UC-A09">Đối soát hóa đơn</a></td><td>Kế toán</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A10">UC-A10</a></td><td><a href="quan-tri.html#UC-A10">Công nợ và ghi nhận thanh toán</a></td><td>Kế toán</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A11">UC-A11</a></td><td><a href="quan-tri.html#UC-A11">Xuất số liệu theo mẫu ThucTe</a></td><td>Kế toán</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A12">UC-A12</a></td><td><a href="quan-tri.html#UC-A12">Quản lý nội dung chung và cấu hình</a></td><td>Sale/CSKH · Giám đốc</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A13">UC-A13</a></td><td><a href="quan-tri.html#UC-A13">Xem nhật ký thao tác</a></td><td>Giám đốc</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A14">UC-A14</a></td><td><a href="quan-tri.html#UC-A14">Thiết lập trần gửi tin và chặn lạm dụng</a></td><td>Giám đốc</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A15">UC-A15</a></td><td><a href="quan-tri.html#UC-A15">Quản lý sự kiện</a></td><td>Sale/CSKH</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A16">UC-A16</a></td><td><a href="quan-tri.html#UC-A16">Kiểm duyệt đánh giá</a></td><td>Sale/CSKH</td><td>Trang quản trị</td></tr><tr><td class="id"><a href="quan-tri.html#UC-A17">UC-A17</a></td><td><a href="quan-tri.html#UC-A17">Quản lý deal siêu hời</a></td><td>Giám đốc</td><td>Trang quản trị</td></tr><tr class="grp"><td colspan="4">⚙ Hệ thống tự động</td></tr><tr><td class="id"><a href="tu-dong.html#UC-S01">UC-S01</a></td><td><a href="tu-dong.html#UC-S01">Gửi tin cho khách theo kênh phù hợp</a></td><td>Hệ thống tự động</td><td>Hệ thống</td></tr><tr><td class="id"><a href="tu-dong.html#UC-S02">UC-S02</a></td><td><a href="tu-dong.html#UC-S02">Hẹn giờ theo trạng thái đơn</a></td><td>Hệ thống tự động</td><td>Hệ thống</td></tr><tr><td class="id"><a href="tu-dong.html#UC-S03">UC-S03</a></td><td><a href="tu-dong.html#UC-S03">Tính hoa hồng</a></td><td>Hệ thống tự động</td><td>Hệ thống</td></tr><tr><td class="id"><a href="tu-dong.html#UC-S04">UC-S04</a></td><td><a href="tu-dong.html#UC-S04">Chốt kỳ đối soát hằng tuần</a></td><td>Hệ thống tự động</td><td>Hệ thống</td></tr><tr><td class="id"><a href="tu-dong.html#UC-S05">UC-S05</a></td><td><a href="tu-dong.html#UC-S05">Cập nhật tỷ giá</a></td><td>Hệ thống tự động</td><td>Hệ thống</td></tr><tr><td class="id"><a href="tu-dong.html#UC-S06">UC-S06</a></td><td><a href="tu-dong.html#UC-S06">Chống bot và giới hạn gửi tin</a></td><td>Hệ thống tự động</td><td>Hệ thống</td></tr><tr><td class="id"><a href="tu-dong.html#UC-S07">UC-S07</a></td><td><a href="tu-dong.html#UC-S07">Ghi nhật ký thao tác</a></td><td>Hệ thống tự động</td><td>Hệ thống</td></tr><tr><td class="id"><a href="tu-dong.html#UC-S08">UC-S08</a></td><td><a href="tu-dong.html#UC-S08">Sao lưu dữ liệu hằng ngày</a></td><td>Hệ thống tự động</td><td>Hệ thống</td></tr><tr><td class="id"><a href="tu-dong.html#UC-S09">UC-S09</a></td><td><a href="tu-dong.html#UC-S09">Lưu lịch sử đặt bàn theo số điện thoại và email</a></td><td>Hệ thống tự động</td><td>Hệ thống</td></tr><tr><td class="id"><a href="tu-dong.html#UC-S10">UC-S10</a></td><td><a href="tu-dong.html#UC-S10">Gửi email mời đánh giá</a></td><td>Hệ thống tự động</td><td>Hệ thống</td></tr></tbody></table></div>
+  </section>
+
+  <section class="card">
+    <h2>7. Yêu cầu chung</h2>
+    <div class="gens"><div class="gen"><b>Ngôn ngữ &amp; tiền tệ</b><p>6 ngôn ngữ (VI, EN, KO, RU, ZH, JA) và 6 loại tiền (VND, USD, KRW, RUB, CNY, JPY). Chữ trên giao diện tách khỏi mã nguồn, Toini tự sửa được, và Toini cung cấp bản dịch. Thông tin quán và ưu đãi có nút “Dịch bằng AI” để tạo bản dịch nháp. Toini duyệt xong bản dịch mới hiển thị (<a class="ref" href="quan-tri.html#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01</a>, <a class="ref" href="quan-tri.html#UC-A03" title="Quản lý ưu đãi của quán">UC-A03</a>).</p></div><div class="gen"><b>Giao diện</b><p>Web khách thiết kế ưu tiên điện thoại, theo bộ mock được duyệt. Cổng quán và trang quản trị dùng bộ giao diện có sẵn, phối màu Toini, dùng tốt trên điện thoại.</p></div><div class="gen"><b>Tìm kiếm Google</b><p>Mỗi ngôn ngữ có đường dẫn riêng. Có sitemap và thông tin quán chuẩn cho Google.</p></div><div class="gen"><b>Hạ tầng</b><p>1 máy chủ (VPS). Cloudflare đứng trước để chống bot. Chạy HTTPS. Sao lưu hằng ngày trên chính máy chủ đó.</p></div><div class="gen"><b>Gửi tin</b><p>Zalo ZNS, sau đó SMS brandname, sau đó email (xem <a class="ref" href="tu-dong.html#UC-S01" title="Gửi tin cho khách theo kênh phù hợp">UC-S01</a>). Có trần số tin mỗi ngày (<a class="ref" href="quan-tri.html#UC-A14" title="Thiết lập trần gửi tin và chặn lạm dụng">UC-A14</a>).</p></div><div class="gen"><b>Nhật ký</b><p>Mọi thao tác tạo mới và chỉnh sửa đều được ghi lại, biết ai đã làm (<a class="ref" href="tu-dong.html#UC-S07" title="Ghi nhật ký thao tác">UC-S07</a>).</p></div><div class="gen"><b>Bản đồ</b><p>Trang từng quán dùng Google Maps nhúng. Mục “Bản đồ – quán gần bạn” dùng bản đồ tương tác có ghim từng quán và vị trí của khách (<a class="ref" href="khach.html#UC-K11" title="Tìm quán gần tôi trên bản đồ">UC-K11</a>).</p></div><div class="gen"><b>Tài khoản dịch vụ</b><p>Các tài khoản dịch vụ (Zalo OA, SMS brandname, dịch vụ dịch AI, dịch vụ bản đồ, VPS, Cloudflare, tên miền, email) đứng tên Toini. Đội phát triển làm hộ thủ tục đăng ký ZNS, SMS brandname, mua và cài đặt VPS. Phí dịch vụ do Toini trả trực tiếp cho nhà cung cấp.</p></div><div class="gen"><b>Ra mắt</b><p>Chạy thử với 5–10 quán trước khi mở cho toàn bộ quán.</p></div><div class="gen"><b>Ngoài phạm vi hệ thống</b><p>Các vấn đề gian lận giữa khách và quán. Việc xuất hóa đơn VAT.</p></div></div>
+  </section>
+</div>
+<footer class="foot"><div class="wrap">Toini · Tài liệu use case giai đoạn 1 · Bản 1 · 07/11/2026</div></footer>
+</body>
+</html>

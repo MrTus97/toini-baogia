@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toini · Mock giai đoạn 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap&subset=vietnamese" rel="stylesheet">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.top{background:var(--ink);color:var(--cream);padding:30px 0 34px}
+.top .k{font-size:.75rem;font-weight:800;letter-spacing:.08em;color:var(--lime)}
+.top h1{font-size:clamp(32px,7vw,52px);margin:8px 0 10px;letter-spacing:-.02em}
+.top h1 em{font-style:normal;color:var(--lime)}
+.top p{max-width:760px;color:#ddd6c8;margin:0}
+section{margin:28px 0}
+h2{font-size:clamp(21px,4vw,27px);margin-bottom:10px}
+.apps{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.apps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.app{display:flex;flex-direction:column;gap:6px;background:var(--paper);border:var(--bd);border-radius:16px;box-shadow:var(--sh);padding:16px;text-decoration:none;transition:transform .1s}
+.app:hover{transform:translate(-2px,-2px);background:var(--lime)}
+.app .ic{font-size:1.8rem}
+.app b{font:800 1.3rem var(--fd)}
+.app small{color:var(--muted)}
+.app .go{margin-top:auto;font-weight:800}
+.card{background:var(--paper);border:var(--bd);border-radius:14px;padding:16px;margin-bottom:12px;min-width:0}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;border-bottom:1.5px solid var(--line);padding:7px 8px;vertical-align:top}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+code{background:var(--soft);border-radius:6px;padding:1px 6px;font-size:.88em}
+.flows{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px){.flows{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.flow h3{font-size:1.1rem;margin-bottom:6px}
+.flow ol{margin:0;padding-left:20px;font-size:.92rem}
+.flow li{margin:4px 0}
+.uc{font-size:.72rem;font-weight:800;background:#efe7ff;color:var(--violet);border-radius:6px;padding:1px 6px;white-space:nowrap;text-decoration:none}
+.note{background:#fff8e6;border:1.5px solid #f3dca0;border-radius:12px;padding:12px 14px;font-size:.92rem}
+.foot{color:var(--muted);font-size:.84rem;padding:20px 0 50px}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><div class="k">TOINI · GIAI ĐOẠN 1 · BẢN MOCK</div><h1>Mock <em>giai đoạn 1</em></h1><p>Ba giao diện chạy được ngay trên trình duyệt, dùng chung một bộ dữ liệu: thao tác ở web khách sẽ hiện ở cổng quán và trang quản trị (mở nhiều tab cùng lúc để thấy). Các dịch vụ bên ngoài (Zalo ZNS, SMS, email, Telegram, dịch AI, Grab, đăng nhập, OTP) đều là mô phỏng bằng dữ liệu cứng.</p></div></div>
+<div class="wrap">
+<section>
+  <h2>1. Ba giao diện</h2>
+  <div class="apps">
+    <a class="app" href="khach/index.html"><span class="ic">👤</span><b>Web khách</b><small>Tìm quán, xem gallery ảnh, đặt bàn, OTP, tra cứu đơn, “Tôi đã tới quán”, Grab, chat. 6 ngôn ngữ, 6 loại tiền.</small><span class="go">Mở web khách →</span></a>
+    <a class="app" href="quan/index.html"><span class="ic">🏪</span><b>Cổng quán</b><small>Nhận đơn, xác nhận/từ chối trong 15 phút, lịch đơn, bật/tắt nhận khách, nhập hóa đơn, công nợ, Telegram.</small><span class="go">Mở cổng quán →</span></a>
+    <a class="app" href="quan-tri/index.html"><span class="ic">🛠</span><b>Quản trị Toini</b><small>Quán & bản dịch AI, ưu đãi, tài khoản quán, đơn & cảnh báo, hoa hồng, đối soát, công nợ, xuất số liệu, nhật ký, trần gửi tin.</small><span class="go">Mở quản trị →</span></a>
+  </div>
+</section>
+
+<section>
+  <h2>2. Dữ liệu demo <span class="t-ref">* giá trị tham khảo</span></h2>
+  <div class="card tbl"><table>
+    <thead><tr><th>Dùng cho</th><th>Giá trị</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+      <tr><td>Mã OTP</td><td><code>123456</code></td><td>Đã điền sẵn trong ô nhập mã</td></tr>
+      <tr><td>Cổng quán</td><td><code>sky36.letan</code> / <code>demo123</code></td><td>1 quán (Sky36)</td></tr>
+      <tr><td>Cổng quán – nhiều quán</td><td><code>bachdang.group</code> / <code>demo123</code></td><td>Sky36, Brilliant Top Bar, Bamboo2 Bar – đổi quán ở đầu trang</td></tr>
+      <tr><td>Cổng quán – lần đầu</td><td><code>beman.thungan</code> / <code>demo123</code></td><td>Bắt đổi mật khẩu tạm</td></tr>
+      <tr><td>Cổng quán – đã khóa</td><td><code>sky36.cu</code> / <code>demo123</code></td><td>Không đăng nhập được</td></tr>
+      <tr><td>Quản trị</td><td><code>giamdoc</code> · <code>cskh</code> · <code>ketoan</code> / <code>demo123</code></td><td>Mỗi vai trò thấy menu khác nhau</td></tr>
+      <tr><td>Tra cứu đơn</td><td><code>TN-C5Q1</code> + <code>john@example.com</code></td><td>Đã điền sẵn ở trang tra cứu</td></tr>
+    </tbody></table></div>
+  <div class="note">Nút <b>⚙ Demo</b> (cạnh trái màn hình) dùng để <b>tua giờ giả lập</b> (+15 phút, +30 phút, +1 ngày), <b>giả lập Zalo ZNS lỗi</b>, <b>chốt kỳ tuần ngay</b> và <b>khôi phục dữ liệu mẫu</b>. Dữ liệu lưu trong trình duyệt đang dùng.</div>
+</section>
+
+<section>
+  <h2>3. Kịch bản demo nhanh</h2>
+  <div class="flows">
+    <div class="card flow"><h3>A. Khách đặt bàn → quán xác nhận</h3><ol>
+      <li>Web khách: chọn Sky36, xem ảnh (bấm ảnh để mở gallery) <a class="uc" href="../usecase/khach.html#UC-K03">UC-K03</a></li>
+      <li>Bấm Đặt bàn, chọn “Khách VN”, tick đồng ý, Gửi mã <a class="uc" href="../usecase/khach.html#UC-K05">UC-K05</a></li>
+      <li>Thấy tin ZNS mô phỏng, bấm Xác minh (mã có sẵn) <a class="uc" href="../usecase/khach.html#UC-K06">UC-K06</a></li>
+      <li>Tab khác: cổng quán <code>sky36.letan</code> → Đơn cần xử lý → Xác nhận <a class="uc" href="../usecase/quan.html#UC-Q04">UC-Q04</a></li>
+      <li>Quay lại web khách: đơn chuyển “Đã xác nhận” <a class="uc" href="../usecase/khach.html#UC-K07">UC-K07</a></li>
+    </ol></div>
+    <div class="card flow"><h3>B. Quán chậm phản hồi</h3><ol>
+      <li>Quản trị <code>cskh</code> → Tổng quan: đã có cảnh báo đơn TN-A7K2 quá 15 phút <a class="uc" href="../usecase/quan-tri.html#UC-A07">UC-A07</a></li>
+      <li>Telegram CSKH có tin cảnh báo; bấm “xác nhận thay” khi quán đồng ý qua điện thoại</li>
+      <li>Hoặc Demo → +30 phút: đơn TN-B3M9 tự hủy, khách nhận tin <a class="uc" href="../usecase/tu-dong.html#UC-S02">UC-S02</a></li>
+    </ol></div>
+    <div class="card flow"><h3>C. Tới quán → hóa đơn → đối soát → công nợ</h3><ol>
+      <li>Web khách: mở đơn đã xác nhận → “Tôi đã tới quán” → màn hình ưu đãi <a class="uc" href="../usecase/khach.html#UC-K09">UC-K09</a></li>
+      <li>Cổng quán → Hóa đơn → Nhập hóa đơn (ảnh mẫu) <a class="uc" href="../usecase/quan.html#UC-Q07">UC-Q07</a></li>
+      <li>Quản trị <code>ketoan</code> → Đối soát → Đã khớp / Điều chỉnh <a class="uc" href="../usecase/quan-tri.html#UC-A09">UC-A09</a></li>
+      <li>Demo → Chốt kỳ tuần ngay → Công nợ → Ghi nhận đã thu <a class="uc" href="../usecase/quan-tri.html#UC-A10">UC-A10</a></li>
+    </ol></div>
+    <div class="card flow"><h3>D. Dịch bằng AI và duyệt</h3><ol>
+      <li>Quản trị <code>cskh</code> → Quán → Brilliant Top Bar → tab Bản dịch <a class="uc" href="../usecase/quan-tri.html#UC-A01">UC-A01</a></li>
+      <li>Chọn KO → ✨ Dịch bằng AI → sửa bản nháp → Duyệt</li>
+      <li>Web khách đổi sang 한국어: mô tả quán hiện bản vừa duyệt (trước đó hiện tiếng Anh)</li>
+      <li>Làm tương tự với ưu đãi <a class="uc" href="../usecase/quan-tri.html#UC-A03">UC-A03</a></li>
+    </ol></div>
+    <div class="card flow"><h3>E. Kênh gửi tin & trần tin nhắn</h3><ol>
+      <li>Demo → bật “Giả lập Zalo ZNS lỗi”, đặt bàn bằng số VN: mã chuyển sang SMS <a class="uc" href="../usecase/tu-dong.html#UC-S01">UC-S01</a></li>
+      <li>Đặt bằng “Khách Hàn” (số nước ngoài + email): mã gửi qua email</li>
+      <li>Quản trị <code>giamdoc</code> → Trần gửi tin → “đẩy ZNS sát trần” → đặt thêm đơn: chuyển SMS + cảnh báo <a class="uc" href="../usecase/quan-tri.html#UC-A14">UC-A14</a></li>
+    </ol></div>
+    <div class="card flow"><h3>F. Tài khoản quán & nhật ký</h3><ol>
+      <li>Cổng quán <code>bachdang.group</code>: chọn/đổi giữa 3 quán <a class="uc" href="../usecase/quan.html#UC-Q01">UC-Q01</a></li>
+      <li>Quản trị → Tài khoản quán: gán thêm quán, khóa tài khoản <a class="uc" href="../usecase/quan-tri.html#UC-A04">UC-A04</a></li>
+      <li>Quản trị <code>giamdoc</code> → Nhật ký thao tác: thấy toàn bộ thao tác vừa làm, trước → sau <a class="uc" href="../usecase/quan-tri.html#UC-A13">UC-A13</a></li>
+    </ol></div>
+  </div>
+</section>
+
+<section>
+  <h2>4. Ghi chú</h2>
+  <div class="card">
+    <ul style="margin:0;padding-left:20px">
+      <li>Quán và địa chỉ là quán thật ở Đà Nẵng. Giá, ưu đãi, đánh giá, tọa độ, số liệu đơn và công nợ là <b>giá trị tham khảo</b> cho demo.</li>
+      <li>Ảnh Sky36, Brilliant Top Bar, Bamboo2 Bar, Herbal Spa lấy từ website chính thức của quán. Ảnh Hải sản Bé Mặn, X8 KTV, Golden Lotus Spa và ảnh thành phố là <b>ảnh minh họa</b> từ Wikimedia Commons. Danh sách nguồn: <code>assets/img/sources.json</code>.</li>
+      <li>Trang quán dùng Google Maps nhúng. Trang <b>Bản đồ</b> (quán gần bạn) dùng bản đồ tương tác với nền OpenStreetMap: đặt vị trí bằng GPS, điểm mẫu, chạm hoặc kéo chấm tím; mỗi quán là một ghim, bấm ghim ra thẻ nhỏ để vào trang quán. Cả hai cần mạng.</li>
+      <li>Nút Grab hiện trên điện thoại hoặc cửa sổ hẹp; bản mock hiển thị màn hình mô phỏng thay vì mở app.</li>
+      <li>Cổng quán và quản trị chỉ tập trung đủ chức năng; giao diện thật sẽ dùng bộ thư viện UI có sẵn, phối màu Toini.</li>
+      <li>Tài liệu kèm theo: <a href="../usecase/index.html">Use case</a> · <a href="../evidence/index.html">Evidence (ảnh chụp từng luồng)</a> · <a href="../bao-gia/index.html">Báo giá</a></li>
+    </ul>
+  </div>
+</section>
+<div class="foot">Toini · Mock giai đoạn 1 · 07/11/2026</div>
+</div>
+</body>
+</html>

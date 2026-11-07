@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quán · Toini giai đoạn 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/uc.css">
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs";
+mermaid.initialize({startOnLoad:true,theme:"base",securityLevel:"loose",
+ flowchart:{htmlLabels:true,curve:"basis"},
+ themeVariables:{fontFamily:"Archivo, system-ui, sans-serif",fontSize:"14px",
+ primaryColor:"#FFFDF8",primaryBorderColor:"#0D0D0D",primaryTextColor:"#0D0D0D",lineColor:"#0D0D0D",
+ secondaryColor:"#F5F1E8",tertiaryColor:"#F5F1E8",clusterBkg:"#F5F1E8",clusterBorder:"#0D0D0D",
+ actorBkg:"#C6FF00",actorBorder:"#0D0D0D",actorTextColor:"#0D0D0D",actorLineColor:"#0D0D0D",
+ signalColor:"#0D0D0D",signalTextColor:"#0D0D0D",labelBoxBkgColor:"#C6FF00",labelBoxBorderColor:"#0D0D0D",
+ noteBkgColor:"#FFE7A3",noteBorderColor:"#0D0D0D",activationBkgColor:"#C6FF00",edgeLabelBackground:"#FFFDF8"}});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="logo">toini</span><span class="sub">Use case · Giai đoạn 1</span></div>
+    <nav class="tabs"><a href="index.html">Tổng quan</a><a href="khach.html">Khách</a><a href="quan.html" class="on" aria-current="page">Quán</a><a href="quan-tri.html">Quản trị Toini</a><a href="tu-dong.html">Hệ thống tự động</a><a href="../mock/index.html" class="ext">Mock ↗</a><a href="../evidence/index.html" class="ext">Evidence ↗</a><a href="../bao-gia/index.html" class="ext">Báo giá ↗</a></nav>
+  </div>
+</header>
+
+<section class="hero"><div class="wrap">
+  <div class="kick">🏪 Tác nhân · Nhân viên quán</div>
+  <h1>Quán</h1>
+  <p>Quán dùng <b>cổng quán</b>, là trang web dùng tốt trên điện thoại. Toini cấp tài khoản cho quán. Quán được cấp nhiều tài khoản và tự giao cho nhân viên của mình. <b>Mọi tài khoản của quán có quyền như nhau.</b> Hồ sơ quán do Toini cập nhật, quán không tự sửa trong giai đoạn này.</p>
+</div></section>
+<div class="wrap layout">
+  <aside class="toc"><div class="toc-in"><b>8 use case</b><ol><li><a href="#UC-Q01"><span>UC-Q01</span>Đăng nhập và chọn quán</a></li><li><a href="#UC-Q02"><span>UC-Q02</span>Bật hoặc tắt nhận khách theo từng tối</a></li><li><a href="#UC-Q03"><span>UC-Q03</span>Nhận thông báo đơn mới</a></li><li><a href="#UC-Q04"><span>UC-Q04</span>Xác nhận hoặc từ chối đơn</a></li><li><a href="#UC-Q05"><span>UC-Q05</span>Xem lịch đơn theo ngày</a></li><li><a href="#UC-Q06"><span>UC-Q06</span>Báo “Khách đã tới”</a></li><li><a href="#UC-Q07"><span>UC-Q07</span>Nhập hóa đơn</a></li><li><a href="#UC-Q08"><span>UC-Q08</span>Xem công nợ hoa hồng</a></li></ol></div></aside>
+  <main>
+    <section class="card diagram">
+      <h2>Sơ đồ use case</h2>
+      <p class="muted">Bấm vào từng ô để tới mô tả chi tiết.</p>
+      <pre class="mermaid">flowchart LR
+  ACT(["🏪 Nhân viên quán"]):::actor
+  Q01(["&lt;b&gt;UC-Q01&lt;/b&gt;&lt;br/&gt;Đăng nhập và chọn quán"])
+  ACT --- Q01
+  click Q01 href "#UC-Q01"
+  Q02(["&lt;b&gt;UC-Q02&lt;/b&gt;&lt;br/&gt;Bật hoặc tắt nhận khách theo từng tối"])
+  ACT --- Q02
+  click Q02 href "#UC-Q02"
+  Q03(["&lt;b&gt;UC-Q03&lt;/b&gt;&lt;br/&gt;Nhận thông báo đơn mới"])
+  ACT --- Q03
+  click Q03 href "#UC-Q03"
+  Q04(["&lt;b&gt;UC-Q04&lt;/b&gt;&lt;br/&gt;Xác nhận hoặc từ chối đơn"])
+  ACT --- Q04
+  click Q04 href "#UC-Q04"
+  Q05(["&lt;b&gt;UC-Q05&lt;/b&gt;&lt;br/&gt;Xem lịch đơn theo ngày"])
+  ACT --- Q05
+  click Q05 href "#UC-Q05"
+  Q06(["&lt;b&gt;UC-Q06&lt;/b&gt;&lt;br/&gt;Báo “Khách đã tới”"])
+  ACT --- Q06
+  click Q06 href "#UC-Q06"
+  Q07(["&lt;b&gt;UC-Q07&lt;/b&gt;&lt;br/&gt;Nhập hóa đơn"])
+  ACT --- Q07
+  click Q07 href "#UC-Q07"
+  Q08(["&lt;b&gt;UC-Q08&lt;/b&gt;&lt;br/&gt;Xem công nợ hoa hồng"])
+  ACT --- Q08
+  click Q08 href "#UC-Q08"
+  classDef actor fill:#C6FF00,stroke:#0D0D0D,stroke-width:2.5px,color:#0D0D0D,font-weight:800</pre>
+    </section>
+    <article class="uc" id="UC-Q01">
+  <header>
+    <span class="code">UC-Q01</span>
+    <h3>Đăng nhập và chọn quán</h3>
+    <div class="meta"><span class="pill actor">Quán</span><span class="pill where">Cổng quán</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Nhân viên vào đúng quán mình phụ trách.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Toini đã tạo tài khoản và gán tài khoản đó cho ít nhất một quán (<a class="ref" href="quan-tri.html#UC-A04" title="Quản lý tài khoản quán">UC-A04</a>).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Nhân viên đang làm việc trên đúng quán.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên đăng nhập bằng tài khoản Toini cấp.</li><li>Nếu tài khoản được gán cho nhiều quán, nhân viên chọn quán muốn làm việc. Nhân viên đổi sang quán khác bất cứ lúc nào bằng nút ở đầu trang.</li><li>Cổng quán chỉ hiển thị dữ liệu của quán đang chọn.</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Quên mật khẩu</td><td>Nhân viên đặt lại mật khẩu qua email của tài khoản, hoặc nhờ Toini cấp lại.</td></tr><tr><td>Tài khoản bị khóa</td><td>Nhân viên không đăng nhập được. Nếu đang đăng nhập thì bị đăng xuất ngay.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Một quán có nhiều tài khoản. Một tài khoản quản lý được nhiều quán.</li><li>Trong quán không phân quyền: mọi tài khoản của quán làm được mọi việc trên cổng quán.</li><li>Lần đăng nhập đầu tiên, nhân viên phải đổi mật khẩu tạm.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="quan-tri.html#UC-A04" title="Quản lý tài khoản quán">UC-A04 · Quản lý tài khoản quán</a><a class="chip" href="tu-dong.html#UC-S07" title="Ghi nhật ký thao tác">UC-S07 · Ghi nhật ký thao tác</a></div>
+</article>
+<article class="uc" id="UC-Q02">
+  <header>
+    <span class="code">UC-Q02</span>
+    <h3>Bật hoặc tắt nhận khách theo từng tối</h3>
+    <div class="meta"><span class="pill actor">Quán</span><span class="pill where">Cổng quán</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Quán chủ động ngừng nhận đơn vào những tối đã kín chỗ hoặc nghỉ.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đã đăng nhập (<a class="ref" href="#UC-Q01" title="Đăng nhập và chọn quán">UC-Q01</a>).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Web khách cập nhật ngay tình trạng nhận khách.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên mở lịch các tối sắp tới.</li><li>Nhân viên bật hoặc tắt <b>“Còn nhận khách”</b> cho từng tối.</li><li>Với những tối đã tắt, khách không đặt được bàn. Quán vẫn hiển thị trên web.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Tắt nhận khách không tự hủy các đơn đã có của tối đó. Quán vẫn xử lý từng đơn như bình thường.</li><li>Quán không cần quản lý số bàn hay sơ đồ chỗ ngồi.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K02" title="Xem trang chủ và tìm quán">UC-K02 · Xem trang chủ và tìm quán</a><a class="chip" href="khach.html#UC-K05" title="Đặt bàn">UC-K05 · Đặt bàn</a></div>
+</article>
+<article class="uc" id="UC-Q03">
+  <header>
+    <span class="code">UC-Q03</span>
+    <h3>Nhận thông báo đơn mới</h3>
+    <div class="meta"><span class="pill actor">Quán</span><span class="pill where">Cổng quán</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Quán biết ngay khi có đơn mới, đơn đổi giờ hoặc đơn bị hủy.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Quán đã thêm bot Telegram của Toini vào nhóm Telegram của nhân viên quán. Toini hướng dẫn việc này khi bàn giao.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Quán đã biết có đơn cần xử lý.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Khi có đơn mới, đơn đổi giờ hoặc đơn bị hủy, bot Telegram gửi tin vào nhóm của quán. Tin gồm tên khách, tối và giờ đến, số khách, ghi chú, và link mở đơn.</li><li>Trên cổng quán, đơn mới nằm đầu danh sách và có số đếm đơn đang chờ.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Tin Telegram chỉ dùng để báo. Việc xác nhận hoặc từ chối làm trên cổng quán (<a class="ref" href="#UC-Q04" title="Xác nhận hoặc từ chối đơn">UC-Q04</a>).</li><li>Tin gửi quán viết bằng tiếng Việt.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-Q04" title="Xác nhận hoặc từ chối đơn">UC-Q04 · Xác nhận hoặc từ chối đơn</a><a class="chip" href="khach.html#UC-K05" title="Đặt bàn">UC-K05 · Đặt bàn</a><a class="chip" href="khach.html#UC-K08" title="Đổi giờ hoặc hủy đơn">UC-K08 · Đổi giờ hoặc hủy đơn</a></div>
+</article>
+<article class="uc" id="UC-Q04">
+  <header>
+    <span class="code">UC-Q04</span>
+    <h3>Xác nhận hoặc từ chối đơn</h3>
+    <div class="meta"><span class="pill actor">Quán</span><span class="pill where">Cổng quán</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Quán trả lời khách nhanh và rõ ràng.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đơn đang “Chờ quán xác nhận”.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Khách nhận được kết quả.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên mở đơn. Đơn ghi rõ nếu khách đặt cho một sự kiện hoặc dùng deal siêu hời Toini.</li><li>Nhân viên bấm <b>“Xác nhận”</b>, hoặc bấm <b>“Từ chối”</b> và chọn lý do (hết chỗ, không phục vụ được số khách này, giờ không phù hợp, lý do khác kèm ghi chú).</li><li>Đơn chuyển sang “Đã xác nhận” hoặc “Quán từ chối”. Hệ thống báo kết quả cho khách (<a class="ref" href="tu-dong.html#UC-S01" title="Gửi tin cho khách theo kênh phù hợp">UC-S01</a>).</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Quá 15 phút quán chưa phản hồi</td><td>Toini nhận cảnh báo và gọi cho quán (<a class="ref" href="quan-tri.html#UC-A07" title="Xử lý đơn quán chậm phản hồi">UC-A07</a>).</td></tr><tr><td>Quá 30 phút quán chưa phản hồi</td><td>Hệ thống tự hủy đơn và báo khách (<a class="ref" href="tu-dong.html#UC-S02" title="Hẹn giờ theo trạng thái đơn">UC-S02</a>).</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Quán có 15 phút để phản hồi, tính từ lúc đơn được tạo hoặc lúc khách đổi giờ.</li><li>Hệ thống ghi lại tài khoản nào đã xác nhận hoặc từ chối (<a class="ref" href="tu-dong.html#UC-S07" title="Ghi nhật ký thao tác">UC-S07</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-Q03" title="Nhận thông báo đơn mới">UC-Q03 · Nhận thông báo đơn mới</a><a class="chip" href="khach.html#UC-K07" title="Nhận kết quả và tra cứu đơn">UC-K07 · Nhận kết quả và tra cứu đơn</a><a class="chip" href="quan-tri.html#UC-A07" title="Xử lý đơn quán chậm phản hồi">UC-A07 · Xử lý đơn quán chậm phản hồi</a><a class="chip" href="tu-dong.html#UC-S01" title="Gửi tin cho khách theo kênh phù hợp">UC-S01 · Gửi tin cho khách theo kênh phù hợp</a><a class="chip" href="tu-dong.html#UC-S02" title="Hẹn giờ theo trạng thái đơn">UC-S02 · Hẹn giờ theo trạng thái đơn</a></div>
+</article>
+<article class="uc" id="UC-Q05">
+  <header>
+    <span class="code">UC-Q05</span>
+    <h3>Xem lịch đơn theo ngày</h3>
+    <div class="meta"><span class="pill actor">Quán</span><span class="pill where">Cổng quán</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Quán chuẩn bị đón khách theo từng tối.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đã đăng nhập (<a class="ref" href="#UC-Q01" title="Đăng nhập và chọn quán">UC-Q01</a>).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Quán nắm được các đơn của từng tối.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên chọn ngày cần xem.</li><li>Cổng quán liệt kê các đơn của ngày đó theo giờ đến. Mỗi đơn có: tên khách, số khách, giờ đến, ghi chú, ngôn ngữ của khách, số điện thoại của khách (nếu có), trạng thái.</li><li>Nhân viên lọc đơn theo trạng thái.</li></ol>
+  <div class="rel"><span>Liên quan</span><a class="chip" href="#UC-Q04" title="Xác nhận hoặc từ chối đơn">UC-Q04 · Xác nhận hoặc từ chối đơn</a><a class="chip" href="#UC-Q06" title="Báo “Khách đã tới”">UC-Q06 · Báo “Khách đã tới”</a></div>
+</article>
+<article class="uc" id="UC-Q06">
+  <header>
+    <span class="code">UC-Q06</span>
+    <h3>Báo “Khách đã tới”</h3>
+    <div class="meta"><span class="pill actor">Quán</span><span class="pill where">Cổng quán</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Ghi nhận khách đã tới trong trường hợp khách quên bấm trên điện thoại.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đơn đang “Đã xác nhận” và khách chưa bấm “Tôi đã tới quán”.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Quán có thể nhập hóa đơn cho đơn này.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên mở đơn và bấm <b>“Khách đã tới”</b>.</li><li>Đơn chuyển sang “Đã tới quán”. Hệ thống ghi rõ việc này do quán báo.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Trang đối soát hiển thị riêng các đơn do quán báo đã tới, để kế toán dễ kiểm tra (<a class="ref" href="quan-tri.html#UC-A09" title="Đối soát hóa đơn">UC-A09</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="khach.html#UC-K09" title="Báo “Tôi đã tới quán” và dùng ưu đãi">UC-K09 · Báo “Tôi đã tới quán” và dùng ưu đãi</a><a class="chip" href="#UC-Q07" title="Nhập hóa đơn">UC-Q07 · Nhập hóa đơn</a><a class="chip" href="quan-tri.html#UC-A09" title="Đối soát hóa đơn">UC-A09 · Đối soát hóa đơn</a></div>
+</article>
+<article class="uc" id="UC-Q07">
+  <header>
+    <span class="code">UC-Q07</span>
+    <h3>Nhập hóa đơn</h3>
+    <div class="meta"><span class="pill actor">Quán</span><span class="pill where">Cổng quán</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Cung cấp số liệu thật để tính hoa hồng.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đơn đang “Đã tới quán”.</li><li>Kỳ đối soát của đơn chưa chốt.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Đơn chuyển sang “Đã có hóa đơn” và xuất hiện trong danh sách đối soát.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên mở đơn và chọn <b>“Nhập hóa đơn”</b>.</li><li>Nhân viên nhập: số hóa đơn, tổng tiền trước thuế và phí (sau khi đã trừ ưu đãi), số khách thực tế, và ảnh chụp hóa đơn.</li><li>Hệ thống lưu lại và hiển thị hoa hồng tạm tính (<a class="ref" href="tu-dong.html#UC-S03" title="Tính hoa hồng">UC-S03</a>).</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Nhập sai</td><td>Quán sửa được cho tới khi kỳ được chốt. Sau khi chốt kỳ, mọi chỉnh sửa do kế toán Toini thực hiện (<a class="ref" href="quan-tri.html#UC-A09" title="Đối soát hóa đơn">UC-A09</a>).</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Hoa hồng tính trên giá trị hóa đơn sau ưu đãi của quán, trước thuế và phí.</li><li>Đơn dùng deal siêu hời: quán nhập giá trị hóa đơn <b>trước khi trừ deal</b> và giảm cho khách đúng mức deal. Hệ thống tính tiền khách được giảm, phần Toini tài trợ và hoa hồng thực của đơn (<a class="ref" href="tu-dong.html#UC-S03" title="Tính hoa hồng">UC-S03</a>); hoa hồng thực có thể âm (Toini trả quán).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="tu-dong.html#UC-S03" title="Tính hoa hồng">UC-S03 · Tính hoa hồng</a><a class="chip" href="quan-tri.html#UC-A09" title="Đối soát hóa đơn">UC-A09 · Đối soát hóa đơn</a><a class="chip" href="tu-dong.html#UC-S04" title="Chốt kỳ đối soát hằng tuần">UC-S04 · Chốt kỳ đối soát hằng tuần</a></div>
+</article>
+<article class="uc" id="UC-Q08">
+  <header>
+    <span class="code">UC-Q08</span>
+    <h3>Xem công nợ hoa hồng</h3>
+    <div class="meta"><span class="pill actor">Quán</span><span class="pill where">Cổng quán</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Quán biết phải trả Toini bao nhiêu và trả trước ngày nào.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đã đăng nhập (<a class="ref" href="#UC-Q01" title="Đăng nhập và chọn quán">UC-Q01</a>).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Quán nắm rõ công nợ.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Nhân viên mở mục <b>“Công nợ”</b>.</li><li>Cổng quán hiển thị từng kỳ tuần: danh sách đơn, giá trị hóa đơn, hoa hồng của từng đơn, tổng phải trả, hạn trả, số đã trả và số còn nợ.</li><li>Nhân viên xem lịch sử các lần đã thanh toán.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Hạn trả là 7 ngày kể từ ngày chốt kỳ (<a class="ref" href="tu-dong.html#UC-S04" title="Chốt kỳ đối soát hằng tuần">UC-S04</a>).</li><li>Nếu tổng hoa hồng của kỳ bị âm do deal siêu hời, cổng quán ghi “Toini trả quán” và số tiền Toini phải trả.</li><li>Quán chuyển khoản cho Toini bên ngoài hệ thống. Kế toán Toini ghi nhận khoản đã thu (<a class="ref" href="quan-tri.html#UC-A10" title="Công nợ và ghi nhận thanh toán">UC-A10</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="tu-dong.html#UC-S04" title="Chốt kỳ đối soát hằng tuần">UC-S04 · Chốt kỳ đối soát hằng tuần</a><a class="chip" href="quan-tri.html#UC-A10" title="Công nợ và ghi nhận thanh toán">UC-A10 · Công nợ và ghi nhận thanh toán</a></div>
+</article>
+  </main>
+</div>
+<footer class="foot"><div class="wrap">Toini · Tài liệu use case giai đoạn 1 · Bản 1 · 07/11/2026</div></footer>
+</body>
+</html>

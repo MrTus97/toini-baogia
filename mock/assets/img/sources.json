@@ -1,0 +1,264 @@
+{
+ "sky36": {
+  "credit": "sky36.vn (website chính thức)",
+  "files": [
+   {
+    "f": "sky36/01.jpg",
+    "src": "https://sky36.vn/wp-content/uploads/2025/05/sky36-anh-dep-2.jpg",
+    "w": 1400,
+    "h": 562
+   },
+   {
+    "f": "sky36/02.jpg",
+    "src": "https://sky36.vn/wp-content/uploads/2025/05/sky36-anh-dep-5.jpg",
+    "w": 1400,
+    "h": 562
+   },
+   {
+    "f": "sky36/03.jpg",
+    "src": "https://sky36.vn/wp-content/uploads/2025/05/sky36-anh-dep-6.jpg",
+    "w": 1400,
+    "h": 562
+   },
+   {
+    "f": "sky36/04.jpg",
+    "src": "https://sky36.vn/wp-content/uploads/2025/05/sky36-anh-dep-7.jpg",
+    "w": 1400,
+    "h": 562
+   },
+   {
+    "f": "sky36/05.jpg",
+    "src": "https://sky36.vn/wp-content/uploads/2025/05/sky36-anh-dep-8.jpg",
+    "w": 1400,
+    "h": 562
+   },
+   {
+    "f": "sky36/06.jpg",
+    "src": "https://sky36.vn/wp-content/uploads/2025/05/sky36-anh-dep-14.jpg",
+    "w": 1400,
+    "h": 562
+   },
+   {
+    "f": "sky36/07.jpg",
+    "src": "https://sky36.vn/wp-content/uploads/2025/05/sky36-anh-dep-18.jpg",
+    "w": 1400,
+    "h": 562
+   },
+   {
+    "f": "sky36/08.jpg",
+    "src": "https://sky36.vn/wp-content/uploads/2025/05/sky36-anh-dep-20.jpg",
+    "w": 1400,
+    "h": 562
+   }
+  ]
+ },
+ "brilliant": {
+  "credit": "brillianthotel.vn (website chính thức)",
+  "files": [
+   {
+    "f": "brilliant/01.jpg",
+    "src": "https://brillianthotel.vn/wp-content/uploads/2023/12/001-1536x863.jpg",
+    "w": 1400,
+    "h": 787
+   },
+   {
+    "f": "brilliant/02.jpg",
+    "src": "https://brillianthotel.vn/wp-content/uploads/2024/01/br2-1-1024x794.jpg",
+    "w": 1024,
+    "h": 794
+   },
+   {
+    "f": "brilliant/03.jpg",
+    "src": "https://brillianthotel.vn/wp-content/uploads/2023/12/004-2-1536x1026.jpg",
+    "w": 1400,
+    "h": 935
+   },
+   {
+    "f": "brilliant/04.jpg",
+    "src": "https://brillianthotel.vn/wp-content/uploads/2023/12/043_2-1536x746.jpg",
+    "w": 1400,
+    "h": 680
+   },
+   {
+    "f": "brilliant/05.jpg",
+    "src": "https://brillianthotel.vn/wp-content/uploads/2023/12/002-2-1018x1024.jpg",
+    "w": 1018,
+    "h": 1024
+   }
+  ]
+ },
+ "bamboo2": {
+  "credit": "bamboo2bar.com (website chính thức)",
+  "files": [
+   {
+    "f": "bamboo2/01.jpg",
+    "src": "https://bamboo2bar.com/airo-assets/images/pages/home/hero",
+    "w": 1400,
+    "h": 875
+   },
+   {
+    "f": "bamboo2/02.jpg",
+    "src": "https://bamboo2bar.com/airo-assets/images/components/bamboo-aboutsection/bamboo-2-bar-interior-sports-bar-da-nang",
+    "w": 1400,
+    "h": 1203
+   },
+   {
+    "f": "bamboo2/03.jpg",
+    "src": "https://bamboo2bar.com/airo-assets/images/components/bamboo-aboutsection/bamboo-2-bar-outdoor-seating-bach-dang",
+    "w": 1400,
+    "h": 1050
+   },
+   {
+    "f": "bamboo2/04.jpg",
+    "src": "https://bamboo2bar.com/airo-assets/images/pages/home/pool-table",
+    "w": 1400,
+    "h": 1050
+   },
+   {
+    "f": "bamboo2/05.jpg",
+    "src": "https://bamboo2bar.com/airo-assets/images/pages/home/music-feature",
+    "w": 1400,
+    "h": 1050
+   },
+   {
+    "f": "bamboo2/06.jpg",
+    "src": "https://bamboo2bar.com/airo-assets/images/pages/home/cold-drinks",
+    "w": 1400,
+    "h": 1867
+   },
+   {
+    "f": "bamboo2/07.jpg",
+    "src": "https://bamboo2bar.com/airo-assets/images/components/bamboo-fooddrinkssection/bamboo-2-bar-food-menu",
+    "w": 1229,
+    "h": 879
+   },
+   {
+    "f": "bamboo2/08.jpg",
+    "src": "https://bamboo2bar.com/airo-assets/images/pages/home/gallery-8",
+    "w": 1028,
+    "h": 1280
+   }
+  ]
+ },
+ "herbal": {
+  "credit": "herbalspa.vn (website chính thức)",
+  "files": [
+   {
+    "f": "herbal/01.jpg",
+    "src": "https://herbalspa.vn/data/album/1000/mat-tien-xoa-day-dien.webp",
+    "w": 1400,
+    "h": 941
+   },
+   {
+    "f": "herbal/02.jpg",
+    "src": "https://herbalspa.vn/data/album/1000/sanh-don-khach-3.webp",
+    "w": 1400,
+    "h": 933
+   },
+   {
+    "f": "herbal/03.jpg",
+    "src": "https://herbalspa.vn/data/album/1000/quay-le-tan.webp",
+    "w": 1400,
+    "h": 931
+   },
+   {
+    "f": "herbal/04.jpg",
+    "src": "https://herbalspa.vn/data/album/1000/giuong-massage.webp",
+    "w": 1400,
+    "h": 933
+   },
+   {
+    "f": "herbal/05.jpg",
+    "src": "https://herbalspa.vn/data/album/1000/giuong-massage-chan-goc-rong.webp",
+    "w": 1400,
+    "h": 933
+   },
+   {
+    "f": "herbal/06.jpg",
+    "src": "https://herbalspa.vn/data/album/1000/khu-nghi-ngoi-sau-massage1.webp",
+    "w": 1400,
+    "h": 1031
+   },
+   {
+    "f": "herbal/07.jpg",
+    "src": "https://herbalspa.vn/data/album/1000/herbal-boutique-spa-1774340547.webp",
+    "w": 1000,
+    "h": 563
+   }
+  ]
+ },
+ "bemann": {
+  "credit": "Wikimedia Commons (ảnh minh họa)",
+  "files": [
+   {
+    "f": "bemann/01.jpg",
+    "src": "https://commons.wikimedia.org/wiki/File:Live_seafood_tanks_in_Danang.jpg",
+    "w": 1280,
+    "h": 960
+   }
+  ]
+ },
+ "x8ktv": {
+  "credit": "Wikimedia Commons (ảnh minh họa)",
+  "files": [
+   {
+    "f": "x8ktv/01.jpg",
+    "src": "https://commons.wikimedia.org/wiki/File:Karaoke_in_Nha_Trang.jpg",
+    "w": 1280,
+    "h": 960
+   }
+  ]
+ },
+ "goldenlotus": {
+  "credit": "Wikimedia Commons (ảnh minh họa)",
+  "files": [
+   {
+    "f": "goldenlotus/01.jpg",
+    "src": "https://commons.wikimedia.org/wiki/File:YHI_Spa_treatment_room_at_Paradisus_by_Meli%C3%A1_Bali.jpg",
+    "w": 1280,
+    "h": 1106
+   },
+   {
+    "f": "goldenlotus/02.jpg",
+    "src": "https://commons.wikimedia.org/wiki/File:Emotions_Spa_Facial_Massage_Parlour.jpg",
+    "w": 1280,
+    "h": 856
+   },
+   {
+    "f": "goldenlotus/03.jpg",
+    "src": "https://commons.wikimedia.org/wiki/File:Lounge_at_the_Spa_at_Silver_Legacy_-_2021-11-14_-_Sarah_Stierch_01.jpg",
+    "w": 1280,
+    "h": 960
+   }
+  ]
+ },
+ "city": {
+  "credit": "Wikimedia Commons",
+  "files": [
+   {
+    "f": "city/01.jpg",
+    "src": "https://commons.wikimedia.org/wiki/File:Dragon_Bridge,_Da_Nang_at_night_-_20230819.jpg",
+    "w": 1280,
+    "h": 958
+   },
+   {
+    "f": "city/02.jpg",
+    "src": "https://commons.wikimedia.org/wiki/File:Da_Nang_Dragon_Bridge_(II).jpg",
+    "w": 1280,
+    "h": 720
+   },
+   {
+    "f": "city/03.jpg",
+    "src": "https://commons.wikimedia.org/wiki/File:My_Khe_Beach_Da_Nang.jpg",
+    "w": 1280,
+    "h": 960
+   },
+   {
+    "f": "city/04.jpg",
+    "src": "https://commons.wikimedia.org/wiki/File:Da_Nang_Night_Panorama_01.jpg",
+    "w": 1280,
+    "h": 254
+   }
+  ]
+ }
+}

@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khách · Toini giai đoạn 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/uc.css">
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs";
+mermaid.initialize({startOnLoad:true,theme:"base",securityLevel:"loose",
+ flowchart:{htmlLabels:true,curve:"basis"},
+ themeVariables:{fontFamily:"Archivo, system-ui, sans-serif",fontSize:"14px",
+ primaryColor:"#FFFDF8",primaryBorderColor:"#0D0D0D",primaryTextColor:"#0D0D0D",lineColor:"#0D0D0D",
+ secondaryColor:"#F5F1E8",tertiaryColor:"#F5F1E8",clusterBkg:"#F5F1E8",clusterBorder:"#0D0D0D",
+ actorBkg:"#C6FF00",actorBorder:"#0D0D0D",actorTextColor:"#0D0D0D",actorLineColor:"#0D0D0D",
+ signalColor:"#0D0D0D",signalTextColor:"#0D0D0D",labelBoxBkgColor:"#C6FF00",labelBoxBorderColor:"#0D0D0D",
+ noteBkgColor:"#FFE7A3",noteBorderColor:"#0D0D0D",activationBkgColor:"#C6FF00",edgeLabelBackground:"#FFFDF8"}});
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="logo">toini</span><span class="sub">Use case · Giai đoạn 1</span></div>
+    <nav class="tabs"><a href="index.html">Tổng quan</a><a href="khach.html" class="on" aria-current="page">Khách</a><a href="quan.html">Quán</a><a href="quan-tri.html">Quản trị Toini</a><a href="tu-dong.html">Hệ thống tự động</a><a href="../mock/index.html" class="ext">Mock ↗</a><a href="../evidence/index.html" class="ext">Evidence ↗</a><a href="../bao-gia/index.html" class="ext">Báo giá ↗</a></nav>
+  </div>
+</header>
+
+<section class="hero"><div class="wrap">
+  <div class="kick">👤 Tác nhân · Khách du lịch và người địa phương</div>
+  <h1>Khách</h1>
+  <p>Khách dùng web Toini trên điện thoại hoặc máy tính, <b>không cần tạo tài khoản</b>. Khách tìm quán, đặt bàn và xác minh bằng mã OTP. Khách trả tiền trực tiếp tại quán, Toini không thu phí đặt bàn.</p>
+</div></section>
+<div class="wrap layout">
+  <aside class="toc"><div class="toc-in"><b>14 use case</b><ol><li><a href="#UC-K01"><span>UC-K01</span>Chọn ngôn ngữ và loại tiền</a></li><li><a href="#UC-K02"><span>UC-K02</span>Xem trang chủ và tìm quán</a></li><li><a href="#UC-K03"><span>UC-K03</span>Xem chi tiết quán</a></li><li><a href="#UC-K04"><span>UC-K04</span>Đi tới quán bằng Grab hoặc Google Maps</a></li><li><a href="#UC-K05"><span>UC-K05</span>Đặt bàn</a></li><li><a href="#UC-K06"><span>UC-K06</span>Xác minh số điện thoại hoặc email bằng mã OTP</a></li><li><a href="#UC-K07"><span>UC-K07</span>Nhận kết quả và tra cứu đơn</a></li><li><a href="#UC-K08"><span>UC-K08</span>Đổi giờ hoặc hủy đơn</a></li><li><a href="#UC-K09"><span>UC-K09</span>Báo “Tôi đã tới quán” và dùng ưu đãi</a></li><li><a href="#UC-K10"><span>UC-K10</span>Nhắn tin cho Toini qua ứng dụng chat</a></li><li><a href="#UC-K11"><span>UC-K11</span>Tìm quán gần tôi trên bản đồ</a></li><li><a href="#UC-K12"><span>UC-K12</span>Xem sự kiện và đặt bàn theo sự kiện</a></li><li><a href="#UC-K13"><span>UC-K13</span>Đánh giá sau khi đi</a></li><li><a href="#UC-K14"><span>UC-K14</span>Đặt bàn với deal siêu hời Toini</a></li></ol></div></aside>
+  <main>
+    <section class="card diagram">
+      <h2>Sơ đồ use case</h2>
+      <p class="muted">Bấm vào từng ô để tới mô tả chi tiết.</p>
+      <pre class="mermaid">flowchart LR
+  ACT(["👤 Khách du lịch và người địa phương"]):::actor
+  K01(["&lt;b&gt;UC-K01&lt;/b&gt;&lt;br/&gt;Chọn ngôn ngữ và loại tiền"])
+  ACT --- K01
+  click K01 href "#UC-K01"
+  K02(["&lt;b&gt;UC-K02&lt;/b&gt;&lt;br/&gt;Xem trang chủ và tìm quán"])
+  ACT --- K02
+  click K02 href "#UC-K02"
+  K03(["&lt;b&gt;UC-K03&lt;/b&gt;&lt;br/&gt;Xem chi tiết quán"])
+  ACT --- K03
+  click K03 href "#UC-K03"
+  K04(["&lt;b&gt;UC-K04&lt;/b&gt;&lt;br/&gt;Đi tới quán bằng Grab hoặc Google Maps"])
+  ACT --- K04
+  click K04 href "#UC-K04"
+  K05(["&lt;b&gt;UC-K05&lt;/b&gt;&lt;br/&gt;Đặt bàn"])
+  ACT --- K05
+  click K05 href "#UC-K05"
+  K06(["&lt;b&gt;UC-K06&lt;/b&gt;&lt;br/&gt;Xác minh số điện thoại hoặc email bằng mã OTP"])
+  ACT --- K06
+  click K06 href "#UC-K06"
+  K07(["&lt;b&gt;UC-K07&lt;/b&gt;&lt;br/&gt;Nhận kết quả và tra cứu đơn"])
+  ACT --- K07
+  click K07 href "#UC-K07"
+  K08(["&lt;b&gt;UC-K08&lt;/b&gt;&lt;br/&gt;Đổi giờ hoặc hủy đơn"])
+  ACT --- K08
+  click K08 href "#UC-K08"
+  K09(["&lt;b&gt;UC-K09&lt;/b&gt;&lt;br/&gt;Báo “Tôi đã tới quán” và dùng ưu đãi"])
+  ACT --- K09
+  click K09 href "#UC-K09"
+  K10(["&lt;b&gt;UC-K10&lt;/b&gt;&lt;br/&gt;Nhắn tin cho Toini qua ứng dụng chat"])
+  ACT --- K10
+  click K10 href "#UC-K10"
+  K11(["&lt;b&gt;UC-K11&lt;/b&gt;&lt;br/&gt;Tìm quán gần tôi trên bản đồ"])
+  ACT --- K11
+  click K11 href "#UC-K11"
+  K12(["&lt;b&gt;UC-K12&lt;/b&gt;&lt;br/&gt;Xem sự kiện và đặt bàn theo sự kiện"])
+  ACT --- K12
+  click K12 href "#UC-K12"
+  K13(["&lt;b&gt;UC-K13&lt;/b&gt;&lt;br/&gt;Đánh giá sau khi đi"])
+  ACT --- K13
+  click K13 href "#UC-K13"
+  K14(["&lt;b&gt;UC-K14&lt;/b&gt;&lt;br/&gt;Đặt bàn với deal siêu hời Toini"])
+  ACT --- K14
+  click K14 href "#UC-K14"
+  classDef actor fill:#C6FF00,stroke:#0D0D0D,stroke-width:2.5px,color:#0D0D0D,font-weight:800</pre>
+    </section>
+    <article class="uc" id="UC-K01">
+  <header>
+    <span class="code">UC-K01</span>
+    <h3>Chọn ngôn ngữ và loại tiền</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách xem toàn bộ web bằng ngôn ngữ của mình và thấy giá theo loại tiền quen dùng.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Không có.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Toàn bộ web hiển thị theo ngôn ngữ và loại tiền khách đã chọn.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Lần đầu vào web, hệ thống chọn sẵn ngôn ngữ theo cài đặt của trình duyệt. Nếu trình duyệt dùng ngôn ngữ không có trong 6 ngôn ngữ, web hiển thị tiếng Anh.</li><li>Khách bấm nút ngôn ngữ ở đầu trang và chọn 1 trong 6 ngôn ngữ: Tiếng Việt, English, 한국어, Русский, 中文, 日本語.</li><li>Khách chọn loại tiền: VND, USD, KRW, RUB, CNY, JPY.</li><li>Mọi giá trên web hiển thị giá gốc VND, kèm giá quy đổi sang loại tiền khách đã chọn.</li><li>Web ghi nhớ lựa chọn cho lần truy cập sau.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Giá quy đổi chỉ để tham khảo. Khách thanh toán tại quán theo hóa đơn của quán.</li><li>Tỷ giá lấy từ nguồn ngân hàng, có ghi thời điểm cập nhật (<a class="ref" href="tu-dong.html#UC-S05" title="Cập nhật tỷ giá">UC-S05</a>).</li><li>Nội dung nào chưa có bản dịch sang ngôn ngữ khách chọn thì hiển thị bằng tiếng Anh.</li><li>Đường dẫn của mỗi trang có mã ngôn ngữ (ví dụ toini.vn/ko/...), để khách chia sẻ đúng ngôn ngữ và để Google tìm được từng bản.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-K02" title="Xem trang chủ và tìm quán">UC-K02 · Xem trang chủ và tìm quán</a><a class="chip" href="quan-tri.html#UC-A12" title="Quản lý nội dung chung và cấu hình">UC-A12 · Quản lý nội dung chung và cấu hình</a><a class="chip" href="tu-dong.html#UC-S05" title="Cập nhật tỷ giá">UC-S05 · Cập nhật tỷ giá</a></div>
+</article>
+<article class="uc" id="UC-K02">
+  <header>
+    <span class="code">UC-K02</span>
+    <h3>Xem trang chủ và tìm quán</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách nhanh chóng tìm được quán phù hợp cho tối nay.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Không có.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Khách tìm được quán muốn xem.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Khách mở trang chủ “Tối ni đi mô?”. Trang hiển thị danh sách các quán Toini đang bật hiển thị.</li><li>Mỗi quán hiển thị thành một thẻ gồm: ảnh, tên quán, loại hình, khu vực, mức giá, ưu đãi đang có, và tình trạng “còn nhận khách tối nay”.</li><li>Khách lọc danh sách theo khu vực, loại hình, mức giá, hoặc chỉ xem các quán còn nhận khách. Khách cũng có thể tìm quán theo tên.</li><li>Khách lọc thêm theo <b>tiện ích</b> của quán, chọn được nhiều tiện ích cùng lúc: nhạc sống, view sông Hàn, gần biển, nhận thẻ, menu tiếng Anh, hợp nhóm đông, phòng VIP… Danh sách chỉ giữ các quán có đủ mọi tiện ích đã chọn.</li><li>Trang chủ có thêm mục <b>Deal siêu hời</b> do Toini tài trợ (<a class="ref" href="#UC-K14" title="Đặt bàn với deal siêu hời Toini">UC-K14</a>) và <b>Sự kiện tối nay</b> (<a class="ref" href="#UC-K12" title="Xem sự kiện và đặt bàn theo sự kiện">UC-K12</a>).</li><li>Khách bấm vào một thẻ để mở trang chi tiết quán (<a class="ref" href="#UC-K03" title="Xem chi tiết quán">UC-K03</a>).</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Không có quán nào khớp bộ lọc</td><td>Web báo không có kết quả và gợi ý bỏ bớt điều kiện lọc.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Quán đã tắt nhận khách tối nay (<a class="ref" href="quan.html#UC-Q02" title="Bật hoặc tắt nhận khách theo từng tối">UC-Q02</a>) vẫn hiển thị trong danh sách, nhưng khách không đặt được bàn cho tối đó.</li><li>Danh mục khu vực, loại hình và tiện ích do Toini quản lý (<a class="ref" href="quan-tri.html#UC-A12" title="Quản lý nội dung chung và cấu hình">UC-A12</a>). Tiện ích của từng quán do Toini gắn khi cập nhật hồ sơ quán (<a class="ref" href="quan-tri.html#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01</a>); tên tiện ích hiển thị theo ngôn ngữ khách chọn.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-K03" title="Xem chi tiết quán">UC-K03 · Xem chi tiết quán</a><a class="chip" href="quan.html#UC-Q02" title="Bật hoặc tắt nhận khách theo từng tối">UC-Q02 · Bật hoặc tắt nhận khách theo từng tối</a><a class="chip" href="quan-tri.html#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01 · Quản lý quán và hồ sơ quán</a></div>
+</article>
+<article class="uc" id="UC-K03">
+  <header>
+    <span class="code">UC-K03</span>
+    <h3>Xem chi tiết quán</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách biết rõ quán thế nào và hết khoảng bao nhiêu tiền trước khi đi.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Quán đang được Toini bật hiển thị.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Khách có đủ thông tin để quyết định đặt bàn.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Khách mở trang của quán.</li><li>Trang hiển thị: ảnh, mô tả, giờ mở cửa, phí vào cửa, mức chi tiêu tối thiểu, thuế và phí dịch vụ, dress code, giới hạn tuổi.</li><li>Trang hiển thị các ưu đãi đang áp dụng, kèm điều kiện và khung giờ của từng ưu đãi.</li><li>Trang hiển thị deal siêu hời Toini tài trợ (nếu có) với nút “Đặt bàn với deal này” (<a class="ref" href="#UC-K14" title="Đặt bàn với deal siêu hời Toini">UC-K14</a>), và các sự kiện sắp tới của quán (<a class="ref" href="#UC-K12" title="Xem sự kiện và đặt bàn theo sự kiện">UC-K12</a>).</li><li>Trang có bản đồ Google Maps nhúng, đánh dấu vị trí quán.</li><li>Trang hiển thị điểm đánh giá trung bình và các đánh giá đã được Toini duyệt, kèm ảnh của khách (<a class="ref" href="#UC-K13" title="Đánh giá sau khi đi">UC-K13</a>).</li><li>Từ trang này, khách có thể: đặt bàn (<a class="ref" href="#UC-K05" title="Đặt bàn">UC-K05</a>), gọi Grab hoặc xem chỉ đường (<a class="ref" href="#UC-K04" title="Đi tới quán bằng Grab hoặc Google Maps">UC-K04</a>), hoặc nhắn tin cho Toini (<a class="ref" href="#UC-K10" title="Nhắn tin cho Toini qua ứng dụng chat">UC-K10</a>).</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Giá phải ghi rõ đã gồm hay chưa gồm thuế và phí dịch vụ.</li><li>Thông tin quán do Toini cập nhật (<a class="ref" href="quan-tri.html#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01</a>). Quán không tự sửa hồ sơ trong giai đoạn này.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-K04" title="Đi tới quán bằng Grab hoặc Google Maps">UC-K04 · Đi tới quán bằng Grab hoặc Google Maps</a><a class="chip" href="#UC-K05" title="Đặt bàn">UC-K05 · Đặt bàn</a><a class="chip" href="#UC-K10" title="Nhắn tin cho Toini qua ứng dụng chat">UC-K10 · Nhắn tin cho Toini qua ứng dụng chat</a><a class="chip" href="quan-tri.html#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01 · Quản lý quán và hồ sơ quán</a><a class="chip" href="quan-tri.html#UC-A03" title="Quản lý ưu đãi của quán">UC-A03 · Quản lý ưu đãi của quán</a></div>
+</article>
+<article class="uc" id="UC-K04">
+  <header>
+    <span class="code">UC-K04</span>
+    <h3>Đi tới quán bằng Grab hoặc Google Maps</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách bấm một lần là đặt được xe tới quán, không phải tự gõ địa chỉ.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Quán đã có vị trí trên bản đồ.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Khách đặt được xe hoặc biết đường tới quán.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Trên trang quán hoặc trang đơn, khách bấm <b>“Đi Grab”</b>.</li><li>Nếu điện thoại đã có app Grab, app tự mở màn hình đặt xe. Điểm đến điền sẵn là quán, điểm đón là vị trí hiện tại của khách.</li><li>Khách chọn loại xe và đặt xe ngay trong app Grab.</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Điện thoại chưa có app Grab</td><td>Web mở trang tải Grab trên App Store hoặc Google Play.</td></tr><tr><td>Khách dùng máy tính</td><td>Web không hiện nút Grab, chỉ hiện nút Google Maps.</td></tr><tr><td>Khách bấm “Chỉ đường”</td><td>Web mở Google Maps (app hoặc web) với đường đi tới quán.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Giá cước và việc đặt xe do Grab xử lý. Toini không thu tiền và không lưu thông tin chuyến xe.</li><li>Điểm đến lấy theo vị trí của quán mà Toini đã nhập (<a class="ref" href="quan-tri.html#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-K03" title="Xem chi tiết quán">UC-K03 · Xem chi tiết quán</a><a class="chip" href="#UC-K07" title="Nhận kết quả và tra cứu đơn">UC-K07 · Nhận kết quả và tra cứu đơn</a><a class="chip" href="quan-tri.html#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01 · Quản lý quán và hồ sơ quán</a></div>
+</article>
+<article class="uc" id="UC-K05">
+  <header>
+    <span class="code">UC-K05</span>
+    <h3>Đặt bàn</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách gửi yêu cầu đặt bàn cho một tối cụ thể, không cần tạo tài khoản.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Quán đang hiển thị và còn nhận khách vào tối khách chọn.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Đơn được tạo ở trạng thái “Chờ quán xác nhận”. Khách có mã đặt chỗ.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Khách bấm <b>“Đặt bàn”</b> trên trang quán.</li><li>Khách chọn tối muốn đi (chỉ chọn được những tối quán còn nhận khách), giờ đến, số khách, và ghi chú nếu có.</li><li>Khách nhập tên và thông tin liên hệ: <b>số điện thoại hoặc email, ít nhất một trong hai</b>. Với số điện thoại, khách chọn mã quốc gia trước khi nhập số.</li><li>Khách tick đồng ý điều khoản sử dụng và chính sách bảo mật.</li><li>Khách bấm gửi. Hệ thống gửi mã xác minh (<a class="ref" href="#UC-K06" title="Xác minh số điện thoại hoặc email bằng mã OTP">UC-K06</a>).</li><li>Khách nhập đúng mã. Hệ thống tạo đơn, cấp <b>mã đặt chỗ</b> (ví dụ TN-7K2Q) và chuyển đơn sang trạng thái <b>“Chờ quán xác nhận”</b>.</li><li>Web hiện trang đơn kèm link tra cứu. Hệ thống gửi xác nhận đã nhận đơn cho khách (<a class="ref" href="tu-dong.html#UC-S01" title="Gửi tin cho khách theo kênh phù hợp">UC-S01</a>) và báo đơn mới cho quán (<a class="ref" href="quan.html#UC-Q03" title="Nhận thông báo đơn mới">UC-Q03</a>).</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Khách chỉ có số điện thoại nước ngoài</td><td>Khách phải nhập thêm email. Mã xác minh và thông báo sẽ gửi qua email.</td></tr><tr><td>Quán vừa tắt nhận khách trong lúc khách đang điền</td><td>Web báo tối đó quán đã ngừng nhận khách. Web gợi ý khách chọn tối khác hoặc xem các quán khác.</td></tr><tr><td>Khách gửi trùng</td><td>Nếu cùng thông tin liên hệ đã có một đơn đang chờ ở cùng quán, cùng tối, web mở lại đơn đó và không tạo đơn mới.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Không cần tài khoản. Toini không thu tiền đặt bàn, khách trả tiền tại quán.</li><li>Số điện thoại được lưu ở dạng quốc tế (ví dụ +84 90...), email lưu dạng chữ thường. Nhờ vậy, sau này khi có chức năng tài khoản, khách xem lại được các lần đặt cũ theo số điện thoại hoặc email (<a class="ref" href="tu-dong.html#UC-S09" title="Lưu lịch sử đặt bàn theo số điện thoại và email">UC-S09</a>).</li><li>Mọi đơn đều phải chờ quán xác nhận (<a class="ref" href="quan.html#UC-Q04" title="Xác nhận hoặc từ chối đơn">UC-Q04</a>).</li><li>Đơn có thể được gắn với một sự kiện (<a class="ref" href="#UC-K12" title="Xem sự kiện và đặt bàn theo sự kiện">UC-K12</a>) và/hoặc một deal siêu hời (<a class="ref" href="#UC-K14" title="Đặt bàn với deal siêu hời Toini">UC-K14</a>) khi khách đặt từ sự kiện hoặc deal đó.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-K06" title="Xác minh số điện thoại hoặc email bằng mã OTP">UC-K06 · Xác minh số điện thoại hoặc email bằng mã OTP</a><a class="chip" href="#UC-K07" title="Nhận kết quả và tra cứu đơn">UC-K07 · Nhận kết quả và tra cứu đơn</a><a class="chip" href="quan.html#UC-Q03" title="Nhận thông báo đơn mới">UC-Q03 · Nhận thông báo đơn mới</a><a class="chip" href="quan.html#UC-Q04" title="Xác nhận hoặc từ chối đơn">UC-Q04 · Xác nhận hoặc từ chối đơn</a><a class="chip" href="tu-dong.html#UC-S01" title="Gửi tin cho khách theo kênh phù hợp">UC-S01 · Gửi tin cho khách theo kênh phù hợp</a><a class="chip" href="tu-dong.html#UC-S09" title="Lưu lịch sử đặt bàn theo số điện thoại và email">UC-S09 · Lưu lịch sử đặt bàn theo số điện thoại và email</a></div>
+</article>
+<article class="uc" id="UC-K06">
+  <header>
+    <span class="code">UC-K06</span>
+    <h3>Xác minh số điện thoại hoặc email bằng mã OTP</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Bảo đảm thông tin liên hệ của khách là thật, để quán không nhận đơn ảo và Toini liên lạc được với khách.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Khách đã điền xong form đặt bàn (<a class="ref" href="#UC-K05" title="Đặt bàn">UC-K05</a>) và đã qua lớp kiểm tra chống bot (<a class="ref" href="tu-dong.html#UC-S06" title="Chống bot và giới hạn gửi tin">UC-S06</a>).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Thông tin liên hệ của khách đã được xác minh.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Hệ thống chọn kênh gửi mã theo thứ tự ưu tiên:<ul><li>Số điện thoại Việt Nam: gửi qua <b>Zalo ZNS</b>.</li><li>Nếu không gửi được qua Zalo (số không dùng Zalo hoặc Zalo báo lỗi): gửi lại qua <b>SMS brandname</b> của Toini.</li><li>Không có số Việt Nam: gửi qua <b>email</b>.</li></ul></li><li>Khách nhập mã nhận được trên web.</li><li>Mã đúng: hệ thống tạo đơn (tiếp bước 6 của <a class="ref" href="#UC-K05" title="Đặt bàn">UC-K05</a>).</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Khách chưa nhận được mã</td><td>Sau 60 giây, khách bấm “Gửi lại mã”. Nếu khách có cả số điện thoại và email, khách được chọn nhận mã qua email.</td></tr><tr><td>Nhập sai mã quá 5 lần, hoặc mã đã hết hạn</td><td>Mã cũ hết hiệu lực, khách phải yêu cầu mã mới.</td></tr><tr><td>Số điện thoại hoặc IP đã gửi quá số lần cho phép, hoặc hệ thống đã chạm trần tin nhắn trong ngày</td><td>Nếu khách có email, mã gửi qua email. Nếu không, web đề nghị khách thử lại sau hoặc nhắn tin cho Toini (<a class="ref" href="#UC-K10" title="Nhắn tin cho Toini qua ứng dụng chat">UC-K10</a>).</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Mặc định mã có 6 số, hiệu lực 5 phút, nhập sai tối đa 5 lần. Toini có thể điều chỉnh các con số này.</li><li>Tin nhắn chỉ chứa mã và thông tin đơn, không có nội dung quảng cáo.</li><li>Các giới hạn gửi tin do Toini thiết lập (<a class="ref" href="quan-tri.html#UC-A14" title="Thiết lập trần gửi tin và chặn lạm dụng">UC-A14</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-K05" title="Đặt bàn">UC-K05 · Đặt bàn</a><a class="chip" href="tu-dong.html#UC-S01" title="Gửi tin cho khách theo kênh phù hợp">UC-S01 · Gửi tin cho khách theo kênh phù hợp</a><a class="chip" href="tu-dong.html#UC-S06" title="Chống bot và giới hạn gửi tin">UC-S06 · Chống bot và giới hạn gửi tin</a><a class="chip" href="quan-tri.html#UC-A14" title="Thiết lập trần gửi tin và chặn lạm dụng">UC-A14 · Thiết lập trần gửi tin và chặn lạm dụng</a></div>
+</article>
+<article class="uc" id="UC-K07">
+  <header>
+    <span class="code">UC-K07</span>
+    <h3>Nhận kết quả và tra cứu đơn</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách biết quán đã nhận hay từ chối, kể cả khi khách không nhận được tin nhắn.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Khách đã có mã đặt chỗ.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Khách biết tình trạng đơn của mình.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Khi quán xác nhận hoặc từ chối, hệ thống báo cho khách (<a class="ref" href="tu-dong.html#UC-S01" title="Gửi tin cho khách theo kênh phù hợp">UC-S01</a>). Nếu khách có email, hệ thống gửi email. Nếu khách có số Việt Nam, hệ thống gửi thêm tin Zalo ZNS, gửi không được thì gửi SMS.</li><li>Khách có thể tự kiểm tra bất cứ lúc nào: mở link trong tin nhắn hoặc email, hoặc vào mục <b>“Tra cứu đơn”</b> và nhập mã đặt chỗ cùng số điện thoại hoặc email đã dùng khi đặt.</li><li>Trang đơn hiển thị: trạng thái đơn, tên quán, tối và giờ đến, số khách, ưu đãi, lý do từ chối (nếu có), nút Grab và chỉ đường (<a class="ref" href="#UC-K04" title="Đi tới quán bằng Grab hoặc Google Maps">UC-K04</a>).</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Khách không có email và không nhận được tin nhắn</td><td>Khách tự vào trang “Tra cứu đơn” để xem kết quả.</td></tr><tr><td>Khách mở lại web trên chính thiết bị đã đặt</td><td>Mục <b>“Đơn của tôi”</b> hiện sẵn các đơn đã đặt trên thiết bị đó, khách không cần nhập mã.</td></tr><tr><td>Khách dùng thiết bị khác, hoặc đã xóa dữ liệu trình duyệt</td><td>Khách tra cứu bằng mã đặt chỗ cùng số điện thoại hoặc email.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Đơn có các trạng thái: Chờ quán xác nhận · Đã xác nhận · Quán từ chối · Quá hạn · Đã hủy · Đã tới quán · Không đến. Sơ đồ đầy đủ ở trang Tổng quan.</li><li>Toàn bộ thông tin đơn lưu trên máy chủ của Toini. Trình duyệt của khách chỉ ghi nhớ <b>mã đặt chỗ</b> của các đơn đã đặt trên thiết bị đó (bộ nhớ trình duyệt – localStorage), không lưu tên, số điện thoại hay email. Mỗi lần mở “Đơn của tôi”, web dùng các mã này để lấy trạng thái mới nhất từ máy chủ.</li><li>Khi có chức năng tài khoản ở giai đoạn sau, “Đơn của tôi” sẽ lấy theo tài khoản (số điện thoại/email) thay vì theo thiết bị (<a class="ref" href="tu-dong.html#UC-S09" title="Lưu lịch sử đặt bàn theo số điện thoại và email">UC-S09</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="tu-dong.html#UC-S01" title="Gửi tin cho khách theo kênh phù hợp">UC-S01 · Gửi tin cho khách theo kênh phù hợp</a><a class="chip" href="#UC-K08" title="Đổi giờ hoặc hủy đơn">UC-K08 · Đổi giờ hoặc hủy đơn</a><a class="chip" href="#UC-K09" title="Báo “Tôi đã tới quán” và dùng ưu đãi">UC-K09 · Báo “Tôi đã tới quán” và dùng ưu đãi</a><a class="chip" href="quan.html#UC-Q04" title="Xác nhận hoặc từ chối đơn">UC-Q04 · Xác nhận hoặc từ chối đơn</a></div>
+</article>
+<article class="uc" id="UC-K08">
+  <header>
+    <span class="code">UC-K08</span>
+    <h3>Đổi giờ hoặc hủy đơn</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách tự đổi giờ hoặc hủy đơn mà không cần gọi cho quán.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đơn đang “Chờ quán xác nhận” hoặc “Đã xác nhận”, và chưa tới giờ đặt.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Đơn có giờ mới và chờ quán xác nhận lại, hoặc đơn đã bị hủy.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Khách mở trang đơn (<a class="ref" href="#UC-K07" title="Nhận kết quả và tra cứu đơn">UC-K07</a>).</li><li><b>Đổi giờ:</b> khách chọn giờ mới hoặc tối mới. Đơn quay về <b>“Chờ quán xác nhận”</b>, quán nhận thông báo (<a class="ref" href="quan.html#UC-Q03" title="Nhận thông báo đơn mới">UC-Q03</a>) và có lại 15 phút để phản hồi.</li><li><b>Hủy:</b> khách bấm hủy rồi xác nhận lại. Đơn chuyển sang <b>“Đã hủy”</b> và quán nhận thông báo.</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Đã quá giờ đặt</td><td>Web không cho đổi giờ hoặc hủy nữa. Khách nhắn tin cho Toini (<a class="ref" href="#UC-K10" title="Nhắn tin cho Toini qua ứng dụng chat">UC-K10</a>) để được hỗ trợ.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Đổi giờ và hủy trước giờ đặt đều miễn phí, khách không bị phạt.</li><li>Mỗi lần đổi giờ đều được ghi lại trong lịch sử đơn.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-K07" title="Nhận kết quả và tra cứu đơn">UC-K07 · Nhận kết quả và tra cứu đơn</a><a class="chip" href="quan.html#UC-Q03" title="Nhận thông báo đơn mới">UC-Q03 · Nhận thông báo đơn mới</a><a class="chip" href="quan.html#UC-Q04" title="Xác nhận hoặc từ chối đơn">UC-Q04 · Xác nhận hoặc từ chối đơn</a></div>
+</article>
+<article class="uc" id="UC-K09">
+  <header>
+    <span class="code">UC-K09</span>
+    <h3>Báo “Tôi đã tới quán” và dùng ưu đãi</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Ghi nhận khách đã tới quán qua Toini, làm căn cứ tính hoa hồng, và để khách nhận ưu đãi.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đơn ở trạng thái “Đã xác nhận”.</li><li>Đang trong khung giờ của đơn (tính quanh giờ đặt).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Đơn chuyển sang “Đã tới quán”. Quán có thể nhập hóa đơn (<a class="ref" href="quan.html#UC-Q07" title="Nhập hóa đơn">UC-Q07</a>).</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Tới quán, khách mở trang đơn và bấm <b>“Tôi đã tới quán”</b>.</li><li>Web hỏi khách có cho lấy vị trí một lần hay không. Khách có thể từ chối.</li><li>Hệ thống ghi giờ khách tới (và vị trí, nếu khách đồng ý), rồi chuyển đơn sang <b>“Đã tới quán”</b>.</li><li>Web hiện màn hình ưu đãi gồm tên quán, mã đơn, ưu đãi được hưởng (deal siêu hời Toini nếu đơn có deal) và đồng hồ đang chạy (để nhân viên biết đây không phải ảnh chụp). Khách đưa màn hình này cho nhân viên quán xem.</li><li>Sau khi tới quán, khách đánh giá được trải nghiệm (<a class="ref" href="#UC-K13" title="Đánh giá sau khi đi">UC-K13</a>).</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Khách quên bấm</td><td>Nhân viên quán bấm “Khách đã tới” trên cổng quán (<a class="ref" href="quan.html#UC-Q06" title="Báo “Khách đã tới”">UC-Q06</a>).</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Mỗi đơn chỉ ghi nhận đã tới một lần.</li><li>Hệ thống chỉ lấy vị trí đúng một lần khi khách đồng ý, không theo dõi vị trí liên tục. Không dùng mã QR tại quán.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="quan.html#UC-Q06" title="Báo “Khách đã tới”">UC-Q06 · Báo “Khách đã tới”</a><a class="chip" href="quan.html#UC-Q07" title="Nhập hóa đơn">UC-Q07 · Nhập hóa đơn</a><a class="chip" href="quan-tri.html#UC-A03" title="Quản lý ưu đãi của quán">UC-A03 · Quản lý ưu đãi của quán</a></div>
+</article>
+<article class="uc" id="UC-K10">
+  <header>
+    <span class="code">UC-K10</span>
+    <h3>Nhắn tin cho Toini qua ứng dụng chat</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách hỏi Toini qua ứng dụng chat quen dùng, không phải cài thêm gì.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Không có.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Khách đã liên lạc được với Toini.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Mọi trang đều có nút chat nổi ở góc màn hình.</li><li>Khách bấm nút chat. Web hiện danh sách kênh: Zalo, KakaoTalk, WhatsApp, LINE, WeChat, Messenger… Kênh hợp với ngôn ngữ khách được xếp lên đầu, ví dụ 한국어 thì KakaoTalk đứng đầu, Tiếng Việt thì Zalo đứng đầu.</li><li>Khách chọn một kênh. App chat đó mở ra cuộc trò chuyện với tài khoản của Toini.</li><li>Nhân viên Toini trả lời khách ngay trong app chat đó.</li></ol>
+  <h4>Quy tắc</h4><ul class="rules"><li>Toini tự cấu hình danh sách kênh và đường link của từng kênh (<a class="ref" href="quan-tri.html#UC-A12" title="Quản lý nội dung chung và cấu hình">UC-A12</a>).</li><li>Nội dung chat nằm trên app chat, web Toini không lưu.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="quan-tri.html#UC-A12" title="Quản lý nội dung chung và cấu hình">UC-A12 · Quản lý nội dung chung và cấu hình</a></div>
+</article>
+<article class="uc" id="UC-K11">
+  <header>
+    <span class="code">UC-K11</span>
+    <h3>Tìm quán gần tôi trên bản đồ</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách chưa có tên quán cụ thể trong đầu, muốn biết quanh chỗ mình đang ở có những quán nào để chọn.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Khách mở mục <b>“Bản đồ”</b> trên web.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Khách tìm được quán gần mình và mở trang quán để đặt bàn.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Web hiện bản đồ tương tác. Mỗi quán đang hiển thị là một <b>ghim</b> trên bản đồ, biểu tượng theo loại hình. Quán đã tắt nhận khách tối nay có ghim màu xám.</li><li>Khách đặt vị trí của mình bằng một trong các cách:<ul><li>Bấm <b>“Dùng vị trí của tôi”</b>. Web hỏi khách cho phép lấy vị trí <b>một lần</b>, rồi đặt chấm vị trí của khách lên bản đồ.</li><li>Chọn một điểm có sẵn (ví dụ Biển Mỹ Khê, Cầu Rồng, Chợ Hàn, Phố An Thượng), hợp với khách du lịch đang ở khách sạn quanh đó.</li><li>Chạm lên bản đồ, hoặc kéo chấm vị trí tới chỗ mong muốn.</li></ul></li><li>Web vẽ vòng bán kính quanh vị trí của khách và hiện danh sách <b>“Gần bạn nhất”</b>: các quán xếp theo khoảng cách, kèm số mét/km và tình trạng nhận khách tối nay.</li><li>Khách lọc theo loại hình, hoặc chỉ xem quán còn nhận khách tối nay.</li><li>Khách bấm vào một ghim (hoặc một dòng trong danh sách). Web hiện <b>thẻ nhỏ</b> của quán: ảnh, tên, loại hình, khoảng cách, tình trạng nhận khách, ưu đãi đang có.</li><li>Khách bấm vào thẻ nhỏ để mở trang chi tiết quán (<a class="ref" href="#UC-K03" title="Xem chi tiết quán">UC-K03</a>), rồi đặt bàn (<a class="ref" href="#UC-K05" title="Đặt bàn">UC-K05</a>).</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Khách từ chối cho lấy vị trí, hoặc trình duyệt không lấy được</td><td>Web báo không lấy được vị trí và gợi ý chọn điểm có sẵn hoặc chạm lên bản đồ.</td></tr><tr><td>Vị trí lấy được ở quá xa Đà Nẵng</td><td>Web giữ vị trí đang chọn và gợi ý khách chọn điểm hoặc chạm lên bản đồ.</td></tr><tr><td>Không có quán nào khớp bộ lọc</td><td>Danh sách báo không có kết quả; khách bỏ bớt bộ lọc.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Vị trí của khách chỉ dùng trên thiết bị để tính khoảng cách, không gửi về và không lưu trên máy chủ Toini.</li><li>Khoảng cách là đường chim bay từ vị trí khách tới tọa độ quán Toini đã nhập (<a class="ref" href="quan-tri.html#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01</a>); đường đi thực tế xem qua nút Chỉ đường hoặc Grab (<a class="ref" href="#UC-K04" title="Đi tới quán bằng Grab hoặc Google Maps">UC-K04</a>).</li><li>Bản đồ tương tác dùng dịch vụ bản đồ bên ngoài (Google Maps JavaScript API, hoặc nền bản đồ thuê từ nhà cung cấp khác). Phí dịch vụ tính theo lượt tải bản đồ, Toini trả trực tiếp cho nhà cung cấp; nằm trong chi phí dịch vụ.</li><li>Trang chi tiết từng quán vẫn dùng Google Maps nhúng (<a class="ref" href="#UC-K03" title="Xem chi tiết quán">UC-K03</a>).</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-K03" title="Xem chi tiết quán">UC-K03 · Xem chi tiết quán</a><a class="chip" href="#UC-K04" title="Đi tới quán bằng Grab hoặc Google Maps">UC-K04 · Đi tới quán bằng Grab hoặc Google Maps</a><a class="chip" href="#UC-K05" title="Đặt bàn">UC-K05 · Đặt bàn</a><a class="chip" href="quan-tri.html#UC-A01" title="Quản lý quán và hồ sơ quán">UC-A01 · Quản lý quán và hồ sơ quán</a></div>
+</article>
+<article class="uc" id="UC-K12">
+  <header>
+    <span class="code">UC-K12</span>
+    <h3>Xem sự kiện và đặt bàn theo sự kiện</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách biết tối nay, ngày mai hay trong tháng có sự kiện gì ở đâu, và đặt bàn đúng tối đó.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Toini đã nhập sự kiện cho quán (<a class="ref" href="quan-tri.html#UC-A15" title="Quản lý sự kiện">UC-A15</a>).</li></ul></div>
+    <div><h4>Kết quả</h4><p>Khách có đơn đặt bàn gắn với sự kiện.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Khách mở mục <b>“Sự kiện”</b> trên menu, hoặc mục “Sự kiện tối nay” ở trang chủ, hoặc phần “Sự kiện sắp tới” trên trang quán.</li><li>Khách lọc: Tối nay · Ngày mai · 7 ngày tới · <b>Lịch tháng</b>. Ở lịch tháng, ngày có sự kiện có số đếm; bấm vào ngày để xem các sự kiện của ngày đó.</li><li>Mỗi sự kiện có: ảnh, tên, quán, ngày giờ, nhãn (DJ, nhạc sống, chiếu thể thao…).</li><li>Khách bấm vào sự kiện để xem chi tiết: mô tả, quán, thời gian, nút <b>“Đặt bàn cho sự kiện”</b> và nút <b>“Xem quán”</b>.</li><li>Bấm “Đặt bàn cho sự kiện”: form đặt bàn (<a class="ref" href="#UC-K05" title="Đặt bàn">UC-K05</a>) điền sẵn tối và giờ theo sự kiện. Đơn được <b>gắn với sự kiện</b>; quán và Toini thấy khách đặt vì sự kiện nào.</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Sự kiện đã qua</td><td>Vẫn xem được trong lịch tháng nhưng không có nút đặt bàn.</td></tr><tr><td>Quán tắt nhận khách tối có sự kiện</td><td>Form đặt bàn không cho chọn tối đó (<a class="ref" href="quan.html#UC-Q02" title="Bật hoặc tắt nhận khách theo từng tối">UC-Q02</a>).</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Sự kiện do Toini nhập, chưa bán vé (vé sự kiện để giai đoạn 2).</li><li>Tên và mô tả sự kiện hiển thị theo ngôn ngữ khách; chưa có bản dịch đã duyệt thì hiện tiếng Anh.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-K05" title="Đặt bàn">UC-K05 · Đặt bàn</a><a class="chip" href="quan-tri.html#UC-A15" title="Quản lý sự kiện">UC-A15 · Quản lý sự kiện</a><a class="chip" href="quan.html#UC-Q04" title="Xác nhận hoặc từ chối đơn">UC-Q04 · Xác nhận hoặc từ chối đơn</a></div>
+</article>
+<article class="uc" id="UC-K13">
+  <header>
+    <span class="code">UC-K13</span>
+    <h3>Đánh giá sau khi đi</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách chia sẻ trải nghiệm thật để khách sau tin tưởng hơn.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Đơn đã ở trạng thái “Đã tới quán” (hoặc đã có hóa đơn).</li><li>Đơn chưa được đánh giá.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Đánh giá được gửi để Toini duyệt.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Khách mở trang đơn (từ “Đơn của tôi” hoặc link trong email mời đánh giá – <a class="ref" href="tu-dong.html#UC-S10" title="Gửi email mời đánh giá">UC-S10</a>) và bấm <b>“Đánh giá trải nghiệm”</b>.</li><li>Khách chấm <b>1–5 sao</b>, viết bình luận, đính kèm <b>tối đa 3 ảnh</b>.</li><li>Khách bấm gửi. Đánh giá ở trạng thái <b>chờ Toini duyệt</b> (<a class="ref" href="quan-tri.html#UC-A16" title="Kiểm duyệt đánh giá">UC-A16</a>); trang đơn hiện “Đã gửi – chờ Toini duyệt”.</li><li>Khi được duyệt, đánh giá hiện trên trang quán và được tính vào điểm trung bình của quán (<a class="ref" href="#UC-K03" title="Xem chi tiết quán">UC-K03</a>).</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Đánh giá không được duyệt</td><td>Trang đơn hiện “Không được duyệt” kèm lý do; đánh giá không hiện trên web.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Chỉ khách đã tới quán qua Toini mới đánh giá được; mỗi đơn đánh giá một lần.</li><li>Ảnh được thu nhỏ trước khi lưu trên máy chủ.</li><li>Điểm đánh giá trên web chỉ tính các đánh giá đã duyệt.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-K03" title="Xem chi tiết quán">UC-K03 · Xem chi tiết quán</a><a class="chip" href="#UC-K09" title="Báo “Tôi đã tới quán” và dùng ưu đãi">UC-K09 · Báo “Tôi đã tới quán” và dùng ưu đãi</a><a class="chip" href="quan-tri.html#UC-A16" title="Kiểm duyệt đánh giá">UC-A16 · Kiểm duyệt đánh giá</a><a class="chip" href="tu-dong.html#UC-S10" title="Gửi email mời đánh giá">UC-S10 · Gửi email mời đánh giá</a></div>
+</article>
+<article class="uc" id="UC-K14">
+  <header>
+    <span class="code">UC-K14</span>
+    <h3>Đặt bàn với deal siêu hời Toini</h3>
+    <div class="meta"><span class="pill actor">Khách</span><span class="pill where">Web khách</span></div>
+  </header>
+  <p class="goal"><b>Mục tiêu.</b> Khách được giảm giá lớn do Toini tài trợ khi đặt bàn qua Toini.</p>
+  <div class="pp">
+    <div><h4>Điều kiện trước</h4><ul><li>Toini đang chạy deal siêu hời cho quán (<a class="ref" href="quan-tri.html#UC-A17" title="Quản lý deal siêu hời">UC-A17</a>), còn suất.</li></ul></div>
+    <div><h4>Kết quả</h4><p>Đơn có deal siêu hời, khách được giảm khi thanh toán tại quán.</p></div>
+  </div>
+  <h4>Luồng chính</h4>
+  <ol class="steps"><li>Khách thấy deal ở trang chủ (mục Deal siêu hời), trang Ưu đãi hoặc trang quán. Deal ghi rõ mức giảm (% hóa đơn hoặc voucher số tiền), khung giờ, điều kiện, số suất còn lại.</li><li>Khách bấm <b>“Đặt bàn với deal này”</b>. Form đặt bàn tự chọn tối và giờ nằm trong khung deal.</li><li>Ở bước chọn thời gian, khách thấy deal áp dụng cho đơn và có thể chọn “Không dùng deal”.</li><li>Đơn được tạo kèm deal (<a class="ref" href="#UC-K05" title="Đặt bàn">UC-K05</a>). Quán thấy đơn dùng deal Toini (<a class="ref" href="quan.html#UC-Q04" title="Xác nhận hoặc từ chối đơn">UC-Q04</a>).</li><li>Khi tới quán, màn hình ưu đãi hiện deal để nhân viên giảm cho khách (<a class="ref" href="#UC-K09" title="Báo “Tôi đã tới quán” và dùng ưu đãi">UC-K09</a>).</li></ol>
+  <h4>Trường hợp khác</h4><div class="tbl"><table class="alt"><thead><tr><th>Khi</th><th>Hệ thống xử lý</th></tr></thead><tbody><tr><td>Chọn giờ ngoài khung deal</td><td>Form báo khung giờ của deal; đơn không gắn deal nếu khách vẫn chọn giờ ngoài khung.</td></tr><tr><td>Deal hết suất hoặc hết hạn</td><td>Deal không còn hiện và không gắn vào đơn mới.</td></tr></tbody></table></div><h4>Quy tắc</h4><ul class="rules"><li>Toini chịu toàn bộ phần giảm và trừ vào hoa hồng của đơn (<a class="ref" href="tu-dong.html#UC-S03" title="Tính hoa hồng">UC-S03</a>); hoa hồng của đơn có thể âm.</li><li>Mỗi đơn dùng tối đa một deal siêu hời.</li></ul><div class="rel"><span>Liên quan</span><a class="chip" href="#UC-K05" title="Đặt bàn">UC-K05 · Đặt bàn</a><a class="chip" href="#UC-K09" title="Báo “Tôi đã tới quán” và dùng ưu đãi">UC-K09 · Báo “Tôi đã tới quán” và dùng ưu đãi</a><a class="chip" href="quan-tri.html#UC-A17" title="Quản lý deal siêu hời">UC-A17 · Quản lý deal siêu hời</a><a class="chip" href="tu-dong.html#UC-S03" title="Tính hoa hồng">UC-S03 · Tính hoa hồng</a><a class="chip" href="quan.html#UC-Q07" title="Nhập hóa đơn">UC-Q07 · Nhập hóa đơn</a></div>
+</article>
+  </main>
+</div>
+<footer class="foot"><div class="wrap">Toini · Tài liệu use case giai đoạn 1 · Bản 1 · 07/11/2026</div></footer>
+</body>
+</html>
